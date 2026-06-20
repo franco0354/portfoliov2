@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "francogregorio.vercel.app"
+        }
+      ],
+      "destination": "https://francogregorio.com/:path*",
+      "permanent": true
+    }
+  ]
+}

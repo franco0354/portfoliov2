@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://francogregorio.com/sitemap.xml
