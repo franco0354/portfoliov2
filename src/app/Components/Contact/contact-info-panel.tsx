@@ -44,6 +44,7 @@ export function ContactInfoMobile() {
             </p>
             <p className="text-sm font-medium leading-snug break-words">{item.value}</p>
           </div>
+
         </div>
       ))}
     </div>
