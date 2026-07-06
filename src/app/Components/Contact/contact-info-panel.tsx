@@ -1,25 +1,7 @@
 "use client";
 
-import { Github, Linkedin, Facebook, MapPin, Clock, Sparkles, Phone } from "lucide-react";
+import { MapPin, Clock, Sparkles, Phone } from "lucide-react";
 import { motion } from "motion/react";
-
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/franco0354/",
-    icon: Github,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/franco-gregorio-1ba17a277/",
-    icon: Linkedin,
-  },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/franco.0354",
-    icon: Facebook,
-  },
-] as const;
 
 const infoItems = [
   {

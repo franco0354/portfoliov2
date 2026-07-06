@@ -9,7 +9,7 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
-import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion, SiSupabase } from "react-icons/si";
+import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiNotion, SiSupabase } from "react-icons/si";
 import "./About.modern.css";
 import { SkillTag } from "@/components/ui/skill-tag";
 

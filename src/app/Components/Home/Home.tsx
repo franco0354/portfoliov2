@@ -16,30 +16,7 @@ import {
     SiFirebase,
     SiSupabase,
     SiTypescript,
-    SiJavascript,
-    SiNodedotjs,
-    SiTailwindcss,
-    SiGit,
-    SiGithub,
 } from 'react-icons/si';
-
-function Skill({ children }: { children: React.ReactNode }) {
-    return <span className="text-primary font-semibold">{children}</span>;
-}
-
-const coreSkillTags = [
-    { label: 'React', icon: <SiReact /> },
-    { label: 'Next.js', icon: <SiNextdotjs /> },
-    { label: 'React Native', icon: <SiReact /> },
-    { label: 'TypeScript', icon: <SiTypescript /> },
-    { label: 'JavaScript', icon: <SiJavascript /> },
-    { label: 'Node.js', icon: <SiNodedotjs /> },
-    { label: 'Tailwind CSS', icon: <SiTailwindcss /> },
-    { label: 'Firebase', icon: <SiFirebase /> },
-    { label: 'Supabase', icon: <SiSupabase /> },
-    { label: 'Git', icon: <SiGit /> },
-    { label: 'GitHub', icon: <SiGithub /> },
-] as const;
 
 const dataText = [
     "FrontEnd Web Developer",
