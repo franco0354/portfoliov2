@@ -27,7 +27,7 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                 style={{
                     borderRadius: '4px',
                 }}
-                className='block w-full max-w-full sm:max-w-[470px] border-0 bg-transparent p-0 text-left'
+                className='block w-full max-w-full overflow-hidden rounded sm:max-w-[470px] border-0 bg-transparent p-0 text-left'
             >
                 <Tilt
                     rotationFactor={8}
@@ -80,15 +80,15 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                         style={{
                             borderRadius: '4px',
                         }}
-                        className='pointer-events-auto relative mx-4 flex h-auto max-h-[90vh] w-[calc(100%-2rem)] flex-col overflow-y-auto border border-border/50 bg-card sm:mx-0 sm:w-[500px]'
+                        className='pointer-events-auto relative mx-4 flex h-auto max-h-[90vh] w-[calc(100%-2rem)] flex-col border border-border/50 bg-card sm:mx-0 sm:w-[500px]'
                     >
-                        <Tilt rotationFactor={8} isRevese className='flex flex-col'>
+                        <Tilt rotationFactor={8} isRevese className='flex flex-col overflow-hidden bg-card'>
                             <MorphingDialogImage
                                 src={props.photoURl}
                                 alt={props.photoAlt}
                                 className='h-full w-full'
                             />
-                            <div className='p-6'>
+                            <div className='overflow-y-auto p-6'>
                                 <MorphingDialogTitle className='text-2xl text-zinc-950 dark:text-zinc-50'>
                                     <a className='hover:text-gray-500/50 gap-1  flex' href={props.link}>
                                         {props.title}
