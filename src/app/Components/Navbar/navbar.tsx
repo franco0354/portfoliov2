@@ -40,13 +40,20 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6">
-        <Link
-          href="#Home"
-          onClick={(e) => handleNavClick(e, "#Home")}
-          className="text-lg font-bold tracking-tight sm:text-xl"
-        >
-          Franco Gregorio
-        </Link>
+        <div className="flex items-center gap-0.5">
+          {DATA.socials.map((social) => (
+            <Button key={social.label} variant="ghost" size="icon" asChild>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+              >
+                <social.icon className="size-4" />
+              </a>
+            </Button>
+          ))}
+        </div>
 
         <nav className="hidden items-center gap-1 md:flex">
           {DATA.navbar.map((item) => (

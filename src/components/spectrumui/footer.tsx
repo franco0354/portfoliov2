@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Github, Facebook } from "lucide-react";
+import { Mail } from "lucide-react";
 import { motion } from "motion/react";
 
 const backWavePath =
@@ -59,36 +59,14 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="mb-4 font-semibold">Socials</h3>
-              <div className="flex flex-col gap-3 sm:flex-row sm:gap-8">
-                <a
-                  href="https://github.com/franco0354/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Github size={18} className="transition-transform group-hover:scale-110" />
-                  Github
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/franco-gregorio-1ba17a277/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Linkedin size={18} className="transition-transform group-hover:scale-110" />
-                  LinkedIn
-                </a>
-                <a
-                  href="https://www.facebook.com/franco.0354"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Facebook size={18} className="transition-transform group-hover:scale-110" />
-                  Facebook
-                </a>
-              </div>
+              <h3 className="mb-4 font-semibold">Email</h3>
+              <a
+                href="mailto:francogregorio2004@gmail.com"
+                className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <Mail size={18} className="transition-transform group-hover:scale-110" />
+                francogregorio2004@gmail.com
+              </a>
             </div>
           </div>
         </div>
