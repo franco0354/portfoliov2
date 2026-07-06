@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Nunito } from "next/font/google";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -18,11 +18,19 @@ const nunito = Nunito({
   weight: ['400']
 })
 
+const sectionClass =
+  "scroll-mt-14 sm:scroll-mt-16 bg-section px-4 py-8 sm:px-6 sm:py-10 md:p-10";
+
 export default function Page() {
   const { isLoading, isOverInput } = usePageState();
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
   return (
-    <div className={nunito.className}>
+    <div className={`${nunito.className} overflow-x-hidden`}>
       {isLoading && (
         <Loading />
       )}
@@ -34,47 +42,47 @@ export default function Page() {
           duration: 0.1,
         }}
       />
-      <Cursor
-        attachToParent
-        variants={{
-          initial: { scale: 0.3, opacity: 0 },
-          animate: { scale: 1, opacity: 1 },
-          exit: { scale: 0.3, opacity: 0 },
-        }}
-        transition={{
-          ease: 'easeInOut',
-          duration: 0.15,
-        }}
-        className=' z-50'
-      >
-        {!isOverInput && (
-          <div>
-            <MouseIcon className='h-6 w-6' />
-          </div>
-        )}
-      </Cursor>
+      {!isTouch && (
+        <Cursor
+          attachToParent
+          variants={{
+            initial: { scale: 0.3, opacity: 0 },
+            animate: { scale: 1, opacity: 1 },
+            exit: { scale: 0.3, opacity: 0 },
+          }}
+          transition={{
+            ease: 'easeInOut',
+            duration: 0.15,
+          }}
+          className=' z-50'
+        >
+          {!isOverInput && (
+            <div>
+              <MouseIcon className='h-6 w-6' />
+            </div>
+          )}
+        </Cursor>
+      )}
       <Navbar />
-      <div className="relative z-20 pt-14 sm:pt-16">
+      <div className="relative z-20 pt-14 sm:pt-16 max-md:text-justify">
         <div>
-          <section id="Home" className="">
+          <section id="Home" className={sectionClass}>
             <Home />
           </section>
 
-          <section id="About" className="mt-24">
+          <section id="About" className={sectionClass}>
             <About />
           </section>
 
-          <section id="Project" className="mt-24">
+          <section id="Project" className={sectionClass}>
             <Project />
           </section>
-          <section id="Timeline" className="mt-24 min-h-screen py-20">
+          <section id="Timeline" className={`min-h-screen bg-section-alt px-4 py-10 sm:px-6 sm:py-12 md:p-10 scroll-mt-14 sm:scroll-mt-16`}>
             <TimelinePage />
           </section>
-          <section id="Contact" className="mt-24">
+          <section id="Contact" className={sectionClass}>
             <Contact />
           </section>
-
-          <hr />
         </div>
       </div>
       <Footer />

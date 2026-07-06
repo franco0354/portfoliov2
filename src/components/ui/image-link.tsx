@@ -68,11 +68,11 @@ export function ImageLink({
 
       {/* Image Display */}
       {isImageVisible && (
-        <div className="relative">
+        <div className="relative mt-2 w-full max-w-full overflow-hidden">
           <Image
             src={imageSources[currentImageIndex]}
             alt={imageAlts[currentImageIndex]}
-            className={`cursor-pointer transition-transform hover:scale-105 ${className}`}
+            className={`w-full max-w-full h-auto cursor-pointer transition-transform hover:scale-105 ${className}`}
             onClick={openModal}
           />
         </div>

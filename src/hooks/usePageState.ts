@@ -80,15 +80,19 @@ export const usePageState = () => {
 
     // Scroll-based active section detection
     useEffect(() => {
+        const getHeaderHeight = () =>
+            window.matchMedia('(min-width: 640px)').matches ? 64 : 56;
+
         const handleScroll = () => {
             const sections = ['Home', 'About', 'Project', 'Timeline', 'Contact'];
-            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            const scrollPosition = window.scrollY + getHeaderHeight() + 80;
 
             for (let i = sections.length - 1; i >= 0; i--) {
                 const section = document.getElementById(sections[i]);
                 if (section) {
-                    const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
 
                     if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
                         setActiveSection(sections[i]);

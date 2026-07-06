@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { usePageState } from "@/hooks/usePageState";
 import { cn } from "@/lib/utils";
@@ -15,18 +15,37 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+function scrollToSection(href: string) {
+  const id = href.replace("#", "");
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+    window.history.pushState(null, "", href);
+  }
+}
+
 export default function Navbar() {
   const { mode, activeSection, toggleMode } = usePageState();
   const [open, setOpen] = useState(false);
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      scrollToSection(href);
+      setOpen(false);
+    },
+    []
+  );
 
   return (
     <header className="fixed top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6">
         <Link
           href="#Home"
+          onClick={(e) => handleNavClick(e, "#Home")}
           className="text-lg font-bold tracking-tight sm:text-xl"
         >
-          Franco
+          Franco Gregorio
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -34,12 +53,13 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               aria-label={item.label}
               aria-current={activeSection === item.label ? "page" : undefined}
               className={cn(
                 "rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-accent",
                 activeSection === item.label &&
-                  "bg-primary/20 ring-1 ring-primary/50"
+                "bg-primary/20 ring-1 ring-primary/50"
               )}
             >
               {item.label}
@@ -81,14 +101,14 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     aria-current={
                       activeSection === item.label ? "page" : undefined
                     }
                     className={cn(
                       "rounded-md px-3 py-2.5 text-sm font-medium transition-colors hover:bg-accent",
                       activeSection === item.label &&
-                        "bg-primary/20 text-primary"
+                      "bg-primary/20 text-primary"
                     )}
                   >
                     {item.label}

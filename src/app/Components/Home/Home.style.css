@@ -12,14 +12,14 @@
   border-radius: 50%;
   background: linear-gradient(135deg, #f8fafc, #e2e8f0);
   order: 1;
-  min-width: 250px;
-  max-width: 350px;
+  min-width: unset;
+  max-width: min(100%, 280px);
   position: relative;
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 10px solid rgba(0, 0, 0, 0.2);
+  border: 4px solid rgba(0, 0, 0, 0.2);
 }
 
 .AvatarImage:hover {
@@ -36,7 +36,7 @@
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.3),
     0 2px 8px rgba(0, 0, 0, 0.2);
-  border: 10px solid rgba(255, 255, 255, 0.1);
+  border: 4px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark .AvatarImage:hover {
@@ -51,7 +51,7 @@
 
 .profile_and_text {
   flex-wrap: wrap;
-  text-align: center;
+  text-align: justify;
   justify-content: center;
 }
 
@@ -103,6 +103,16 @@
 }
 
 @media screen and (min-width: 859px) {
+
+  .AvatarImage {
+    min-width: 250px;
+    max-width: 350px;
+    border-width: 10px;
+  }
+
+  .dark .AvatarImage {
+    border-width: 10px;
+  }
 
   .inline-talents {
     justify-content: left;

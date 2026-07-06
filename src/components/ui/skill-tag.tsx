@@ -19,7 +19,7 @@ export function SkillTag({
   return (
     <span 
       className={cn(
-        "modern-card text-sm px-4 py-2 rounded-lg font-medium flex items-center animate-fade-scale hover:scale-105 transition-transform",
+        "modern-card text-sm px-4 py-2.5 rounded-lg font-medium inline-flex items-center animate-fade-scale hover:scale-105 transition-transform",
         delayClass,
         className
       )}

@@ -9,37 +9,60 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
-import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion, SiSupabase, SiAndroidstudio } from "react-icons/si";
+import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiChakraui, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiBlender, SiNotion, SiSupabase } from "react-icons/si";
 import "./About.modern.css";
 import { SkillTag } from "@/components/ui/skill-tag";
 
+const technologies = [
+    { label: "CSS3", icon: <SiCss3 /> },
+    { label: "TypeScript", icon: <SiTypescript /> },
+    { label: "Vercel", icon: <SiVercel /> },
+    { label: "Ant Design", icon: <SiAntdesign /> },
+    { label: "Bootstrap", icon: <SiBootstrap /> },
+    { label: "Node.js", icon: <SiNodedotjs /> },
+    { label: "Yarn", icon: <SiYarn /> },
+    { label: "Git", icon: <SiGit /> },
+    { label: "GitHub", icon: <SiGithub /> },
+    { label: "Unity", icon: <SiUnity /> },
+    { label: "Firebase", icon: <SiFirebase /> },
+    { label: "Next.js", icon: <SiNextdotjs /> },
+    { label: "JavaScript", icon: <SiJavascript /> },
+    { label: "HTML5", icon: <SiHtml5 /> },
+    { label: "SASS", icon: <SiSass /> },
+    { label: "Python", icon: <SiPython /> },
+    { label: "React", icon: <SiReact /> },
+    { label: "TailwindCSS", icon: <SiTailwindcss /> },
+    { label: "Notion", icon: <SiNotion /> },
+    { label: "Supabase", icon: <SiSupabase /> },
+] as const;
+
 const CarouselExample = () => {
     return (
-        <div className="pt-24 m:mt-0 text-center text-xl">
+        <div className="pt-8 md:pt-24 text-justify md:text-center text-base sm:text-lg md:text-xl">
             <TextHeader
                 text="About"
             />
-            <blockquote className="mb-6 text-muted-foreground text-xl border-l-2 italic text-center">
+            <blockquote className="mb-6 text-muted-foreground text-base sm:text-lg md:text-xl border-l-2 italic text-justify md:text-center px-2">
                 <TextAnimate animation="blurIn" as="h1" duration={1}>
                     &quot;Great developers aren&#39;t born—they&#39;re made through consistency, curiosity, and code.&quot;
                 </TextAnimate>
             </blockquote>
 
-            <div className=" flex flex-col md:flex-row  justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 overflow-x-auto">
+            <div className="flex flex-col md:flex-row justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 min-w-0">
                 <Carousel orientation="horizontal">
-                    <div className="relative min-w-0  flex-1 md:basis-3/4 w-full">
-                        <CarouselMainContainer className="h-60  md:h-90">
+                    <div className="relative min-w-0 flex-1 md:basis-3/4 w-full">
+                        <CarouselMainContainer className="h-48 sm:h-56 md:h-72">
                             {photoData.map((id) => (
                                 <SliderMainItem
                                     key={id.id}
-                                    className="border border-muted flex overflow-hidden items-center justify-center md:h-84 rounded-md"
+                                    className="border border-muted flex overflow-hidden items-center justify-center h-48 sm:h-56 md:h-72 rounded-md"
                                 >
                                     <Image src={id.photoURL.src} alt="" width={id.photoURL.width} height={id.photoURL.height} className="object-contain" />
                                 </SliderMainItem>
                             ))}
                         </CarouselMainContainer>
                     </div>
-                    <CarouselThumbsContainer className="h-30 sm:h-50 lg:h-60 min-w-0 flex-1 md:basis-1/4 w-full mt-4 md:mt-0">
+                    <CarouselThumbsContainer className="h-24 sm:h-32 md:h-40 min-w-0 flex-1 md:basis-1/4 w-full mt-4 md:mt-0">
                         {photoData.map((id, idx) => (
                             <SliderThumbItem
                                 key={id.id}
@@ -63,7 +86,7 @@ const CarouselExample = () => {
                             text="Who I Am"
                         />
                     </div>
-                    <p className="text-muted-foreground text-xl  leading-relaxed">
+                    <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed px-2 text-justify lg:text-center md:text-left">
                         <TextAnimate animation="blurIn" duration={1} as="h1">
                             I&apos;m a creative problem-solver and passionate web developer who loves turning ideas into
                             interactive, user-focused experiences. I believe great design meets great function, and I aim
@@ -85,7 +108,7 @@ const CarouselExample = () => {
                         />
                     </div>
                     <div className=" dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl ">
-                        <p className="text-muted-foreground text-lg leading-relaxed">
+                        <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed px-2 text-justify lg:text-center md:text-left">
                             <TextAnimate animation="blurIn" duration={1.2} as="h1">
                                 To keep my code clean, I try to name variables and functions in a way that clearly shows what they&apos;re for.
                                 I keep functions short and focused on doing just one thing so they&apos;re easier to read and reuse.
@@ -103,87 +126,25 @@ const CarouselExample = () => {
             </div>
 
             {/* Skills Section */}
-            <div className="flex justify-center mt-12">
-                <div className="max-w-7xl">
+            <div className="flex justify-center mt-12 w-full">
+                <div className="w-full max-w-7xl px-2">
                     <div className="mb-6">
                         <TextHeader
                             variant="sub"
                             text="Technologies I Work With"
                         />
                     </div>
-                    <div className="flex justify-center flex-wrap gap-3">
-                        <SkillTag delay={1} icon={<SiCss3 />}>
-                            CSS3
-                        </SkillTag>
-                        <SkillTag delay={2} icon={<SiTypescript />}>
-                            TypeScript
-                        </SkillTag>
-                        <SkillTag delay={3} icon={<SiVercel />}>
-                            Vercel
-                        </SkillTag>
-                        <SkillTag delay={4} icon={<SiAntdesign />}>
-                            Ant Design
-                        </SkillTag>
-                        <SkillTag delay={5} icon={<SiBootstrap />}>
-                            Bootstrap
-                        </SkillTag>
-                        <SkillTag delay={6} icon={<SiChakraui />}>
-                            Chakra
-                        </SkillTag>
-                        <SkillTag delay={7} icon={<SiNodedotjs />}>
-                            Node.js
-                        </SkillTag>
-                        <SkillTag delay={8} icon={<SiYarn />}>
-                            Yarn
-                        </SkillTag>
-                        <SkillTag delay={9} icon={<SiGit />}>
-                            Git
-                        </SkillTag>
-                        <SkillTag delay={10} icon={<SiGithub />}>
-                            GitHub
-                        </SkillTag>
-                        {/* <span className="bg-[#000000] text-[#FF7139] text-sm px-3 py-1.5 rounded-md font-medium shadow-sm hover:shadow-md transition-shadow flex items-center">
-                            <SiNotion className="mr-2" /> Portfolio
-                        </span> */}
-                        <SkillTag delay={11} icon={<SiUnity />}>
-                            Unity
-                        </SkillTag>
-                        <SkillTag delay={12} icon={<SiFirebase />}>
-                            Firebase
-                        </SkillTag>
-                        <SkillTag delay={13} icon={<SiNextdotjs />}>
-                            Next.js
-                        </SkillTag>
-                        <SkillTag delay={14} icon={<SiJavascript />}>
-                            JavaScript
-                        </SkillTag>
-                        <SkillTag delay={15} icon={<SiHtml5 />}>
-                            HTML5
-                        </SkillTag>
-                        <SkillTag delay={16} icon={<SiSass />}>
-                            SASS
-                        </SkillTag>
-                        <SkillTag delay={17} icon={<SiPython />}>
-                            Python
-                        </SkillTag>
-                        <SkillTag delay={18} icon={<SiReact />}>
-                            React
-                        </SkillTag>
-                        <SkillTag delay={19} icon={<SiTailwindcss />}>
-                            TailwindCSS
-                        </SkillTag>
-                        <SkillTag delay={20} icon={<SiBlender />}>
-                            Blender
-                        </SkillTag>
-                        <SkillTag delay={21} icon={<SiNotion />}>
-                            Notion
-                        </SkillTag>
-                        <SkillTag delay={22} icon={<SiSupabase />}>
-                            Supabase
-                        </SkillTag>
-                        <SkillTag delay={23} icon={<SiAndroidstudio />}>
-                            Android Studio
-                        </SkillTag>
+                    <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                        {technologies.map((tech, index) => (
+                            <SkillTag
+                                key={tech.label}
+                                delay={(index % 10) + 1}
+                                icon={tech.icon}
+                                className="w-full justify-center"
+                            >
+                                {tech.label}
+                            </SkillTag>
+                        ))}
                     </div>
                 </div>
             </div>

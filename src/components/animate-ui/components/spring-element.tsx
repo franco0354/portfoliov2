@@ -137,6 +137,11 @@ function SpringElement({
   React.useImperativeHandle(ref, () => childRef.current as HTMLDivElement);
   const [center, setCenter] = React.useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = React.useState(false);
+  const [isTouch, setIsTouch] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
   React.useLayoutEffect(() => {
     function update() {
@@ -175,33 +180,33 @@ function SpringElement({
 
   return (
     <>
-      <svg
-        width="100vw"
-        height="100vh"
-        className="fixed inset-0 w-screen h-screen pointer-events-none z-0"
-      >
-        <path
-          d={path}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className={cn(
-            'stroke-1 stroke-neutral-400 dark:stroke-neutral-600 fill-none opacity-50',
-            springClassName,
-          )}
-        />
-      </svg>
+      {!isTouch && (
+        <svg
+          className="fixed inset-0 w-full h-full pointer-events-none z-0"
+        >
+          <path
+            d={path}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={cn(
+              'stroke-1 stroke-neutral-400 dark:stroke-neutral-600 fill-none opacity-50',
+              springClassName,
+            )}
+          />
+        </svg>
+      )}
       <motion.div
         ref={childRef}
         className={cn(
           'z-10',
-          isDragging ? 'cursor-grabbing' : 'cursor-grab',
+          !isTouch && (isDragging ? 'cursor-grabbing' : 'cursor-grab'),
           className,
         )}
         style={{
           x: springX,
           y: springY,
         }}
-        drag
+        drag={!isTouch}
         dragElastic={dragElastic}
         dragMomentum={false}
         onDragStart={() => {

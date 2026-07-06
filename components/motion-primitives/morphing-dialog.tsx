@@ -95,9 +95,8 @@ function MorphingDialogTrigger({
   children,
   className,
   style,
-  triggerRef,
 }: MorphingDialogTriggerProps) {
-  const { setIsOpen, isOpen, uniqueId } = useMorphingDialog();
+  const { setIsOpen, isOpen, uniqueId, triggerRef } = useMorphingDialog();
 
   const handleClick = useCallback(() => {
     setIsOpen(!isOpen);
@@ -120,7 +119,11 @@ function MorphingDialogTrigger({
       className={cn('relative cursor-pointer', className)}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      style={style}
+      style={{
+        ...style,
+        opacity: isOpen ? 0 : 1,
+        pointerEvents: isOpen ? 'none' : 'auto',
+      }}
       aria-haspopup='dialog'
       aria-expanded={isOpen}
       aria-controls={`motion-ui-morphing-dialog-content-${uniqueId}`}

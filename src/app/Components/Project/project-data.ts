@@ -40,8 +40,8 @@ export const ProjectData = [
     }, {
         projectURL: Scanner,
         title: "Scanner Mobile",
-        description: "A lightweight and fast QR code scanner built with Android Studio. Effortlessly scan and decode QR codes on the go—perfect for everyday use.",
-        icon: ["Android Studio", "Firebase"],
+        description: "A lightweight and fast QR code scanner for mobile. Effortlessly scan and decode QR codes on the go—perfect for everyday use.",
+        icon: ["Firebase"],
         id: 5,
         link: "#",
         github: "#"

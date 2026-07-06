@@ -11,7 +11,7 @@ export default function TimelinePage() {
             month: "Enrolla",
             content: (
                 <div>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-justify md:text-left">
                         <strong>Web Developer</strong> at{" "}
                         <strong>ENROLLA</strong> (early-stage fintech startup)
                         <span className="block text-sm mt-1 text-neutral-400 dark:text-neutral-500">
@@ -19,7 +19,7 @@ export default function TimelinePage() {
                         </span>
                     </p>
 
-                    <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-1.5 mt-3">
+                    <ul className="list-disc list-inside sm:list-outside sm:ml-4 text-muted-foreground space-y-1.5 mt-3 text-justify md:text-left text-sm sm:text-base">
                         <li>
                             Building and maintaining data pipelines (Ads → Fivetran → BigQuery → dbt)
                         </li>
@@ -49,7 +49,7 @@ export default function TimelinePage() {
                 <div className="space-y-6">
                     {/* SnapTrail Section */}
                     <div>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-justify md:text-left">
                             I am currently <strong>collaborating on projects</strong> at{" "}
                             <a
                                 href="https://snaptrail.app/"
@@ -64,11 +64,11 @@ export default function TimelinePage() {
                             <strong>React Native</strong> and <strong>Firebase</strong>.
                         </p>
 
-                        <p className="text-muted-foreground my-3">
+                        <p className="text-muted-foreground my-3 text-justify md:text-left">
                             My main contributions include:
                         </p>
 
-                        <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-1.5">
+                        <ul className="list-disc list-inside sm:list-outside sm:ml-4 text-muted-foreground space-y-1.5 text-justify md:text-left text-sm sm:text-base">
                             <li>
                                 Developed and integrated new features to enhance functionality and deliver
                                 a smoother, more engaging user experience.
@@ -94,7 +94,7 @@ export default function TimelinePage() {
 
                     {/* Champion Blitz Section */}
                     <div>
-                        <p className="mb-2 text-muted-foreground">
+                        <p className="mb-2 text-muted-foreground text-justify md:text-left">
                             On April 3, I became the{" "}
                             <strong>champion in a blitz programming competition</strong>. I
                             competed against 2nd, 3rd, and 4th-year college students and managed
@@ -103,7 +103,7 @@ export default function TimelinePage() {
                         <ImageLink
                             src={image2}
                             alt="Champion Blitz Competition"
-                            className="object-cover aspect-video rounded-lg"
+                            className="w-full max-w-full object-cover aspect-video rounded-lg"
                             linkText="View Competition Image"
                         />
                     </div>
@@ -115,7 +115,7 @@ export default function TimelinePage() {
             month: "College Journey",
             content: (
                 <div>
-                    <p className=" mb-2   text-muted-foreground">
+                    <p className="mb-2 text-muted-foreground text-justify md:text-left">
                         I began my college journey pursuing a <strong>Bachelor of Science in Information Systems</strong>,
                         where I gained foundational knowledge in flowcharts and programming fundamentals, and later
                         expanded into web development using frameworks such as <strong>React, Next.js,</strong> and <strong>TypeScript</strong>.
@@ -128,13 +128,13 @@ export default function TimelinePage() {
             month: "Best in Research",
             content: (
                 <div>
-                    <p className=" mb-2   text-muted-foreground">
+                    <p className="mb-2 text-muted-foreground text-justify md:text-left">
                         I started learning <strong>web development</strong> in 2021. During senior high school, I deepened my knowledge and began building my own projects. When our capstone project started,
                         I actively presented and discussed my work with my teacher. Our group was also recognized as the <strong>Best in Research</strong> in the ICT Strand.
                     </p>
                     <ImageLink
                         src={[planing1, planing2]}
-                        className="md:w-56 object-cover aspect-video rounded-lg"
+                        className="w-full sm:w-auto sm:max-w-xs md:w-56 object-cover aspect-video rounded-lg"
                         alt={["Research Project 1", "Research Project 2"]}
                         linkText="View Research Images"
                     />
@@ -143,7 +143,7 @@ export default function TimelinePage() {
         },
     ];
     return (
-        <div className="relative w-full overflow-clip">
+        <div className="relative w-full overflow-x-hidden">
             <Timeline data={data} />
         </div>
     );
