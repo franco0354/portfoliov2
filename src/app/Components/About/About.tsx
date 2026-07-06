@@ -42,7 +42,7 @@ const CarouselExample = () => {
             <TextHeader
                 text="About"
             />
-            <blockquote className="mb-6 text-muted-foreground text-base sm:text-lg md:text-xl border-l-2 italic text-justify md:text-center px-2">
+            <blockquote className="mb-6 w-fit max-w-4xl mx-auto text-muted-foreground text-base sm:text-lg md:text-xl border-l-2 border-muted-foreground/40 pl-4 pr-2 italic text-justify md:text-left">
                 <TextAnimate animation="blurIn" as="h1" duration={1}>
                     &quot;Great developers aren&#39;t born—they&#39;re made through consistency, curiosity, and code.&quot;
                 </TextAnimate>
