@@ -1,18 +1,13 @@
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { app } from '@/lib/firebaseSDK';
-const db = getFirestore(app);
+export const ContactForm = async (name: string, email: string, message: string) => {
+    const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+    });
 
-export const ContactForm = async (name: string, email: string, message: string) => {  
-    
-    try {
-        await addDoc(collection(db, "messages"), {
-            name: name,
-            email: email,
-            message: message
-        });
-        console.log("success")
-    } catch (err) {
-        console.log(err)
-        throw err;
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+        throw new Error(data.error ?? "Failed to send message");
     }
-}
+};

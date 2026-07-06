@@ -69,9 +69,13 @@ export function ContactLayouts({
             setEmail("")
             setName("")
             setMessage("")
-        } catch {
+        } catch (error) {
             setAlertTitle("Error");
-            setAlertDescription("Failed to send your message. Please try again later.");
+            setAlertDescription(
+                error instanceof Error
+                    ? error.message
+                    : "Failed to send your message. Please try again later."
+            );
             setShowAlert(true);
         } finally {
             setIsSubmitting(false);
