@@ -15,6 +15,8 @@ const dataText = [
     "BackEnd Web Developer",
     "Full Stack Web Developer",
 ];
+const longestRoleText = dataText.reduce((a, b) => (a.length > b.length ? a : b));
+
 function Home() {
 
     return (
@@ -26,16 +28,21 @@ function Home() {
                             <span className="">Hello!</span> I&apos;m Franco
                         </h1>
                         <hr className="hidden md:block "/>
-                        <h1 className=" md:mt-3 text-[clamp(2rem,5vw+1rem,3rem)]">
+                        <h1 className="md:mt-3 text-[clamp(2rem,5vw+1rem,3rem)]">
                             <span className="gradient-text">
                             I am    
-                            </span> <TypingText
-                              
-                                text={dataText}
-                                cursor
-                                loop={true}
-                                cursorClassName="h-10"
-                            />
+                            </span>{" "}
+                            <span className="inline-grid [grid-template-areas:'stack'] *:[grid-area:stack] text-center md:text-left">
+                                <span className="invisible select-none" aria-hidden="true">
+                                    {longestRoleText}
+                                </span>
+                                <TypingText
+                                    text={dataText}
+                                    cursor
+                                    loop={true}
+                                    cursorClassName="h-[1em] md:h-10"
+                                />
+                            </span>
                         </h1>
                         <CardDescription className="text-xl p-2 md:p-0 text-center md:text-justify ">
                           Based in Bulacan, I am an Information Systems undergraduate from ICI with a deep passion for building and exploring digital solutions. Since 2021, I&apos;ve been focused on growing as a web developer, constantly learning and refining my skills. While I enjoy playing chess and Mobile Legends in my free time, my true drive comes from creating meaningful web experiences and continuously improving in the tech space.

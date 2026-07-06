@@ -22,7 +22,7 @@ export default function Page() {
   const { isLoading, isOverInput } = usePageState();
 
   return (
-    <div>
+    <div className={nunito.className}>
       {isLoading && (
         <Loading />
       )}
@@ -53,13 +53,9 @@ export default function Page() {
           </div>
         )}
       </Cursor>
-      <div className={`${nunito.className} relative z-20`}>
+      <Navbar />
+      <div className="relative z-20 pt-14 sm:pt-16">
         <div>
-
-          <div className="fixed bottom-0 w-full flex flex-col items-center justify-center z-40">
-            <Navbar />
-          </div>
-
           <section id="Home" className="">
             <Home />
           </section>

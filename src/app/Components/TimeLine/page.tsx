@@ -7,6 +7,42 @@ import image2 from '../../assets/img/image-2.jpg'
 export default function TimelinePage() {
     const data = [
         {
+            year: "2026",
+            month: "Enrolla",
+            content: (
+                <div>
+                    <p className="text-muted-foreground leading-relaxed">
+                        <strong>Web Developer</strong> at{" "}
+                        <strong>ENROLLA</strong> (early-stage fintech startup)
+                        <span className="block text-sm mt-1 text-neutral-400 dark:text-neutral-500">
+                            April 2026 – Present
+                        </span>
+                    </p>
+
+                    <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-1.5 mt-3">
+                        <li>
+                            Building and maintaining data pipelines (Ads → Fivetran → BigQuery → dbt)
+                        </li>
+                        <li>
+                            Designing multi-tenant systems with proper data isolation
+                        </li>
+                        <li>
+                            Data modeling and transformation for analytics and reporting
+                        </li>
+                        <li>
+                            Developing dashboards and reporting tools using Next.js
+                        </li>
+                        <li>
+                            Implementing secure authentication with Supabase
+                        </li>
+                        <li>
+                            Optimizing performance across frontend and backend systems
+                        </li>
+                    </ul>
+                </div>
+            ),
+        },
+        {
             year: "2025",
             month: "SnapTrail / Champion Blitz",
             content: (
