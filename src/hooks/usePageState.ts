@@ -45,6 +45,7 @@ export const usePageState = () => {
         const timer = setTimeout(() => {
             setIsLoading(false);
             document.getElementById('initial-loader')?.remove();
+            document.body.style.overflow = '';
         }, LOAD_DURATION);
 
         return () => clearTimeout(timer);

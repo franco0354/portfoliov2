@@ -24,6 +24,50 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html, body {
+                margin: 0;
+                min-height: 100%;
+                background-color: inherit;
+              }
+              html {
+                background: #ffffff;
+              }
+              html.dark {
+                background: #242424;
+              }
+              body:has(#initial-loader) {
+                overflow: hidden;
+              }
+              #initial-loader {
+                position: fixed;
+                inset: 0;
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: inherit;
+              }
+              #initial-loader .initial-loader-spinner {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 9999px;
+                border: 1.5px solid #e5e5e5;
+                border-top-color: #252525;
+                animation: initialLoaderSpin 0.7s linear infinite;
+              }
+              html.dark #initial-loader .initial-loader-spinner {
+                border-color: #3f3f3f;
+                border-top-color: #fafafa;
+              }
+              @keyframes initialLoaderSpin {
+                to { transform: rotate(360deg); }
+              }
+            `,
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -31,28 +75,42 @@ export default function RootLayout({
                 try {
                   var theme = localStorage.getItem('theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var isDark = theme === 'dark' || (!theme && prefersDark);
+                  var bg = isDark ? '#242424' : '#ffffff';
                   
-                  if (theme === 'dark' || (!theme && prefersDark)) {
+                  if (isDark) {
                     document.documentElement.classList.add('dark');
-                    document.body.classList.add('dark');
                   } else {
                     document.documentElement.classList.remove('dark');
-                    document.body.classList.remove('dark');
                   }
+
+                  document.documentElement.style.backgroundColor = bg;
                 } catch (e) {
-                  // Fallback to system preference
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var bg = prefersDark ? '#242424' : '#ffffff';
                   if (prefersDark) {
                     document.documentElement.classList.add('dark');
-                    document.body.classList.add('dark');
                   }
+                  document.documentElement.style.backgroundColor = bg;
                 }
               })();
             `,
           }}
         />
       </head>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning className="bg-background">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var root = document.documentElement;
+                if (root.classList.contains('dark')) {
+                  document.body.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
         <div id="initial-loader" aria-hidden="true">
           <div className="initial-loader-spinner" />
         </div>
