@@ -53,6 +53,9 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <div id="initial-loader" aria-hidden="true">
+          <div className="initial-loader-spinner" />
+        </div>
         {children}
       </body>
     </html>

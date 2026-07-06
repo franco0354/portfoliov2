@@ -1,99 +1,146 @@
-import React from 'react'
+"use client";
+
+import Image from "next/image";
+import { motion } from "motion/react";
+import { useEffect, useLayoutEffect, useState } from "react";
+import Profile from "@/app/assets/img/transparent-profile1.png";
+
+export const LOAD_DURATION = 2000;
+
+function easeOutCubic(t: number) {
+  return 1 - Math.pow(1 - t, 3);
+}
 
 export default function Loading() {
-    return (
-        <div>
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 backdrop-blur-xl">
-                
-                {/* Floating Cyber Orbs */}
-                <div className="absolute inset-0 overflow-hidden">
-                    {Array.from({ length: 8 }, (_, i) => (
-                        <div
-                            key={i}
-                            className="absolute w-2 h-2 bg-gray-400/60 rounded-full blur-sm"
-                            style={{
-                                left: `${15 + i * 12}%`,
-                                top: `${20 + (i % 3) * 25}%`,
-                                animation: `float ${3 + i * 0.5}s ease-in-out infinite`,
-                                animationDelay: `${i * 0.3}s`,
-                                boxShadow: '0 0 20px rgba(107,114,128,0.4)'
-                            }}
-                        />
-                    ))}
-                </div>
+  const [progress, setProgress] = useState(0);
 
-                <div className="text-center p-8 relative z-10">
-                    {/* Modern Glass Card */}
-                    <div className="relative p-8">
-                        
-                        {/* Modern Avatar */}
-                        <div className="flex justify-center relative z-10 mb-8">
-                            <div className="relative">
-                                {/* Outer Ring */}
-                                <div className="absolute inset-0 w-24 h-24 md:w-32 md:h-32 border border-gray-400/30 rounded-full animate-spin" 
-                                     style={{ animationDuration: '8s' }}>
-                                </div>
-                                
-                                {/* Inner Ring */}
-                                <div className="absolute inset-2 w-20 h-20 md:w-28 md:h-28 border border-gray-400/20 rounded-full animate-pulse">
-                                </div>
+  useLayoutEffect(() => {
+    document.getElementById("initial-loader")?.remove();
+  }, []);
 
-                                {/* Main Avatar */}
-                                <div className="relative w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-gray-400/30 to-gray-600/30 dark:from-gray-400/20 dark:to-gray-600/20 border border-gray-400/60 dark:border-gray-400/40 flex items-center justify-center backdrop-blur-sm">
-                                    <div className="text-lg md:text-2xl font-bold text-gray-600 dark:text-gray-400 animate-pulse">
-                                        FG
-                                    </div>
-                                </div>
+  useEffect(() => {
+    const start = performance.now();
+    let frame = 0;
 
-                                {/* Floating Dots */}
-                                <div className="absolute -top-1 -right-1 w-2 h-2 bg-gray-400/60 rounded-full animate-bounce" 
-                                     style={{ animationDelay: '0.5s' }}>
-                                </div>
-                                <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-gray-400/40 rounded-full animate-bounce" 
-                                     style={{ animationDelay: '1s' }}>
-                                </div>
-                            </div>
-                        </div>
+    const tick = (now: number) => {
+      const elapsed = Math.min(now - start, LOAD_DURATION);
+      const next = Math.round(easeOutCubic(elapsed / LOAD_DURATION) * 100);
+      setProgress(next);
+      if (elapsed < LOAD_DURATION) frame = requestAnimationFrame(tick);
+    };
 
-                        {/* Modern Loading Text */}
-                        <div className="space-y-6 relative z-10">
-                            <div className="space-y-3">
-                                <h1 className="text-2xl md:text-4xl font-bold text-slate-800 dark:text-white animate-pulse">
-                                    Franco Gregorio
-                                </h1>
-                                <p className="text-sm md:text-lg text-gray-600/80 dark:text-gray-300/80 font-medium">
-                                    Loading Portfolio
-                                </p>
-                            </div>
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
-                            {/* Modern Progress Bar */}
-                            <div className="relative">
-                                <div className="w-64 md:w-80 h-2 bg-slate-200/50 dark:bg-slate-800/50 rounded-full overflow-hidden mx-auto border border-gray-500/40 dark:border-gray-500/20">
-                                    <div className="h-full bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 dark:from-gray-400 dark:via-gray-500 dark:to-gray-400 rounded-full animate-[modernLoad_2s_ease-in-out_infinite] relative">
-                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 dark:via-white/20 to-transparent animate-pulse"></div>
-                                    </div>
-                                </div>
-                                <div className="text-xs text-gray-600/70 dark:text-gray-400/60 mt-3 font-mono">
-                                    Initializing...
-                                </div>
-                            </div>
+  return (
+    <motion.div
+      initial={false}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-background"
+      role="status"
+      aria-label="Loading portfolio"
+      aria-valuenow={progress}
+      aria-valuemin={0}
+      aria-valuemax={100}
+    >
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-1/2 top-[38%] size-[min(90vw,520px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px] dark:bg-primary/20" />
+        <div className="absolute -bottom-24 -right-16 size-80 rounded-full bg-foreground/4 blur-[90px] dark:bg-foreground/[0.07]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_72%)]" />
+        <div className="absolute inset-0 opacity-[0.035] dark:opacity-[0.06] bg-[radial-gradient(var(--foreground)_0.5px,transparent_0.5px)] bg-size-[28px_28px]" />
+      </div>
 
-                            {/* Modern Loading Dots */}
-                            <div className="flex justify-center space-x-2">
-                                <div className="w-2 h-2 bg-gray-500 dark:bg-gray-400 rounded-full animate-bounce" 
-                                     style={{ animationDelay: '0s' }}>
-                                </div>
-                                <div className="w-2 h-2 bg-gray-500 dark:bg-gray-400 rounded-full animate-bounce" 
-                                     style={{ animationDelay: '0.1s' }}>
-                                </div>
-                                <div className="w-2 h-2 bg-gray-500 dark:bg-gray-400 rounded-full animate-bounce" 
-                                     style={{ animationDelay: '0.2s' }}>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        className="relative flex flex-col items-center gap-9 px-6"
+      >
+        <div className="relative size-32 md:size-36">
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 rounded-full border border-dashed border-foreground/12"
+          />
+
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-3 rounded-full"
+          >
+            <svg viewBox="0 0 100 100" className="size-full -rotate-90">
+              <circle
+                cx="50"
+                cy="50"
+                r="48"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="0.75"
+                className="text-border/50"
+              />
+              <circle
+                cx="50"
+                cy="50"
+                r="48"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.25"
+                strokeLinecap="round"
+                strokeDasharray="72 230"
+                className="text-foreground/70"
+              />
+            </svg>
+          </motion.div>
+
+          <div className="absolute inset-5 rounded-full bg-linear-to-br from-foreground/6 via-transparent to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] dark:from-foreground/8" />
+
+          <div className="absolute inset-7 overflow-hidden rounded-full ring-1 ring-border/70 ring-offset-2 ring-offset-background">
+            <Image
+              src={Profile}
+              alt=""
+              fill
+              className="object-cover object-top scale-110"
+              priority
+            />
+          </div>
+
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0"
+          >
+            <span className="absolute left-1/2 top-1 size-1.5 -translate-x-1/2 rounded-full bg-foreground shadow-[0_0_10px_color-mix(in_oklch,var(--foreground)_40%,transparent)]" />
+          </motion.div>
         </div>
-    )
+
+        <div className="flex flex-col items-center gap-3 text-center">
+          <h1 className="text-[clamp(1.5rem,4vw,2rem)] font-bold tracking-tight text-foreground">
+            Franco <span className="gradient-text">Gregorio</span>
+          </h1>
+
+          <p className="text-sm tracking-wide text-muted-foreground">
+            Preparing your experience
+          </p>
+        </div>
+
+        <div className="w-full max-w-68 space-y-2.5">
+          <div className="relative h-0.5 overflow-hidden rounded-full bg-border/50">
+            <motion.div
+              className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-foreground/30 via-foreground to-foreground/30"
+              style={{ width: `${progress}%` }}
+            />
+            <div className="absolute inset-0 animate-[shimmer_2.2s_ease-in-out_infinite] bg-linear-to-r from-transparent via-foreground/25 to-transparent" />
+          </div>
+
+          <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground/80">
+            <span>Portfolio</span>
+            <span>{String(progress).padStart(2, "0")}%</span>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
 }

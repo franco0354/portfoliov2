@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { LOAD_DURATION } from '@/components/loading';
 
 export const usePageState = () => {
     const [mode, setMode] = useState<'light' | 'dark'>('light');
@@ -43,7 +44,8 @@ export const usePageState = () => {
 
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 2000);
+            document.getElementById('initial-loader')?.remove();
+        }, LOAD_DURATION);
 
         return () => clearTimeout(timer);
     }, []);

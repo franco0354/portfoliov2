@@ -10,6 +10,7 @@ import { Spotlight } from "../../components/motion-primitives/spotlight";
 import { MouseIcon } from "../app/page-data";
 import { Cursor } from "../../components/motion-primitives/cursor";
 import Loading from "@/components/loading";
+import { AnimatePresence } from "motion/react";
 import { usePageState } from "@/hooks/usePageState";
 import Navbar from "./Components/Navbar/navbar";
 import TimelinePage from "./Components/TimeLine/page";
@@ -31,9 +32,9 @@ export default function Page() {
 
   return (
     <div className={`${nunito.className} overflow-x-hidden`}>
-      {isLoading && (
-        <Loading />
-      )}
+      <AnimatePresence mode="wait">
+        {isLoading && <Loading key="portfolio-loading" />}
+      </AnimatePresence>
       <Spotlight
         className='bg-primary/30 dark:bg-primary/20 blur-3xl'
         size={64}
