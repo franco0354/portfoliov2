@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Clock, Sparkles, Phone } from "lucide-react";
+import { MapPin, Clock, Mail, Phone } from "lucide-react";
 import { motion } from "motion/react";
 
 const infoItems = [
@@ -8,6 +8,12 @@ const infoItems = [
     icon: MapPin,
     title: "Based in",
     value: "Bulacan, Philippines",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    value: "francogregorio2004@gmail.com",
+    href: "mailto:francogregorio2004@gmail.com",
   },
   {
     icon: Phone,
@@ -19,11 +25,7 @@ const infoItems = [
     title: "Response time",
     value: "Within 24 hours",
   },
-  {
-    icon: Sparkles,
-    title: "Open to",
-    value: "Collaborations & freelance",
-  },
+
 
 ] as const;
 
@@ -42,7 +44,18 @@ export function ContactInfoMobile() {
             <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
               {item.title}
             </p>
-            <p className="text-sm font-medium leading-snug break-words">{item.value}</p>
+            <p className="text-sm font-medium leading-snug break-words">
+              {"href" in item && item.href ? (
+                <a
+                  href={item.href}
+                  className="transition-colors hover:text-primary"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                item.value
+              )}
+            </p>
           </div>
 
         </div>
@@ -121,7 +134,18 @@ export function ContactInfoPanel() {
                   <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     {item.title}
                   </p>
-                  <p className="text-sm font-medium">{item.value}</p>
+                  <p className="text-sm font-medium">
+                    {"href" in item && item.href ? (
+                      <a
+                        href={item.href}
+                        className="transition-colors hover:text-primary"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      item.value
+                    )}
+                  </p>
                 </div>
               </motion.div>
             ))}

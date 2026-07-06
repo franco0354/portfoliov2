@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 
 const backWavePath =
@@ -59,14 +59,11 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="mb-4 font-semibold">Email</h3>
-              <a
-                href="mailto:francogregorio2004@gmail.com"
-                className="group flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <Mail size={18} className="transition-transform group-hover:scale-110" />
-                francogregorio2004@gmail.com
-              </a>
+              <h3 className="mb-4 font-semibold">Open to</h3>
+              <p className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Sparkles size={18} />
+                Collaborations & Freelance Project
+              </p>
             </div>
           </div>
         </div>
