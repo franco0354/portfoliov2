@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Profile from "@/app/assets/img/transparent-profile1.png";
 
 export const LOAD_DURATION = 2000;
@@ -14,8 +14,11 @@ function easeOutCubic(t: number) {
 export default function Loading() {
   const [progress, setProgress] = useState(0);
 
-  useLayoutEffect(() => {
-    document.getElementById("initial-loader")?.remove();
+  useEffect(() => {
+    return () => {
+      document.getElementById("initial-loader")?.remove();
+      document.body.style.overflow = "";
+    };
   }, []);
 
   useEffect(() => {
@@ -54,9 +57,8 @@ export default function Loading() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
+        initial={false}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         className="relative flex flex-col items-center gap-9 px-6"
       >
         <div className="relative size-32 md:size-36">
