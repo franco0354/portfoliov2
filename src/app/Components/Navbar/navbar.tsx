@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { DATA } from "@/app/page-data";
 import Link from "next/link";
 import { Sun, MoonIcon, Menu } from "lucide-react";
+import { motion } from "motion/react";
 import {
   Sheet,
   SheetContent,
@@ -24,6 +25,49 @@ function scrollToSection(href: string) {
   }
 }
 
+type NavItemProps = {
+  item: (typeof DATA.navbar)[number];
+  isActive: boolean;
+  onClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+  variant?: "desktop" | "mobile";
+};
+
+function NavItem({ item, isActive, onClick, variant = "desktop" }: NavItemProps) {
+  const isDesktop = variant === "desktop";
+
+  return (
+    <Link
+      href={item.href}
+      onClick={(e) => onClick(e, item.href)}
+      aria-label={item.label}
+      aria-current={isActive ? "page" : undefined}
+      className={cn(
+        "relative text-sm font-medium transition-colors",
+        isDesktop ? "px-3 py-2 sm:px-4" : "rounded-lg px-3 py-3",
+        isActive
+          ? "text-primary font-semibold"
+          : "text-muted-foreground hover:text-foreground"
+      )}
+    >
+      {item.label}
+      {isActive && isDesktop && (
+        <motion.span
+          layoutId="navbar-active-underline"
+          className="absolute inset-x-2 bottom-0 h-0.5 bg-primary"
+          transition={{ type: "spring", stiffness: 420, damping: 32 }}
+        />
+      )}
+      {isActive && !isDesktop && (
+        <motion.span
+          layoutId="navbar-active-mobile-bar"
+          className="absolute bottom-0 left-0 top-0 w-0.5 bg-primary"
+          transition={{ type: "spring", stiffness: 420, damping: 32 }}
+        />
+      )}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const { mode, activeSection, toggleMode } = usePageState();
   const [open, setOpen] = useState(false);
@@ -38,7 +82,7 @@ export default function Navbar() {
   );
 
   return (
-    <header className="fixed top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
+    <header className="fixed top-0 z-40 w-full border-b border-border/40 bg-background/75 backdrop-blur-xl supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6">
         <div className="flex items-center gap-0.5">
           {DATA.socials.map((social) => (
@@ -57,20 +101,13 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-1 md:flex">
           {DATA.navbar.map((item) => (
-            <Link
+            <NavItem
               key={item.label}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              aria-label={item.label}
-              aria-current={activeSection === item.label ? "page" : undefined}
-              className={cn(
-                "rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-accent",
-                activeSection === item.label &&
-                "bg-primary/20 ring-1 ring-primary/50"
-              )}
-            >
-              {item.label}
-            </Link>
+              item={item}
+              isActive={activeSection === item.label}
+              onClick={handleNavClick}
+              variant="desktop"
+            />
           ))}
         </nav>
 
@@ -99,27 +136,19 @@ export default function Navbar() {
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-64">
+            <SheetContent side="right" className="w-72 border-border/60 bg-background/95 backdrop-blur-xl">
               <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
+                <SheetTitle>Navigation</SheetTitle>
               </SheetHeader>
               <nav className="mt-6 flex flex-col gap-1">
                 {DATA.navbar.map((item) => (
-                  <Link
+                  <NavItem
                     key={item.label}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    aria-current={
-                      activeSection === item.label ? "page" : undefined
-                    }
-                    className={cn(
-                      "rounded-md px-3 py-2.5 text-sm font-medium transition-colors hover:bg-accent",
-                      activeSection === item.label &&
-                      "bg-primary/20 text-primary"
-                    )}
-                  >
-                    {item.label}
-                  </Link>
+                    item={item}
+                    isActive={activeSection === item.label}
+                    onClick={handleNavClick}
+                    variant="mobile"
+                  />
                 ))}
               </nav>
             </SheetContent>
