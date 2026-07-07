@@ -42,7 +42,7 @@ function NavItem({ item, isActive, onClick, variant = "desktop" }: NavItemProps)
       aria-label={item.label}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "relative text-sm font-medium transition-colors",
+        "group relative text-sm font-medium transition-colors",
         isDesktop ? "px-3 py-2 sm:px-4" : "rounded-lg px-3 py-3",
         isActive
           ? "text-primary font-semibold"
@@ -50,6 +50,12 @@ function NavItem({ item, isActive, onClick, variant = "desktop" }: NavItemProps)
       )}
     >
       {item.label}
+      {isDesktop && !isActive && (
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-x-2 bottom-0 h-0.5 origin-center scale-x-0 bg-primary/70 transition-transform duration-300 ease-out group-hover:scale-x-100"
+        />
+      )}
       {isActive && isDesktop && (
         <motion.span
           layoutId="navbar-active-underline"
