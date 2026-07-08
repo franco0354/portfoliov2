@@ -15,15 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
-function scrollToSection(href: string) {
-  const id = href.replace("#", "");
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-    window.history.pushState(null, "", href);
-  }
-}
+import { scrollToSection } from "@/lib/scroll";
 
 type NavItemProps = {
   item: (typeof DATA.navbar)[number];

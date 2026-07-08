@@ -12,7 +12,9 @@ import { Cursor } from "../../components/motion-primitives/cursor";
 import Loading from "@/components/loading";
 import { AnimatePresence } from "motion/react";
 import { usePageState } from "@/hooks/usePageState";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import Navbar from "./Components/Navbar/navbar";
+import "lenis/dist/lenis.css";
 import TimelinePage from "./Components/TimeLine/page";
 const nunito = Nunito({
   subsets: ['latin'],
@@ -25,6 +27,8 @@ const sectionClass =
 export default function Page() {
   const { isLoading, isOverInput } = usePageState();
   const [isTouch, setIsTouch] = useState(false);
+
+  useSmoothScroll({ enabled: !isLoading });
 
   useEffect(() => {
     setIsTouch(window.matchMedia("(pointer: coarse)").matches);
