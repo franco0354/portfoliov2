@@ -1,14 +1,6 @@
-import { CardDescription } from "@/components/ui/card";
-import Profile from "@/app/assets/img/transparent-profile1.png";
 import '../Home/Home.style.css'
 import '../Home/Home.modern.css'
-import { Tilt } from "../../../../components/motion-primitives/tilt";
-import { SpringElement } from '@/components/animate-ui/components/spring-element';
 import { TypingText } from '@/components/animate-ui/text/typing';
-import {
-    Avatar,
-    AvatarImage,
-} from '@/components/ui/avatar';
 import { SkillTag } from '@/components/ui/skill-tag';
 import {
     SiReact,
@@ -23,74 +15,56 @@ const dataText = [
     "BackEnd Web Developer",
     "Full Stack Web Developer",
 ];
-const longestRoleText = dataText.reduce((a, b) => (a.length > b.length ? a : b));
 
 function Home() {
-
     return (
-        <div className=" lg:pb-0 lg:-mt-24 flex justify-center place-items-center w-full">
-            <div className="container home">
-                <div className="flex justify-between items-center gap-5   profile_and_text" >
-                    <div className="text_profile md:basis-[63%]">
-                        <div className="text-center md:text-left">
-                        <h1 className="text-[clamp(1.75rem,6vw+0.5rem,6rem)] font-bold text-accent-foreground">
-                            <span className="">Hello!</span> I&apos;m Franco
+        <div className="home-shell">
+            <div className="container home mx-auto">
+                <div className="home-stage">
+                    <div className="home-copy">
+                        <p className="home-kicker home-hero-text">
+                            <span className="home-availability" aria-hidden="true" />
+                            Available for work · Bulacan, PH
+                        </p>
+
+                        <h1 className="home-display home-hero-text">
+                            Franco
                         </h1>
-                        <hr className="hidden md:block " />
-                        <h1 className="md:mt-3 text-[clamp(1.25rem,4vw+0.5rem,3rem)]">
-                            <span className="gradient-text">
-                                I am
-                            </span>{" "}
-                            <span className="block text-center md:inline-grid md:[grid-template-areas:'stack'] md:*:[grid-area:stack] md:text-left">
-                                <span className="hidden md:inline invisible select-none" aria-hidden="true">
-                                    {longestRoleText}
-                                </span>
-                                <TypingText
-                                    text={dataText}
-                                    cursor
-                                    loop={true}
-                                    cursorClassName="h-[1em] md:h-10"
-                                />
-                            </span>
-                        </h1>
+
+                        <p className="home-role home-hero-subtitle">
+                            <span className="home-role-label">I build as a</span>
+                            <TypingText
+                                text={dataText}
+                                cursor
+                                loop={true}
+                                className="home-role-typing"
+                                cursorClassName="h-[1em] md:h-8"
+                            />
+                        </p>
+
+                        <p className="home-lead home-hero-bio">
+                            Modern web and mobile apps with React, Next.js,
+                            React Native, Firebase, Supabase, and TypeScript—
+                            fast, scalable, and focused on real user experience.
+                        </p>
+
+                        <div className="home-actions home-hero-bio">
+                            <a href="#Project" className="home-cta home-cta--primary">
+                                View projects
+                            </a>
+                            <a href="#Contact" className="home-cta home-cta--ghost">
+                                Get in touch
+                            </a>
                         </div>
-                        <CardDescription className="text-base sm:text-lg md:text-xl p-2 md:p-0 text-justify md:text-left">
-                            Based in Bulacan, Philippines, specializing in{" "}
-                            <span className="text-primary font-semibold">modern web and mobile development</span>.
-                            I enjoy building fast, scalable, and user-focused applications using technologies like{" "}
-                            <span className="text-primary font-semibold">React</span>,{" "}
-                            <span className="text-primary font-semibold">Next.js</span>,{" "}
-                            <span className="text-primary font-semibold">React Native</span>,{" "}
-                            <span className="text-primary font-semibold">Firebase</span>,{" "}
-                            <span className="text-primary font-semibold">Supabase</span>, and{" "}
-                            <span className="text-primary font-semibold">TypeScript</span>.
-                            I believe great software comes from continuous learning, thoughtful problem-solving,
-                            and attention to both{" "}
-                            <span className="text-primary font-semibold">user experience</span> and{" "}
-                            <span className="text-primary font-semibold">code quality</span>.
-                            <div className="mt-4 inline-talents flex flex-wrap gap-3">
-                                <SkillTag delay={1} icon={<SiReact />}>React</SkillTag>
-                                <SkillTag delay={2} icon={<SiNextdotjs />}>Next.js</SkillTag>
-                                <SkillTag delay={3} icon={<SiReact />}>React Native</SkillTag>
-                                <SkillTag delay={4} icon={<SiFirebase />}>Firebase</SkillTag>
-                                <SkillTag delay={4} icon={<SiSupabase />}>Supabase</SkillTag>
-                                <SkillTag delay={4} icon={<SiTypescript />}>TypeScript</SkillTag>
-                            </div>
-                        </CardDescription>
-                    </div>
-                    <div className="img mt-15 lg:mt-0">
-                        <SpringElement>
-                            <Tilt rotationFactor={3} isRevese>
-                                <Avatar className="size-44 sm:size-56 md:size-64 lg:size-80 AvatarImage">
-                                    <AvatarImage
-                                        draggable={false}
-                                        src={Profile.src}
-                                        className="object-cover"
-                                        alt="Franco's Profile Picture"
-                                    />
-                                </Avatar>
-                            </Tilt>
-                        </SpringElement>
+
+                        <div className="inline-talents home-skills">
+                            <SkillTag delay={1} className="home-skill-tag" icon={<SiReact />}>React</SkillTag>
+                            <SkillTag delay={2} className="home-skill-tag" icon={<SiNextdotjs />}>Next.js</SkillTag>
+                            <SkillTag delay={3} className="home-skill-tag" icon={<SiReact />}>React Native</SkillTag>
+                            <SkillTag delay={4} className="home-skill-tag" icon={<SiFirebase />}>Firebase</SkillTag>
+                            <SkillTag delay={4} className="home-skill-tag" icon={<SiSupabase />}>Supabase</SkillTag>
+                            <SkillTag delay={4} className="home-skill-tag" icon={<SiTypescript />}>TypeScript</SkillTag>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,4 +73,3 @@ function Home() {
 }
 
 export default Home;
-

@@ -4,38 +4,38 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.1448 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.1448 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.1448 0 0);
-  --primary: oklch(0.5555 0 0);
-  --primary-foreground: oklch(0.9851 0 0);
-  --secondary: oklch(0.9702 0 0);
-  --secondary-foreground: oklch(0.2046 0 0);
-  --muted: oklch(0.9702 0 0);
-  --muted-foreground: oklch(0.5486 0 0);
-  --accent: oklch(0.9702 0 0);
-  --accent-foreground: oklch(0.2046 0 0);
+  --background: oklch(0.97 0.018 155);
+  --foreground: oklch(0.28 0.055 148);
+  --card: oklch(0.95 0.022 152);
+  --card-foreground: oklch(0.28 0.055 148);
+  --popover: oklch(0.95 0.022 152);
+  --popover-foreground: oklch(0.28 0.055 148);
+  --primary: oklch(0.44 0.09 152);
+  --primary-foreground: oklch(0.98 0.01 155);
+  --secondary: oklch(0.9 0.035 150);
+  --secondary-foreground: oklch(0.3 0.055 148);
+  --muted: oklch(0.92 0.028 152);
+  --muted-foreground: oklch(0.5 0.045 150);
+  --accent: oklch(0.88 0.04 148);
+  --accent-foreground: oklch(0.28 0.055 148);
   --destructive: oklch(0.583 0.2387 28.4765);
-  --destructive-foreground: oklch(0.9702 0 0);
-  --border: oklch(0.9219 0 0);
-  --input: oklch(0.9219 0 0);
-  --ring: oklch(0.709 0 0);
-  --chart-1: oklch(0.5555 0 0);
-  --chart-2: oklch(0.5555 0 0);
-  --chart-3: oklch(0.5555 0 0);
-  --chart-4: oklch(0.5555 0 0);
-  --chart-5: oklch(0.5555 0 0);
-  --sidebar: oklch(0.9851 0 0);
-  --sidebar-foreground: oklch(0.1448 0 0);
-  --sidebar-primary: oklch(0.2046 0 0);
-  --sidebar-primary-foreground: oklch(0.9851 0 0);
-  --sidebar-accent: oklch(0.9702 0 0);
-  --sidebar-accent-foreground: oklch(0.2046 0 0);
-  --sidebar-border: oklch(0.9219 0 0);
-  --sidebar-ring: oklch(0.709 0 0);
+  --destructive-foreground: oklch(0.97 0.018 155);
+  --border: oklch(0.84 0.035 150);
+  --input: oklch(0.87 0.032 152);
+  --ring: oklch(0.5 0.08 152);
+  --chart-1: oklch(0.44 0.09 152);
+  --chart-2: oklch(0.52 0.08 145);
+  --chart-3: oklch(0.38 0.07 140);
+  --chart-4: oklch(0.6 0.06 155);
+  --chart-5: oklch(0.32 0.065 142);
+  --sidebar: oklch(0.96 0.02 154);
+  --sidebar-foreground: oklch(0.28 0.055 148);
+  --sidebar-primary: oklch(0.44 0.09 152);
+  --sidebar-primary-foreground: oklch(0.98 0.01 155);
+  --sidebar-accent: oklch(0.9 0.035 150);
+  --sidebar-accent-foreground: oklch(0.3 0.055 148);
+  --sidebar-border: oklch(0.84 0.035 150);
+  --sidebar-ring: oklch(0.5 0.08 152);
   --radius: 0rem;
   --shadow-2xs: 0px 1px 0px 0px hsl(0 0% 0% / 0);
   --shadow-xs: 0px 1px 0px 0px hsl(0 0% 0% / 0);
@@ -51,8 +51,8 @@
   --shadow-2xl: 0px 1px 0px 0px hsl(0 0% 0% / 0);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-  --section: oklch(0.992 0 0);
-  --section-alt: oklch(0.984 0 0);
+  --section: oklch(0.18 0.05 148);
+  --section-alt: oklch(0.18 0.05 148);
 }
 
 .dark {
@@ -168,6 +168,222 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Light mode — same dark green, different opacity per section */
+html:not(.dark) #Home {
+  background: oklch(0.18 0.05 148);
+}
+
+html:not(.dark) #About {
+  background: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+}
+
+html:not(.dark) #Project {
+  background: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
+}
+
+html:not(.dark) #Timeline {
+  background: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
+}
+
+html:not(.dark) #Contact {
+  background: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+}
+
+html:not(.dark) footer {
+  background: color-mix(in oklch, oklch(0.18 0.05 148) 85%, white);
+}
+
+/* Dark green sections — white text + themed surfaces (light mode only) */
+html:not(.dark) #Home,
+html:not(.dark) #About,
+html:not(.dark) #Project,
+html:not(.dark) #Timeline,
+html:not(.dark) #Contact,
+html:not(.dark) footer {
+  color: oklch(0.985 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --muted-foreground: oklch(0.86 0.02 155);
+  --primary: oklch(0.76 0.06 150);
+  --primary-foreground: oklch(0.18 0.05 148);
+  --secondary-foreground: oklch(0.92 0.02 155);
+  --ring: oklch(0.7 0.06 150);
+  --chart-1: oklch(0.76 0.06 150);
+  --chart-2: oklch(0.68 0.07 145);
+  --chart-3: oklch(0.58 0.06 155);
+}
+
+html:not(.dark) #Home {
+  --background: oklch(0.18 0.05 148);
+  --card: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
+  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
+  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
+  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  --border: color-mix(in oklch, oklch(0.18 0.05 148) 70%, white);
+  --input: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
+}
+
+html:not(.dark) #About {
+  --background: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  --card: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
+  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
+  --border: color-mix(in oklch, oklch(0.18 0.05 148) 62%, white);
+  --input: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
+  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
+}
+
+html:not(.dark) #Project {
+  --background: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
+  --card: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 84%, white);
+  --border: color-mix(in oklch, oklch(0.18 0.05 148) 68%, white);
+  --input: color-mix(in oklch, oklch(0.18 0.05 148) 84%, white);
+  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+}
+
+html:not(.dark) #Timeline {
+  --background: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
+  --card: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
+  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
+  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 80%, white);
+  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+  --border: color-mix(in oklch, oklch(0.18 0.05 148) 65%, white);
+  --input: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 80%, white);
+}
+
+html:not(.dark) #Contact {
+  --background: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
+  --card: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
+  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
+  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 70%, white);
+  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 72%, white);
+  --border: color-mix(in oklch, oklch(0.18 0.05 148) 58%, white);
+  --input: color-mix(in oklch, oklch(0.18 0.05 148) 72%, white);
+  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 70%, white);
+}
+
+html:not(.dark) footer {
+  --background: color-mix(in oklch, oklch(0.18 0.05 148) 85%, white);
+  --card: color-mix(in oklch, oklch(0.18 0.05 148) 79%, white);
+  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 79%, white);
+  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 73%, white);
+  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 75%, white);
+  --border: color-mix(in oklch, oklch(0.18 0.05 148) 60%, white);
+  --input: color-mix(in oklch, oklch(0.18 0.05 148) 75%, white);
+  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 73%, white);
+}
+
+html:not(.dark)
+  #Home
+  :is(
+    .text-gray-900,
+    .text-gray-800,
+    .text-gray-600,
+    .text-gray-500,
+    .text-zinc-950,
+    .text-zinc-500,
+    .text-neutral-800,
+    .text-neutral-600,
+    .text-neutral-500,
+    .text-neutral-400,
+    .text-foreground,
+    .text-accent-foreground,
+    .text-card-foreground
+  ),
+html:not(.dark)
+  #About
+  :is(
+    .text-gray-900,
+    .text-gray-800,
+    .text-gray-600,
+    .text-gray-500,
+    .text-zinc-950,
+    .text-zinc-500,
+    .text-neutral-800,
+    .text-neutral-600,
+    .text-neutral-500,
+    .text-neutral-400,
+    .text-foreground,
+    .text-accent-foreground,
+    .text-card-foreground
+  ),
+html:not(.dark)
+  #Project
+  :is(
+    .text-gray-900,
+    .text-gray-800,
+    .text-gray-600,
+    .text-gray-500,
+    .text-zinc-950,
+    .text-zinc-500,
+    .text-neutral-800,
+    .text-neutral-600,
+    .text-neutral-500,
+    .text-neutral-400,
+    .text-foreground,
+    .text-accent-foreground,
+    .text-card-foreground
+  ),
+html:not(.dark)
+  #Timeline
+  :is(
+    .text-gray-900,
+    .text-gray-800,
+    .text-gray-600,
+    .text-gray-500,
+    .text-zinc-950,
+    .text-zinc-500,
+    .text-neutral-800,
+    .text-neutral-600,
+    .text-neutral-500,
+    .text-neutral-400,
+    .text-foreground,
+    .text-accent-foreground,
+    .text-card-foreground
+  ),
+html:not(.dark)
+  #Contact
+  :is(
+    .text-gray-900,
+    .text-gray-800,
+    .text-gray-600,
+    .text-gray-500,
+    .text-zinc-950,
+    .text-zinc-500,
+    .text-neutral-800,
+    .text-neutral-600,
+    .text-neutral-500,
+    .text-neutral-400,
+    .text-foreground,
+    .text-accent-foreground,
+    .text-card-foreground
+  ) {
+  color: oklch(0.985 0 0);
+}
+
+html:not(.dark) #Home .bg-gray-300,
+html:not(.dark) #About .bg-gray-300,
+html:not(.dark) #Project .bg-gray-300,
+html:not(.dark) #Timeline .bg-gray-300 {
+  background-color: oklch(0.62 0.04 150);
+}
+
+html:not(.dark) #Contact .bg-gray-300 {
+  background-color: oklch(0.72 0.045 150);
+}
+
+html:not(.dark) footer .bg-gray-300 {
+  background-color: oklch(0.68 0.04 148);
 }
 
 /* Enhanced background utilities */

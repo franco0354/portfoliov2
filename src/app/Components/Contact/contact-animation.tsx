@@ -2,12 +2,12 @@ import React from 'react'
 
 function ContactAnimation() {
     return (
-        <div className="relative hidden rounded-l-2xl bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800 md:block overflow-hidden">
+        <div className="relative hidden rounded-l-2xl bg-gradient-to-br from-emerald-50 to-green-100 dark:from-slate-900 dark:to-slate-800 md:block overflow-hidden">
             {/* Animated background pattern */}
             <div className="absolute inset-0 opacity-10 dark:opacity-20">
-                <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400 dark:bg-blue-300 rounded-full animate-pulse"></div>
-                <div className="absolute top-12 right-8 w-1 h-1 bg-indigo-400 dark:bg-indigo-300 rounded-full animate-ping"></div>
-                <div className="absolute bottom-8 left-12 w-1.5 h-1.5 bg-purple-400 dark:bg-purple-300 rounded-full animate-bounce"></div>
+                <div className="absolute top-4 left-4 w-2 h-2 bg-emerald-600 dark:bg-blue-300 rounded-full animate-pulse"></div>
+                <div className="absolute top-12 right-8 w-1 h-1 bg-green-600 dark:bg-indigo-300 rounded-full animate-ping"></div>
+                <div className="absolute bottom-8 left-12 w-1.5 h-1.5 bg-emerald-700 dark:bg-purple-300 rounded-full animate-bounce"></div>
             </div>
 
             <div className="absolute inset-0 flex items-center justify-center p-8">
@@ -22,12 +22,12 @@ function ContactAnimation() {
                         <div className="absolute top-9 left-3 w-30 h-18 bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-700 border-2 border-gray-300 dark:border-slate-500 rounded-sm shadow-inner dark:shadow-inner"></div>
 
                         {/* Letter inside with animated content */}
-                        <div className="absolute top-11 left-5 w-26 h-14 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-700 dark:to-slate-600 border border-blue-200 dark:border-slate-500 rounded-sm shadow-sm dark:shadow-md group-hover:shadow-md dark:group-hover:shadow-lg transition-shadow duration-300">
+                        <div className="absolute top-11 left-5 w-26 h-14 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-slate-700 dark:to-slate-600 border border-emerald-200 dark:border-slate-500 rounded-sm shadow-sm dark:shadow-md group-hover:shadow-md dark:group-hover:shadow-lg transition-shadow duration-300">
                             <div className="p-2">
-                                <div className="w-full h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5 animate-pulse"></div>
-                                <div className="w-4/5 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5"></div>
-                                <div className="w-3/5 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5"></div>
-                                <div className="w-2/5 h-1 bg-gradient-to-r from-blue-300 to-indigo-300 dark:from-blue-400 dark:to-indigo-400 rounded"></div>
+                                <div className="w-full h-1 bg-gradient-to-r from-emerald-400 to-green-400 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5 animate-pulse"></div>
+                                <div className="w-4/5 h-1 bg-gradient-to-r from-emerald-400 to-green-400 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5"></div>
+                                <div className="w-3/5 h-1 bg-gradient-to-r from-emerald-400 to-green-400 dark:from-blue-400 dark:to-indigo-400 rounded mb-1.5"></div>
+                                <div className="w-2/5 h-1 bg-gradient-to-r from-emerald-400 to-green-400 dark:from-blue-400 dark:to-indigo-400 rounded"></div>
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@ function ContactAnimation() {
                         </div>
 
                         {/* Decorative elements with hover effects */}
-                        <div className="absolute -top-3 -right-3 w-5 h-5 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-full opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300 shadow-lg dark:shadow-xl"></div>
+                        <div className="absolute -top-3 -right-3 w-5 h-5 bg-gradient-to-br from-emerald-600 to-emerald-700 dark:from-blue-400 dark:to-blue-500 rounded-full opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300 shadow-lg dark:shadow-xl"></div>
                         <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-green-400 to-green-500 dark:from-green-300 dark:to-green-400 rounded-full opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300 shadow-lg dark:shadow-xl"></div>
 
                         {/* Subtle shine effect */}
@@ -52,12 +52,12 @@ function ContactAnimation() {
             </div>
 
             {/* Enhanced background decorative elements */}
-            <div className="absolute top-6 right-6 w-20 h-20 border-2 border-dashed border-blue-300 dark:border-blue-400 rounded-full opacity-40 animate-spin-slow"></div>
-            <div className="absolute bottom-6 left-6 w-16 h-16 border border-blue-300 dark:border-blue-400 rounded-lg opacity-40 transform rotate-45 animate-pulse"></div>
+            <div className="absolute top-6 right-6 w-20 h-20 border-2 border-dashed border-emerald-400 dark:border-blue-400 rounded-full opacity-40 animate-spin-slow"></div>
+            <div className="absolute bottom-6 left-6 w-16 h-16 border border-emerald-400 dark:border-blue-400 rounded-lg opacity-40 transform rotate-45 animate-pulse"></div>
 
             {/* Floating particles */}
-            <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-blue-400 dark:bg-blue-300 rounded-full animate-ping"></div>
-            <div className="absolute bottom-1/3 left-1/3 w-0.5 h-0.5 bg-indigo-400 dark:bg-indigo-300 rounded-full animate-ping delay-1000"></div>
+            <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-emerald-600 dark:bg-blue-300 rounded-full animate-ping"></div>
+            <div className="absolute bottom-1/3 left-1/3 w-0.5 h-0.5 bg-green-600 dark:bg-indigo-300 rounded-full animate-ping delay-1000"></div>
 
             {/* Contact info overlay */}
             <div className="absolute bottom-4 right-4 text-xs text-gray-500 dark:text-gray-400 opacity-60 hover:opacity-100 transition-opacity duration-300">

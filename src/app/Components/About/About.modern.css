@@ -14,3 +14,32 @@
 .animate-delay-4 {
   animation-delay: 0.4s;
 }
+
+/* Light text on dark green About section */
+#About {
+  color: white;
+}
+
+#About h1,
+#About .text-gray-900 {
+  color: white;
+}
+
+#About .text-muted-foreground {
+  color: rgb(255 255 255 / 0.82);
+}
+
+#About blockquote {
+  border-left-color: rgb(255 255 255 / 0.35);
+}
+
+#About .modern-card,
+#About .home-skill-tag,
+#About button {
+  color: white;
+}
+
+#About .modern-card {
+  border-color: rgb(255 255 255 / 0.22);
+  background: rgb(255 255 255 / 0.1);
+}

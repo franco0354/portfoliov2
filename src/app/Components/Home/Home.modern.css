@@ -1,4 +1,5 @@
-/* Modern Home Component Styles */
+/* Modern Home — editorial hero over photo */
+
 .animate-delay-1 {
   animation-delay: 0.1s;
 }
@@ -13,4 +14,344 @@
 
 .animate-delay-4 {
   animation-delay: 0.4s;
+}
+
+.home-shell {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+
+.home-stage {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  align-items: center;
+  justify-content: flex-start;
+  padding-block: 2rem;
+}
+
+.home-copy {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.home-hero-text {
+  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.home-hero-subtitle {
+  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.home-hero-bio {
+  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.home-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.home-availability {
+  position: relative;
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.home-availability::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: color-mix(in oklch, var(--primary) 55%, transparent);
+  animation: homePing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.home-display {
+  margin: 0;
+  font-size: clamp(3.5rem, 12vw + 0.5rem, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
+  color: var(--foreground);
+}
+
+.home-role {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.55rem;
+  margin-top: 1.15rem;
+  font-size: clamp(1.05rem, 1.8vw + 0.55rem, 1.55rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--muted-foreground);
+}
+
+.home-role-label {
+  font-weight: 500;
+  color: color-mix(in oklch, var(--muted-foreground) 88%, var(--foreground));
+}
+
+.home-role-typing,
+.home-role-typing [data-slot="typing-text"] {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.home-lead {
+  margin-top: 1.35rem;
+  max-width: 34rem;
+  font-size: clamp(0.98rem, 0.45vw + 0.88rem, 1.125rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  color: var(--muted-foreground);
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.home-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.home-cta:hover {
+  transform: translateY(-2px);
+}
+
+.home-cta--primary {
+  color: var(--primary-foreground);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.home-cta--primary:hover {
+  background: color-mix(in oklch, var(--primary) 88%, black);
+}
+
+.home-cta--ghost {
+  color: var(--foreground);
+  background: transparent;
+  border-color: color-mix(in oklch, var(--border) 80%, transparent);
+}
+
+.home-cta--ghost:hover {
+  border-color: color-mix(in oklch, var(--foreground) 35%, transparent);
+  background: color-mix(in oklch, var(--foreground) 6%, transparent);
+}
+
+.home-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 2rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent);
+  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+}
+
+.home .inline-talents .modern-card,
+.home-skill-tag {
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--foreground);
+  background: color-mix(in oklch, var(--card) 55%, transparent);
+  backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.home .inline-talents .modern-card:hover,
+.home-skill-tag:hover {
+  box-shadow: none;
+  transform: translateY(-2px);
+  border-color: color-mix(in oklch, var(--primary) 50%, transparent);
+  background: color-mix(in oklch, var(--primary) 14%, transparent);
+}
+
+.home .inline-talents .modern-card::before,
+.home-skill-tag::before {
+  display: none;
+}
+
+@keyframes homePing {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* —— Photo overlay (home-on-photo) —— */
+
+.home-on-photo .home-display,
+.home-on-photo .home-role-typing,
+.home-on-photo .home-role-typing [data-slot="typing-text"] {
+  color: white;
+  text-shadow: 0 2px 40px rgb(0 0 0 / 0.25);
+}
+
+.home-on-photo .home-kicker,
+.home-on-photo .home-role-label {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.home-on-photo .home-lead,
+.home-on-photo .home-role {
+  color: rgb(255 255 255 / 0.84);
+}
+
+.home-on-photo .home-availability {
+  background: oklch(0.78 0.12 150);
+}
+
+.home-on-photo .home-availability::before {
+  background: oklch(0.78 0.12 150 / 0.55);
+}
+
+.home-on-photo .home-cta--primary {
+  color: oklch(0.22 0.05 148);
+  background: white;
+  border-color: white;
+}
+
+.home-on-photo .home-cta--primary:hover {
+  background: rgb(255 255 255 / 0.9);
+}
+
+.home-on-photo .home-cta--ghost {
+  color: white;
+  border-color: rgb(255 255 255 / 0.35);
+  background: rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.home-on-photo .home-cta--ghost:hover {
+  border-color: rgb(255 255 255 / 0.55);
+  background: rgb(255 255 255 / 0.14);
+}
+
+.home-on-photo .home-skills {
+  border-top-color: rgb(255 255 255 / 0.18);
+}
+
+.home-on-photo .home-skill-tag,
+.home-on-photo .inline-talents .modern-card {
+  color: white;
+  border-color: rgb(255 255 255 / 0.2);
+  background: rgb(255 255 255 / 0.08);
+}
+
+.home-on-photo .home-skill-tag:hover,
+.home-on-photo .inline-talents .modern-card:hover {
+  border-color: rgb(255 255 255 / 0.4);
+  background: rgb(255 255 255 / 0.16);
+}
+
+/* —— Responsive —— */
+
+@media screen and (max-width: 858px) {
+  .home-stage {
+    justify-content: center;
+    text-align: center;
+    min-height: calc(100vh - 3.5rem);
+  }
+
+  .home-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-kicker {
+    justify-content: center;
+  }
+
+  .home-role {
+    justify-content: center;
+  }
+
+  .home-lead {
+    margin-inline: auto;
+  }
+
+  .home-actions {
+    justify-content: center;
+  }
+
+  .home-skills {
+    justify-content: center;
+  }
+
+  .home-display {
+    font-size: clamp(3.25rem, 16vw, 5rem);
+  }
+}
+
+@media screen and (min-width: 859px) {
+  .home-stage {
+    padding-block: 3rem;
+  }
+
+  .home-copy {
+    max-width: 44rem;
+  }
+
+  .home-lead {
+    margin-top: 1.5rem;
+    max-width: 36rem;
+  }
+
+  .home-actions {
+    margin-top: 2rem;
+  }
+
+  .home-skills {
+    margin-top: 2.25rem;
+  }
 }

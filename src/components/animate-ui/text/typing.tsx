@@ -23,7 +23,7 @@ function CursorBlinker({ className }: { className?: string }) {
       }}
       animate="blinking"
       className={cn(
-        'inline-block h-5 w-[1px] translate-y-1 bg-black dark:bg-white',
+        'inline-block h-5 w-[1px] translate-y-1 bg-current',
         className,
       )}
     />

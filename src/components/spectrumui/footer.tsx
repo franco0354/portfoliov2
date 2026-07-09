@@ -44,7 +44,7 @@ function AnimatedWaveLayer({
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gray-200/30 dark:bg-section-alt max-md:text-justify">
+    <footer className="relative overflow-hidden dark:bg-section-alt max-md:text-justify">
       <div className="px-4 pt-10 md:px-6">
         <div className="container mx-auto pb-10">
           <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">

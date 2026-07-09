@@ -8,16 +8,16 @@ interface SkillTagProps {
   icon?: React.ReactNode;
 }
 
-export function SkillTag({ 
-  children, 
-  delay = 1, 
+export function SkillTag({
+  children,
+  delay = 1,
   className,
-  icon 
+  icon
 }: SkillTagProps) {
   const delayClass = `animate-delay-${delay}`;
-  
+
   return (
-    <span 
+    <span
       className={cn(
         "modern-card text-sm px-4 py-2.5 rounded-lg font-medium inline-flex items-center animate-fade-scale hover:scale-105 transition-transform",
         delayClass,
