@@ -73,7 +73,7 @@ export default function Page() {
       <Navbar />
       <div className="relative z-20 pt-14 sm:pt-16 max-md:text-justify">
         <div>
-          <section id="Home" className={`${sectionClass} relative overflow-hidden !py-0 h-svh min-h-[36rem]`}>
+          <section id="Home" className={`${sectionClass} relative overflow-hidden !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem]`}>
             <Image
               src={profilebackground}
               alt=""

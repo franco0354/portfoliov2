@@ -1,7 +1,10 @@
+'use client'
+
 import '../Home/Home.style.css'
 import '../Home/Home.modern.css'
 import { TypingText } from '@/components/animate-ui/text/typing';
 import { SkillTag } from '@/components/ui/skill-tag';
+import { scrollToSection } from '@/lib/scroll';
 import {
     SiReact,
     SiNextdotjs,
@@ -68,6 +71,19 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+            <a
+                href="#About"
+                className="home-scroll"
+                aria-label="Scroll to about"
+                onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('#About');
+                }}
+            >
+                <span className="home-scroll-line" aria-hidden="true" />
+                <span className="home-scroll-label">Scroll</span>
+            </a>
         </div>
     );
 }

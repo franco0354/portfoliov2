@@ -176,7 +176,7 @@ html:not(.dark) #Home {
 }
 
 html:not(.dark) #About {
-  background: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  background: oklch(0.18 0.05 148);
 }
 
 html:not(.dark) #Project {
@@ -229,14 +229,14 @@ html:not(.dark) #Home {
 }
 
 html:not(.dark) #About {
-  --background: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
-  --card: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
-  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
-  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
-  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
-  --border: color-mix(in oklch, oklch(0.18 0.05 148) 62%, white);
-  --input: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
-  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
+  --background: oklch(0.18 0.05 148);
+  --card: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
+  --popover: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
+  --accent: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
+  --muted: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  --border: color-mix(in oklch, oklch(0.18 0.05 148) 70%, white);
+  --input: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
+  --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
 }
 
 html:not(.dark) #Project {
