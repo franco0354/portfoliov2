@@ -56,7 +56,6 @@
   transform: none;
   text-decoration: none;
   color: rgb(255 255 255 / 0.72);
-  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
 }
 
 .home-scroll-line {
@@ -121,18 +120,6 @@
   max-width: min(52rem, 100%);
   min-width: 0;
   overflow-wrap: anywhere;
-}
-
-.home-hero-text {
-  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.home-hero-subtitle {
-  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
-}
-
-.home-hero-bio {
-  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 .home-kicker {
@@ -267,7 +254,6 @@
   margin-top: 2rem;
   padding-top: 1.35rem;
   border-top: 1px solid color-mix(in oklch, var(--border) 55%, transparent);
-  animation: slideInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
 }
 
 .home .inline-talents .modern-card,

@@ -52,11 +52,6 @@ export default function Footer() {
               <Link href="/" className="inline-flex items-center">
                 <h2 className="mb-4 font-semibold">Portfolio</h2>
               </Link>
-
-              <p className="text-sm text-muted-foreground max-w-xs">
-                Full-stack web and mobile developer crafting thoughtful digital experiences.
-              </p>
-
               <p className="mt-2 text-sm text-muted-foreground">
                 © {new Date().getFullYear()} Franco Gregorio. All rights reserved.
               </p>

@@ -148,7 +148,7 @@ export default function TimelinePage() {
         },
     ];
     return (
-        <div className="relative w-full overflow-x-hidden">
+        <div className="relative w-full overflow-y-hidden">
             <Timeline data={data} />
         </div>
     );
