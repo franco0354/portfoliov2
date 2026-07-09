@@ -13,6 +13,7 @@ import Loading from "@/components/loading";
 import { AnimatePresence } from "motion/react";
 import { usePageState } from "@/hooks/usePageState";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { useAos } from "@/hooks/useAos";
 import Navbar from "./Components/Navbar/navbar";
 import "lenis/dist/lenis.css";
 import TimelinePage from "./Components/TimeLine/page";
@@ -31,6 +32,7 @@ export default function Page() {
   const [isTouch, setIsTouch] = useState(false);
 
   useSmoothScroll({ enabled: !isLoading });
+  useAos({ enabled: !isLoading });
 
   useEffect(() => {
     setIsTouch(window.matchMedia("(pointer: coarse)").matches);
@@ -71,16 +73,16 @@ export default function Page() {
         </Cursor>
       )}
       <Navbar />
-      <div className="relative z-20 pt-14 sm:pt-16 max-md:text-justify">
+      <div className="relative z-20 pt-14 sm:pt-16 max-md:[&_section:not(#Home)]:text-justify">
         <div>
-          <section id="Home" className={`${sectionClass} relative overflow-hidden !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem]`}>
+          <section id="Home" className={`${sectionClass} relative flex flex-col overflow-x-hidden overflow-y-auto !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem] md:overflow-hidden`}>
             <Image
               src={profilebackground}
               alt=""
               aria-hidden="true"
               fill
               priority
-              className="object-cover object-top pointer-events-none scale-110   md:translate-x-[18%] lg:translate-x-[28%] xl:translate-x-[34%]"
+              className="object-cover object-top pointer-events-none scale-100 md:scale-110 md:translate-x-[18%] lg:translate-x-[28%] xl:translate-x-[34%]"
             />
             {/* Flat green opacity over the photo — same green, opacity only */}
             <div
@@ -108,7 +110,7 @@ export default function Page() {
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 h-40 pointer-events-none bg-gradient-to-t from-[oklch(0.18_0.05_148)] via-[oklch(0.18_0.05_148)]/70 to-transparent dark:from-black dark:via-black/70"
             />
-            <div className="relative h-full w-full z-10 home-on-photo px-4 sm:px-6 md:px-10">
+            <div className="relative z-10 home-on-photo flex flex-1 flex-col min-h-0 w-full min-w-0 max-w-full px-4 sm:px-6 md:px-10">
               <Home />
             </div>
           </section>

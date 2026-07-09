@@ -7,7 +7,7 @@ export const ProjectData = [
     {
         projectURL: PinoyCode,
         title: "Pinoy Codex",
-        description: "This is for Beginners in learn the basics of coding and programming .",
+        description: "A beginner-friendly platform for learning the fundamentals of coding and programming. Built to help newcomers take their first steps into software development with clear lessons and practical examples.",
         icon: ["Next Js", "Supabase", "Tailwind"],
         id: 1,
         link: "https://pinoycodex.vercel.app/",
@@ -15,7 +15,7 @@ export const ProjectData = [
     }, {
         projectURL: Messenger,
         title: "Messenger App",
-        description: "Stay connected with your loved ones through real-time chat. Whether you're messaging family or friends, enjoy a fast, secure, and user-friendly experience built for meaningful conversations anytime, anywhere.",
+        description: "Stay connected with the people who matter through real-time messaging. Whether you're chatting with family or friends, enjoy a fast, secure, and user-friendly experience designed for meaningful conversations—anytime, anywhere.",
         icon: ["shadcn", "Tailwind", "Next Js", "Firebase"],
         id: 2,
         link: "https://new-messenger-app-4yo8.vercel.app/",
@@ -23,7 +23,7 @@ export const ProjectData = [
     }, {
         projectURL: TodoList,
         title: "Todo List",
-        description: "Organize your day with ease. The Todo List App helps you keep track of daily tasks, set priorities, and stay productive—all in one simple and intuitive interface.",
+        description: "Organize your day with ease. This todo app helps you track daily tasks, set priorities, and stay productive—all in one simple, intuitive interface built for clarity and focus.",
         icon: ["shadcn", "Tailwind", "Next Js", "Firebase"],
         id: 3,
         link: "https://todo-app2-bice.vercel.app/",
@@ -32,7 +32,7 @@ export const ProjectData = [
     {
         projectURL: Weather,
         title: "Weather",
-        description: "Get real-time weather updates by searching your location. Stay informed with accurate forecasts, temperature, and conditions—wherever you are.",
+        description: "Get real-time weather updates by searching any location. Stay informed with accurate forecasts, temperature readings, and current conditions—wherever you are in the world.",
         icon: ["Tailwind", "Next Js", "Firebase"],
         id: 4,
         link: "https://franco-weather.vercel.app/",
@@ -40,7 +40,7 @@ export const ProjectData = [
     }, {
         projectURL: Scanner,
         title: "Scanner Mobile",
-        description: "A lightweight and fast QR code scanner for mobile. Effortlessly scan and decode QR codes on the go—perfect for everyday use.",
+        description: "A lightweight, fast QR code scanner built for mobile. Scan and decode QR codes effortlessly on the go—ideal for everyday tasks, events, and quick access to links or information.",
         icon: ["Firebase"],
         id: 5,
         link: "#",

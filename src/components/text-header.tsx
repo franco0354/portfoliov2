@@ -1,10 +1,10 @@
 import React from 'react'
 
-function TextHeader(props: { text: string, variant?: 'main' | 'sub' }) {
+function TextHeader(props: { text: string, variant?: 'main' | 'sub', delay?: number }) {
     const isSubHeader = props.variant === 'sub';
 
     return (
-        <div className="relative">
+        <div className="relative" data-aos="fade-up" data-aos-delay={props.delay ?? 0}>
             <div className={`flex items-center justify-center mb-8 sm:mb-12 ${isSubHeader ? 'mb-6 sm:mb-8' : ''}`}>
                 {/* Simple decorative line */}
                 <div className={`hidden sm:block w-8 sm:w-16 h-px bg-current opacity-80 ${isSubHeader ? 'sm:w-12' : ''}`}></div>

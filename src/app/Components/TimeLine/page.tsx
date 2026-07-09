@@ -12,8 +12,8 @@ export default function TimelinePage() {
             content: (
                 <div>
                     <p className="text-muted-foreground leading-relaxed text-justify md:text-left">
-                        <strong>Web Developer</strong> at{" "}
-                        <strong>ENROLLA</strong> (early-stage fintech startup)
+                        Working as a <strong>Web Developer</strong> at{" "}
+                        <strong>ENROLLA</strong>, an early-stage fintech startup focused on building modern financial tools.
                         <span className="block text-sm mt-1 text-neutral-400 dark:text-neutral-500">
                             April 2026 – Present
                         </span>
@@ -24,16 +24,16 @@ export default function TimelinePage() {
                             Building and maintaining data pipelines (Ads → Fivetran → BigQuery → dbt)
                         </li>
                         <li>
-                            Designing multi-tenant systems with proper data isolation
+                            Designing multi-tenant systems with proper data isolation and security
                         </li>
                         <li>
-                            Data modeling and transformation for analytics and reporting
+                            Modeling and transforming data for analytics, reporting, and business insights
                         </li>
                         <li>
                             Developing dashboards and reporting tools using Next.js
                         </li>
                         <li>
-                            Implementing secure authentication with Supabase
+                            Implementing secure authentication and authorization with Supabase
                         </li>
                         <li>
                             Optimizing performance across frontend and backend systems
@@ -65,29 +65,29 @@ export default function TimelinePage() {
                         </p>
 
                         <p className="text-muted-foreground my-3 text-justify md:text-left">
-                            My main contributions include:
+                            Key contributions include:
                         </p>
 
                         <ul className="list-disc list-inside sm:list-outside sm:ml-4 text-muted-foreground space-y-1.5 text-justify md:text-left text-sm sm:text-base">
                             <li>
-                                Developed and integrated new features to enhance functionality and deliver
+                                Developed and integrated new features to improve functionality and deliver
                                 a smoother, more engaging user experience.
                             </li>
                             <li>
                                 Debugged, optimized, and restructured codebases to improve performance,
-                                scalability, and maintainability.
+                                scalability, and long-term maintainability.
                             </li>
                             <li>
                                 Mentored and supported new hires through onboarding, code reviews, and
                                 hands-on technical guidance.
                             </li>
                             <li>
-                                Collaborated with a distributed team using Git/GitHub for version control,
-                                pull requests, and CI/CD integration.
+                                Collaborated with a distributed team using Git and GitHub for version control,
+                                pull requests, and CI/CD workflows.
                             </li>
                             <li>
                                 Proactively proposed and implemented efficient solutions to complex
-                                technical challenges.
+                                technical challenges across the product.
                             </li>
                         </ul>
                     </div>
@@ -95,10 +95,10 @@ export default function TimelinePage() {
                     {/* Champion Blitz Section */}
                     <div>
                         <p className="mb-2 text-muted-foreground text-justify md:text-left">
-                            On April 3, I became the{" "}
-                            <strong>champion in a blitz programming competition</strong>. I
-                            competed against 2nd, 3rd, and 4th-year college students and managed
-                            to defeat them.
+                            On April 3, I won the{" "}
+                            <strong>Champion Blitz programming competition</strong>, competing against
+                            2nd, 3rd, and 4th-year college students and placing first—a milestone that
+                            reinforced my passion for problem-solving under pressure.
                         </p>
                         <ImageLink
                             src={image2}
@@ -117,8 +117,10 @@ export default function TimelinePage() {
                 <div>
                     <p className="mb-2 text-muted-foreground text-justify md:text-left">
                         I began my college journey pursuing a <strong>Bachelor of Science in Information Systems</strong>,
-                        where I gained foundational knowledge in flowcharts and programming fundamentals, and later
-                        expanded into web development using frameworks such as <strong>React, Next.js,</strong> and <strong>TypeScript</strong>.
+                        where I built a strong foundation in flowcharts, programming fundamentals, and systems thinking.
+                        Over time, I expanded into web development with modern frameworks such as{" "}
+                        <strong>React</strong>, <strong>Next.js</strong>, and <strong>TypeScript</strong>, combining
+                        theory with hands-on projects that prepared me for real-world development work.
                     </p>
                 </div>
             ),
@@ -129,8 +131,11 @@ export default function TimelinePage() {
             content: (
                 <div>
                     <p className="mb-2 text-muted-foreground text-justify md:text-left">
-                        I started learning <strong>web development</strong> in 2021. During senior high school, I deepened my knowledge and began building my own projects. When our capstone project started,
-                        I actively presented and discussed my work with my teacher. Our group was also recognized as the <strong>Best in Research</strong> in the ICT Strand.
+                        I started learning <strong>web development</strong> in 2021. During senior high school, I deepened
+                        my skills and began building personal projects from the ground up. When our capstone research
+                        project started, I took an active role in presenting and discussing our work with faculty. Our
+                        group was recognized as <strong>Best in Research</strong> in the ICT Strand—a proud moment that
+                        confirmed my interest in building thoughtful, well-documented solutions.
                     </p>
                     <ImageLink
                         src={[planing1, planing2]}

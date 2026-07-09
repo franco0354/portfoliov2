@@ -48,21 +48,25 @@ export default function Footer() {
       <div className="px-4 pt-10 md:px-6">
         <div className="container mx-auto pb-10">
           <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-            <div>
+            <div data-aos="fade-up">
               <Link href="/" className="inline-flex items-center">
                 <h2 className="mb-4 font-semibold">Portfolio</h2>
               </Link>
 
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground max-w-xs">
+                Full-stack web and mobile developer crafting thoughtful digital experiences.
+              </p>
+
+              <p className="mt-2 text-sm text-muted-foreground">
                 © {new Date().getFullYear()} Franco Gregorio. All rights reserved.
               </p>
             </div>
 
-            <div>
+            <div data-aos="fade-up" data-aos-delay="100">
               <h3 className="mb-4 font-semibold">Open to</h3>
               <p className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Sparkles size={18} />
-                Collaborations & Freelance Project
+                Collaborations & Freelance Projects
               </p>
             </div>
           </div>

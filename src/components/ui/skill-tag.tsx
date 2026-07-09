@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 interface SkillTagProps {
   children: React.ReactNode;
   delay?: number;
+  aosDelay?: number;
   className?: string;
   icon?: React.ReactNode;
 }
@@ -11,6 +12,7 @@ interface SkillTagProps {
 export function SkillTag({
   children,
   delay = 1,
+  aosDelay,
   className,
   icon
 }: SkillTagProps) {
@@ -23,6 +25,8 @@ export function SkillTag({
         delayClass,
         className
       )}
+      data-aos="zoom-in"
+      data-aos-delay={aosDelay}
     >
       {icon && <span className="mr-2">{icon}</span>}
       {children}

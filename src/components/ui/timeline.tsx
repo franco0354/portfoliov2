@@ -80,7 +80,9 @@ function TimelineItem({
   return (
     <div
       ref={itemRef}
-      className="flex justify-start gap-3 sm:gap-4 md:gap-10 pt-8 sm:pt-10 md:pt-40"
+      className="relative z-10 flex justify-start gap-3 sm:gap-4 md:gap-10 pt-8 sm:pt-10 md:pt-40"
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
     >
       {/* Mobile: narrow dot rail. Desktop: sticky sidebar with year labels */}
       <div className="relative md:sticky flex flex-col md:flex-row z-40 items-center md:top-40 self-start shrink-0 w-8 sm:w-10 md:w-auto">
@@ -166,9 +168,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       <TextHeader
         text="Timeline"
       />
-      <TextAnimate animation="blurIn" duration={1} as="p" className="text-justify md:text-center text-muted-foreground text-sm sm:text-base md:text-xl max-w-5xl mx-auto mb-6 sm:mb-10 px-1 sm:px-4 md:px-4">
+      <p
+        className="text-justify md:text-center text-muted-foreground text-sm sm:text-base md:text-xl max-w-5xl mx-auto mb-6 sm:mb-10 px-1 sm:px-4 md:px-4"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         This timeline showcases my journey from being a student to starting my professional career, highlighting the key experiences and milestones along the way.
-      </TextAnimate>
+      </p>
 
       <div ref={ref} className="relative max-w-4xl mx-auto px-1 sm:px-4 md:px-16 pb-12 md:pb-20">
         {data.map((item, index) => (
@@ -178,7 +184,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           style={{
             height: height + "px",
           }}
-          className="absolute left-[15px] sm:left-[19px] md:left-24 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200/80 dark:via-neutral-700/80 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute left-[15px] sm:left-[19px] md:left-24 top-0 z-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200/80 dark:via-neutral-700/80 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{

@@ -42,13 +42,21 @@ const CarouselExample = () => {
             <TextHeader
                 text="About"
             />
-            <blockquote className="mb-6 w-fit max-w-4xl mx-auto text-muted-foreground text-base sm:text-lg md:text-xl border-l-2 border-muted-foreground/40 pl-4 pr-2 italic text-justify md:text-left">
+            <blockquote
+                className="mb-6 w-fit max-w-4xl mx-auto text-muted-foreground text-base sm:text-lg md:text-xl border-l-2 border-muted-foreground/40 pl-4 pr-2 italic text-justify md:text-left"
+                data-aos="fade-up"
+                data-aos-delay="100"
+            >
                 <TextAnimate animation="blurIn" as="h1" duration={1}>
-                    &quot;Great developers aren&#39;t born—they&#39;re made through consistency, curiosity, and code.&quot;
+                    &quot;Great developers aren&#39;t born—they&#39;re shaped through consistency, curiosity, and clean code.&quot;
                 </TextAnimate>
             </blockquote>
 
-            <div className="flex flex-col md:flex-row justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 min-w-0">
+            <div
+                className="flex flex-col md:flex-row justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 min-w-0"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+            >
                 <Carousel orientation="horizontal">
                     <div className="relative min-w-0 flex-1 md:basis-3/4 w-full">
                         <CarouselMainContainer className="h-48 sm:h-56 md:h-72">
@@ -78,7 +86,7 @@ const CarouselExample = () => {
             </div>
 
             {/* About Me Section */}
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-12" data-aos="fade-up" data-aos-delay="100">
                 <div className="max-w-7xl">
                     <div className="mb-6">
                         <TextHeader
@@ -86,20 +94,27 @@ const CarouselExample = () => {
                             text="Who I Am"
                         />
                     </div>
-                    <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed px-2 text-justify lg:text-center md:text-left">
+                    <p
+                        className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed px-2 text-justify lg:text-center md:text-left"
+                        data-aos="fade-up"
+                        data-aos-delay="150"
+                    >
                         <TextAnimate animation="blurIn" duration={1} as="h1">
-                            I&apos;m a creative problem-solver and passionate web developer who loves turning ideas into
-                            interactive, user-focused experiences. I believe great design meets great function, and I aim
-                            to build websites that not only look good—but feel right to use. Alongside crafting seamless
-                            interfaces, I also enjoy building reliable and scalable back-end systems that keep everything
-                            running smoothly behind the scenes.
+                            I&apos;m Franco, a creative problem-solver and passionate web developer based in Bulacan,
+                            Philippines. I love turning ideas into interactive, user-focused digital experiences. I believe
+                            the best products strike a balance between great design and solid engineering—and I aim to
+                            build websites and apps that not only look good, but feel intuitive to use. Beyond crafting
+                            seamless frontends, I also enjoy designing reliable, scalable backend systems that keep
+                            everything running smoothly behind the scenes. Whether I&apos;m collaborating with a team or
+                            learning something new on my own, I bring the same attention to detail and drive to deliver
+                            work I&apos;m proud of.
                         </TextAnimate>
                     </p>
                 </div>
             </div>
 
             {/* Clean Code Philosophy Section */}
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-12" data-aos="fade-up" data-aos-delay="100">
                 <div className="max-w-7xl">
                     <div className="mb-6">
                         <TextHeader
@@ -108,17 +123,22 @@ const CarouselExample = () => {
                         />
                     </div>
                     <div className=" dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl ">
-                        <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed px-2 text-justify lg:text-center md:text-left">
+                        <p
+                            className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed px-2 text-justify lg:text-center md:text-left"
+                            data-aos="fade-up"
+                            data-aos-delay="150"
+                        >
                             <TextAnimate animation="blurIn" duration={1.2} as="h1">
-                                To keep my code clean, I try to name variables and functions in a way that clearly shows what they&apos;re for.
-                                I keep functions short and focused on doing just one thing so they&apos;re easier to read and reuse.
-                                Instead of nesting conditions too much, I use early returns to keep the flow simple.
-                                I follow the DRY principle so I don&apos;t repeat code—if something&apos;s reusable, I turn it into a function or component.
-                                I also stick to consistent formatting using tools like Prettier and follow a style guide so everything looks uniform.
-                                When logic gets tricky, I leave comments to explain why I did something, not just what it does.
-                                I organize my files by feature or functionality and refactor often to make things cleaner.
-                                I also write tests to catch bugs early and keep things well-structured.
-                                Lastly, I use linters like ESLint to spot and fix issues automatically.
+                                I believe clean code is a craft, not an accident. I name variables and functions clearly
+                                so their purpose is obvious at a glance. I keep functions small and focused—each one
+                                should do one thing well. Rather than deeply nested conditions, I prefer early returns
+                                to keep logic easy to follow.
+                                I follow the DRY principle: when something repeats, I extract it into a reusable function
+                                or component. Consistent formatting with tools like Prettier and a shared style guide
+                                keeps the codebase uniform across the team.
+                                When logic gets complex, I add comments that explain why—not just what. I organize files
+                                by feature, refactor regularly, and write tests to catch bugs early. Linters like ESLint
+                                help me spot issues before they reach production.
                             </TextAnimate>
                         </p>
                     </div>
@@ -126,7 +146,7 @@ const CarouselExample = () => {
             </div>
 
             {/* Skills Section */}
-            <div className="flex justify-center mt-12 w-full">
+            <div className="flex justify-center mt-12 w-full" data-aos="fade-up" data-aos-delay="100">
                 <div className="w-full max-w-7xl px-2">
                     <div className="mb-6">
                         <TextHeader
@@ -139,6 +159,7 @@ const CarouselExample = () => {
                             <SkillTag
                                 key={tech.label}
                                 delay={(index % 10) + 1}
+                                aosDelay={(index % 8) * 50}
                                 icon={tech.icon}
                                 className="w-full justify-center"
                             >

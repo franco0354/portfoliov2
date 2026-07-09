@@ -32,10 +32,12 @@ const infoItems = [
 export function ContactInfoMobile() {
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:hidden">
-      {infoItems.map((item) => (
+      {infoItems.map((item, index) => (
         <div
           key={item.title}
           className="flex items-center gap-3 rounded-xl border border-border/60 bg-muted/30 p-3"
+          data-aos="fade-up"
+          data-aos-delay={index * 75}
         >
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <item.icon className="h-4 w-4" />
@@ -66,7 +68,11 @@ export function ContactInfoMobile() {
 
 export function ContactInfoPanel() {
   return (
-    <div className="relative hidden min-h-full overflow-hidden md:flex md:flex-col md:justify-between">
+    <div
+      className="relative hidden min-h-full overflow-hidden md:flex md:flex-col md:justify-between"
+      data-aos="fade-left"
+      data-aos-delay="200"
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-muted/40 to-background dark:from-primary/15 dark:via-muted/20 dark:to-card" />
       <div
@@ -88,6 +94,8 @@ export function ContactInfoPanel() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
             className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60 opacity-75" />
@@ -114,7 +122,7 @@ export function ContactInfoPanel() {
             transition={{ duration: 0.45, delay: 0.1 }}
             className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground text-justify md:text-left"
           >
-            Whether you have a project in mind, need a developer, or just want to connect — I&apos;d love to hear from you.
+            Whether you have a project in mind, need a developer for your team, or simply want to connect—I&apos;d love to hear from you.
           </motion.p>
 
           <div className="mt-8 space-y-3">
@@ -126,6 +134,8 @@ export function ContactInfoPanel() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.15 + index * 0.06 }}
                 className="group flex items-center gap-4 rounded-xl border border-border/60 bg-background/60 p-4 backdrop-blur-sm transition-colors hover:border-primary/30 hover:bg-background/80 dark:bg-background/30 dark:hover:bg-background/40"
+                data-aos="fade-up"
+                data-aos-delay={150 + index * 75}
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
                   <item.icon className="h-4 w-4" />

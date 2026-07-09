@@ -64,7 +64,7 @@ export function ContactLayouts({
         try {
             await ContactForm(name, email, message);
             setAlertTitle("Success!");
-            setAlertDescription("Your message has been sent successfully. I'll get back to you soon!");
+            setAlertDescription("Your message has been sent successfully. I'll get back to you within 24 hours!");
             setShowAlert(true);
             setEmail("")
             setName("")
@@ -85,14 +85,23 @@ export function ContactLayouts({
     return (
         <div className={cn("flex flex-col gap-6", className)} {...props}>
             <ContactInfoMobile />
-            <Card className="overflow-hidden border-border/60 bg-card/80 py-0 shadow-lg backdrop-blur-sm">
+            <Card
+                className="overflow-hidden border-border/60 bg-card/80 py-0 shadow-lg backdrop-blur-sm"
+                data-aos="fade-up"
+                data-aos-delay="150"
+            >
                 <CardContent className="grid p-0 md:grid-cols-2">
                     {!isClient ? (
                         <FormSkeleton />
                     ) : (
-                        <form onSubmit={SubmitData} className="p-6 md:p-8 lg:p-10">
+                        <form
+                            onSubmit={SubmitData}
+                            className="p-6 md:p-8 lg:p-10"
+                            data-aos="fade-right"
+                            data-aos-delay="100"
+                        >
                             <div className="flex flex-col gap-6">
-                                <div className="space-y-2">
+                                <div className="space-y-2" data-aos="fade-up" data-aos-delay="150">
                                     <span className="inline-flex items-center rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-medium text-muted-foreground">
                                         Get in touch
                                     </span>
@@ -100,11 +109,12 @@ export function ContactLayouts({
                                         Contact <span className="gradient-text">Me</span>
                                     </h1>
                                     <p className="text-sm leading-relaxed text-muted-foreground text-justify md:text-left">
-                                        Have a question or a project idea? Drop a message and I&apos;ll get back to you.
+                                        Have a question, a project idea, or a collaboration in mind? Send me a message and
+                                        I&apos;ll get back to you as soon as I can.
                                     </p>
                                 </div>
 
-                                <div className="space-y-4">
+                                <div className="space-y-4" data-aos="fade-up" data-aos-delay="200">
                                     <div className="grid gap-2">
                                         <Label htmlFor="name" className="text-sm font-medium">
                                             Name
@@ -151,7 +161,7 @@ export function ContactLayouts({
                                             <MessageSquare className="pointer-events-none absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                                             <Textarea
                                                 id="message"
-                                                placeholder="Tell me about your project or question..."
+                                                placeholder="Share your project details, timeline, or any questions you have..."
                                                 onChange={e => setMessage(e.target.value)}
                                                 value={message}
                                                 required
@@ -166,6 +176,8 @@ export function ContactLayouts({
                                     type="submit"
                                     className="group h-11 w-full rounded-xl text-sm font-medium shadow-sm transition-all hover:shadow-md"
                                     disabled={isSubmitting}
+                                    data-aos="fade-up"
+                                    data-aos-delay="250"
                                 >
                                     {isSubmitting ? (
                                         "Sending..."
