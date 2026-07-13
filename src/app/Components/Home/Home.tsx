@@ -83,12 +83,12 @@ function Home() {
                         </div>
 
                         <div className="inline-talents home-skills">
-                            <SkillTag aosDelay={100} className="home-skill-tag" icon={<SiReact />}>React</SkillTag>
-                            <SkillTag aosDelay={150} className="home-skill-tag" icon={<SiNextdotjs />}>Next.js</SkillTag>
-                            <SkillTag aosDelay={200} className="home-skill-tag" icon={<SiReact />}>React Native</SkillTag>
-                            <SkillTag aosDelay={250} className="home-skill-tag" icon={<SiFirebase />}>Firebase</SkillTag>
-                            <SkillTag aosDelay={300} className="home-skill-tag" icon={<SiSupabase />}>Supabase</SkillTag>
-                            <SkillTag aosDelay={350} className="home-skill-tag" icon={<SiTypescript />}>TypeScript</SkillTag>
+                            <SkillTag aosDelay={100} className="home-skill-tag home-skill-tag--react" iconClassName="home-skill-icon" icon={<SiReact />}>React</SkillTag>
+                            <SkillTag aosDelay={150} className="home-skill-tag home-skill-tag--nextjs" iconClassName="home-skill-icon" icon={<SiNextdotjs />}>Next.js</SkillTag>
+                            <SkillTag aosDelay={200} className="home-skill-tag home-skill-tag--react-native" iconClassName="home-skill-icon" icon={<SiReact />}>React Native</SkillTag>
+                            <SkillTag aosDelay={250} className="home-skill-tag home-skill-tag--firebase" iconClassName="home-skill-icon" icon={<SiFirebase />}>Firebase</SkillTag>
+                            <SkillTag aosDelay={300} className="home-skill-tag home-skill-tag--supabase" iconClassName="home-skill-icon" icon={<SiSupabase />}>Supabase</SkillTag>
+                            <SkillTag aosDelay={350} className="home-skill-tag home-skill-tag--typescript" iconClassName="home-skill-icon" icon={<SiTypescript />}>TypeScript</SkillTag>
                         </div>
                     </div>
                 </div>

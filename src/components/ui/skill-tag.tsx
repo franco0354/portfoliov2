@@ -8,6 +8,7 @@ interface SkillTagProps {
   aosDelay?: number;
   className?: string;
   icon?: React.ReactNode;
+  iconClassName?: string;
   year?: number;
   award?: boolean;
 }
@@ -18,6 +19,7 @@ export function SkillTag({
   aosDelay,
   className,
   icon,
+  iconClassName,
   year,
   award,
 }: SkillTagProps) {
@@ -53,14 +55,16 @@ export function SkillTag({
   return (
     <span
       className={cn(
-        "modern-card inline-flex items-center rounded-lg px-4 py-2.5 text-sm font-medium animate-fade-scale transition-transform hover:scale-105",
+        "modern-card inline-flex cursor-default items-center rounded-lg px-4 py-2.5 text-sm font-medium animate-fade-scale",
         delayClass,
         className
       )}
       data-aos="zoom-in"
       data-aos-delay={aosDelay}
     >
-      {icon && <span className="mr-2 shrink-0">{icon}</span>}
+      {icon && (
+        <span className={cn("mr-2 shrink-0", iconClassName)}>{icon}</span>
+      )}
       {children}
     </span>
   );

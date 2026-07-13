@@ -257,7 +257,9 @@
 }
 
 .home .inline-talents .modern-card,
-.home-skill-tag {
+.home .home-skill-tag.modern-card {
+  --skill-accent: var(--primary);
+  position: relative;
   padding: 0.45rem 0.85rem;
   border-radius: 0.35rem;
   font-size: 0.8rem;
@@ -265,23 +267,78 @@
   background: color-mix(in oklch, var(--card) 55%, transparent);
   backdrop-filter: blur(10px);
   border: 1px solid color-mix(in oklch, var(--border) 70%, transparent);
+  cursor: pointer;
   transition:
-    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.25s ease,
-    background 0.25s ease;
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.home-skill-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.05em;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease;
+}
+
+.home-skill-tag--react {
+  --skill-accent: #61dafb;
+}
+
+.home-skill-tag--nextjs {
+  --skill-accent: #ffffff;
+}
+
+.home-skill-tag--react-native {
+  --skill-accent: #61dafb;
+}
+
+.home-skill-tag--firebase {
+  --skill-accent: #ffca28;
+}
+
+.home-skill-tag--supabase {
+  --skill-accent: #3ecf8e;
+}
+
+.home-skill-tag--typescript {
+  --skill-accent: #3178c6;
 }
 
 .home .inline-talents .modern-card:hover,
-.home-skill-tag:hover {
+.home .home-skill-tag.modern-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: color-mix(in srgb, var(--skill-accent) 55%, transparent);
+  background: color-mix(in srgb, var(--skill-accent) 16%, transparent);
   box-shadow: none;
-  transform: translateY(-2px);
-  border-color: color-mix(in oklch, var(--primary) 50%, transparent);
-  background: color-mix(in oklch, var(--primary) 14%, transparent);
+}
+
+.home .home-skill-tag.modern-card:hover .home-skill-icon {
+  transform: scale(1.15) translateY(-1px);
+  color: var(--skill-accent);
 }
 
 .home .inline-talents .modern-card::before,
-.home-skill-tag::before {
+.home .home-skill-tag.modern-card::before {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-skill-tag,
+  .home-skill-icon {
+    transition: none;
+  }
+
+  .home-skill-tag:hover {
+    transform: none;
+  }
+
+  .home-skill-tag:hover .home-skill-icon {
+    transform: none;
+  }
 }
 
 @keyframes homePing {
@@ -379,8 +436,13 @@
 
 .home-on-photo .home-skill-tag:hover,
 .home-on-photo .inline-talents .modern-card:hover {
-  border-color: rgb(255 255 255 / 0.4);
-  background: rgb(255 255 255 / 0.16);
+  border-color: color-mix(in srgb, var(--skill-accent) 60%, transparent);
+  background: color-mix(in srgb, var(--skill-accent) 20%, rgb(255 255 255 / 0.08));
+  box-shadow: none;
+}
+
+.home-on-photo .home-skill-tag:hover .home-skill-icon {
+  color: var(--skill-accent);
 }
 
 /* —— Responsive —— */
@@ -491,7 +553,7 @@
     font-size: 0.85rem;
   }
 
-  .home .inline-talents .modern-card,
+  .home .home-skill-tag.modern-card,
   .home-skill-tag {
     padding: 0.35rem 0.7rem;
     font-size: 0.75rem;
