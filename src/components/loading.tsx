@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import Profile from "@/app/assets/img/transparent-profile1.png";
+import Logo from "@/app/assets/img/logo.png";
 
 export const LOAD_DURATION = 2000;
 
@@ -101,10 +101,10 @@ export default function Loading() {
 
           <div className="absolute inset-7 overflow-hidden rounded-full ring-1 ring-border/70 ring-offset-2 ring-offset-background">
             <Image
-              src={Profile}
-              alt=""
+              src={Logo}
+              alt="Logo"
               fill
-              className="object-cover object-top scale-110"
+              className="object-contain p-2"
               priority
             />
           </div>
