@@ -2,6 +2,15 @@
 
 import { MapPin, Clock, Mail, Phone } from "lucide-react";
 import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
+
+const infoItemHoverDelays = [0.1, 0.15, 0.2, 0.25] as const;
+
+const infoItemCardClassName =
+  "group flex items-center rounded-xl border border-border bg-background shadow-sm";
+
+const infoItemIconClassName =
+  "flex shrink-0 items-center justify-center rounded-lg bg-accent text-primary";
 
 const infoItems = [
   {
@@ -29,38 +38,79 @@ const infoItems = [
 
 ] as const;
 
+function InfoItemCard({
+  item,
+  index,
+  className,
+}: {
+  item: (typeof infoItems)[number];
+  index: number;
+  className?: string;
+}) {
+  const hoverDelay = infoItemHoverDelays[index];
+
+  return (
+    <motion.div
+      className={cn(infoItemCardClassName, className)}
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.06 }}
+      whileHover={{
+        y: -2,
+        borderColor: "var(--primary)",
+        backgroundColor: "var(--card)",
+        transition: { duration: 0.35, delay: hoverDelay, ease: "easeOut" },
+      }}
+      data-aos="fade-up"
+      data-aos-delay={index * 75}
+    >
+      <motion.div
+        className={cn(infoItemIconClassName, className?.includes("gap-4") ? "h-10 w-10" : "h-9 w-9")}
+        whileHover={{
+          scale: 1.08,
+          backgroundColor: "var(--secondary)",
+          transition: { duration: 0.35, delay: hoverDelay + 0.05, ease: "easeOut" },
+        }}
+      >
+        <item.icon className="h-4 w-4" />
+      </motion.div>
+      <div className="min-w-0 flex-1">
+        <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+          {item.title}
+        </p>
+        <p className="text-sm font-medium leading-snug break-words">
+          {"href" in item && item.href ? (
+            <motion.a
+              href={item.href}
+              className="inline-block"
+              whileHover={{
+                color: "var(--primary)",
+                x: 2,
+                transition: { duration: 0.35, delay: hoverDelay + 0.08, ease: "easeOut" },
+              }}
+            >
+              {item.value}
+            </motion.a>
+          ) : (
+            item.value
+          )}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
 export function ContactInfoMobile() {
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:hidden">
       {infoItems.map((item, index) => (
-        <div
+        <InfoItemCard
           key={item.title}
-          className="flex items-center gap-3 rounded-xl border border-border/60 bg-muted/30 p-3"
-          data-aos="fade-up"
-          data-aos-delay={index * 75}
-        >
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-            <item.icon className="h-4 w-4" />
-          </div>
-          <div className="min-w-0 flex-1">
-            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              {item.title}
-            </p>
-            <p className="text-sm font-medium leading-snug break-words">
-              {"href" in item && item.href ? (
-                <a
-                  href={item.href}
-                  className="transition-colors hover:text-primary"
-                >
-                  {item.value}
-                </a>
-              ) : (
-                item.value
-              )}
-            </p>
-          </div>
-
-        </div>
+          item={item}
+          index={index}
+          className="gap-3 bg-muted p-3"
+        />
       ))}
     </div>
   );
@@ -69,36 +119,23 @@ export function ContactInfoMobile() {
 export function ContactInfoPanel() {
   return (
     <div
-      className="relative hidden min-h-full overflow-hidden md:flex md:flex-col md:justify-between"
+      className="hidden min-h-full md:flex md:flex-col md:justify-between border-l border-border bg-muted p-8 lg:p-10"
       data-aos="fade-left"
       data-aos-delay="200"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-muted/40 to-background" />
-      <div
-        className="absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0)",
-          backgroundSize: "24px 24px",
-        }}
-      />
-      <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
-
-      <div className="relative flex h-full flex-col justify-between p-8 lg:p-10">
+      <div className="flex h-full flex-col justify-between">
         <div>
           <motion.span
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary"
+            className="inline-flex items-center gap-2 rounded-full border border-primary bg-accent px-3 py-1 text-xs font-medium text-primary"
             data-aos="fade-up"
             data-aos-delay="100"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60 opacity-75" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
             Available for new projects
@@ -127,37 +164,12 @@ export function ContactInfoPanel() {
 
           <div className="mt-8 space-y-3">
             {infoItems.map((item, index) => (
-              <motion.div
+              <InfoItemCard
                 key={item.title}
-                initial={{ opacity: 0, x: 12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.15 + index * 0.06 }}
-                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-background/60 p-4 backdrop-blur-sm transition-colors hover:border-primary/30 hover:bg-background/80"
-                data-aos="fade-up"
-                data-aos-delay={150 + index * 75}
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
-                  <item.icon className="h-4 w-4" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    {item.title}
-                  </p>
-                  <p className="text-sm font-medium">
-                    {"href" in item && item.href ? (
-                      <a
-                        href={item.href}
-                        className="transition-colors hover:text-primary"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      item.value
-                    )}
-                  </p>
-                </div>
-              </motion.div>
+                item={item}
+                index={index}
+                className="gap-4 p-4"
+              />
             ))}
           </div>
         </div>

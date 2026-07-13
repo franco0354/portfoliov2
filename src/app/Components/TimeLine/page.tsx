@@ -4,6 +4,7 @@ import { ImageLink } from "@/components/ui/image-link";
 import planing1 from '../../assets/img/planing-1.jpg'
 import planing2 from '../../assets/img/planing-2.jpg'
 import image2 from '../../assets/img/image-2.jpg'
+
 export default function TimelinePage() {
     const data = [
         {
@@ -11,15 +12,15 @@ export default function TimelinePage() {
             month: "Enrolla",
             content: (
                 <div>
-                    <p className="text-muted-foreground leading-relaxed text-justify md:text-left">
+                    <p className="timeline-copy">
                         Working as a <strong>Web Developer</strong> at{" "}
                         <strong>ENROLLA</strong>, an early-stage fintech startup focused on building modern financial tools.
-                        <span className="block text-sm mt-1 text-neutral-400">
-                            April 2026 – Present
-                        </span>
                     </p>
+                    <span className="timeline-date-badge">
+                        April 2026 – Present
+                    </span>
 
-                    <ul className="list-disc list-inside sm:list-outside sm:ml-4 text-muted-foreground space-y-1.5 mt-3 text-justify md:text-left text-sm sm:text-base">
+                    <ul className="timeline-list">
                         <li>
                             Building and maintaining data pipelines (Ads → Fivetran → BigQuery → dbt)
                         </li>
@@ -46,55 +47,52 @@ export default function TimelinePage() {
             year: "2025",
             month: "SnapTrail",
             content: (
-                <div className="space-y-6">
-                    {/* SnapTrail Section */}
-                    <div>
-                        <p className="text-muted-foreground leading-relaxed text-justify md:text-left">
-                            I am currently <strong>collaborating on projects</strong> at{" "}
-                            <a
-                                href="https://snaptrail.app/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline underline-offset-2 hover:text-primary transition-colors"
-                            >
-                                SnapTrail
-                            </a>{" "}
-                            as a <strong>Full Stack App Developer</strong>, where I build and maintain
-                            cross-platform mobile applications using{" "}
-                            <strong>React Native</strong> and <strong>Firebase</strong>.
-                        </p>
+                <div>
+                    <p className="timeline-copy">
+                        I am currently <strong>collaborating on projects</strong> at{" "}
+                        <a
+                            href="https://snaptrail.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="timeline-link"
+                        >
+                            SnapTrail
+                        </a>{" "}
+                        as a <strong>Full Stack App Developer</strong>, where I build and maintain
+                        cross-platform mobile applications using{" "}
+                        <strong>React Native</strong> and <strong>Firebase</strong>.
+                    </p>
 
-                        <p className="text-muted-foreground my-3 text-justify md:text-left">
-                            Key contributions include:
-                        </p>
+                    <p className="timeline-subsection-label mt-4">
+                        Key contributions
+                    </p>
 
-                        <ul className="list-disc list-inside sm:list-outside sm:ml-4 text-muted-foreground space-y-1.5 text-justify md:text-left text-sm sm:text-base">
-                            <li>
-                                Developed and integrated new features to improve functionality and deliver
-                                a smoother, more engaging user experience.
-                            </li>
-                            <li>
-                                Debugged, optimized, and restructured codebases to improve performance,
-                                scalability, and long-term maintainability.
-                            </li>
-                            <li>
-                                Mentored and supported new hires through onboarding, code reviews, and
-                                hands-on technical guidance.
-                            </li>
-                            <li>
-                                Collaborated with a distributed team using Git and GitHub for version control,
-                                pull requests, and CI/CD workflows.
-                            </li>
-                            <li>
-                                Proactively proposed and implemented efficient solutions to complex
-                                technical challenges across the product.
-                            </li>
-                        </ul>
-                    </div>
+                    <ul className="timeline-list">
+                        <li>
+                            Developed and integrated new features to improve functionality and deliver
+                            a smoother, more engaging user experience.
+                        </li>
+                        <li>
+                            Debugged, optimized, and restructured codebases to improve performance,
+                            scalability, and long-term maintainability.
+                        </li>
+                        <li>
+                            Mentored and supported new hires through onboarding, code reviews, and
+                            hands-on technical guidance.
+                        </li>
+                        <li>
+                            Collaborated with a distributed team using Git and GitHub for version control,
+                            pull requests, and CI/CD workflows.
+                        </li>
+                        <li>
+                            Proactively proposed and implemented efficient solutions to complex
+                            technical challenges across the product.
+                        </li>
+                    </ul>
 
-                    {/* Champion Blitz Section */}
-                    <div>
-                        <p className="mb-2 text-muted-foreground text-justify md:text-left">
+                    <div className="timeline-subsection">
+                        <p className="timeline-subsection-label">Achievement</p>
+                        <p className="timeline-copy">
                             On April 3, I won the{" "}
                             <strong>Champion Blitz programming competition</strong>, competing against
                             2nd, 3rd, and 4th-year college students and placing first—a milestone that
@@ -103,7 +101,7 @@ export default function TimelinePage() {
                         <ImageLink
                             src={image2}
                             alt="Champion Blitz Competition"
-                            className="w-full max-w-full object-cover aspect-video rounded-lg"
+                            className="w-full max-w-full object-cover aspect-video rounded-xl"
                             linkText="View Competition Image"
                         />
                     </div>
@@ -112,10 +110,10 @@ export default function TimelinePage() {
         },
         {
             year: "2023",
-            month: "College Journey",
+            month: "College",
             content: (
                 <div>
-                    <p className="mb-2 text-muted-foreground text-justify md:text-left">
+                    <p className="timeline-copy">
                         I began my college journey pursuing a <strong>Bachelor of Science in Information Systems</strong>,
                         where I built a strong foundation in flowcharts, programming fundamentals, and systems thinking.
                         Over time, I expanded into web development with modern frameworks such as{" "}
@@ -127,10 +125,10 @@ export default function TimelinePage() {
         },
         {
             year: "2022",
-            month: "Best in Research",
+            month: "Research",
             content: (
                 <div>
-                    <p className="mb-2 text-muted-foreground text-justify md:text-left">
+                    <p className="timeline-copy">
                         I started learning <strong>web development</strong> in 2021. During senior high school, I deepened
                         my skills and began building personal projects from the ground up. When our capstone research
                         project started, I took an active role in presenting and discussing our work with faculty. Our
@@ -139,7 +137,7 @@ export default function TimelinePage() {
                     </p>
                     <ImageLink
                         src={[planing1, planing2]}
-                        className="w-full sm:w-auto sm:max-w-xs md:w-56 object-cover aspect-video rounded-lg"
+                        className="w-full sm:w-auto sm:max-w-xs md:w-56 object-cover aspect-video rounded-xl"
                         alt={["Research Project 1", "Research Project 2"]}
                         linkText="View Research Images"
                     />
@@ -148,7 +146,7 @@ export default function TimelinePage() {
         },
     ];
     return (
-        <div className="relative w-full overflow-y-hidden pt-8 pb-12 ">
+        <div className="relative w-full overflow-y-hidden pt-8 pb-12">
             <Timeline data={data} />
         </div>
     );

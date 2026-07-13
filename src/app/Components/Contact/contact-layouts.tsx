@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/alert-dialog'
 
 const fieldClassName =
-    'h-11 rounded-xl border-border/60 bg-muted/30 px-3 pl-10 transition-all placeholder:text-muted-foreground/70 focus-visible:border-primary/50 focus-visible:bg-background focus-visible:ring-primary/20'
+    'h-11 rounded-xl border-border bg-muted px-3 pl-10 transition-all placeholder:text-muted-foreground focus-visible:border-primary focus-visible:bg-background focus-visible:ring-primary'
 
 function FormSkeleton() {
     return (
@@ -86,7 +86,7 @@ export function ContactLayouts({
         <div className={cn("flex flex-col gap-6", className)} {...props}>
             <ContactInfoMobile />
             <Card
-                className="overflow-hidden border-border/60 bg-card/80 py-0 shadow-lg backdrop-blur-sm"
+                className="overflow-hidden border-border bg-card py-0 shadow-lg"
                 data-aos="fade-up"
                 data-aos-delay="150"
             >
@@ -102,7 +102,7 @@ export function ContactLayouts({
                         >
                             <div className="flex flex-col gap-6">
                                 <div className="space-y-2" data-aos="fade-up" data-aos-delay="150">
-                                    <span className="inline-flex items-center rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-medium text-muted-foreground">
+                                    <span className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
                                         Get in touch
                                     </span>
                                     <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
@@ -166,7 +166,7 @@ export function ContactLayouts({
                                                 value={message}
                                                 required
                                                 disabled={isSubmitting}
-                                                className="min-h-[120px] resize-none rounded-xl border-border/60 bg-muted/30 py-3 pl-10 transition-all placeholder:text-muted-foreground/70 focus-visible:border-primary/50 focus-visible:bg-background focus-visible:ring-primary/20"
+                                                className="min-h-[120px] resize-none rounded-xl border-border bg-muted py-3 pl-10 transition-all placeholder:text-muted-foreground focus-visible:border-primary focus-visible:bg-background focus-visible:ring-primary"
                                             />
                                         </div>
                                     </div>
