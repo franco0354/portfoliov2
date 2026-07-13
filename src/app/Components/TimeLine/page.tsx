@@ -44,7 +44,7 @@ export default function TimelinePage() {
         },
         {
             year: "2025",
-            month: "SnapTrail / Champion Blitz",
+            month: "SnapTrail",
             content: (
                 <div className="space-y-6">
                     {/* SnapTrail Section */}

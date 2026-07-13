@@ -99,7 +99,7 @@ function TimelineItem({
             {item.year}
           </motion.h3>
           <p
-            className={`text-lg w-36 mt-1 transition-colors duration-500 ${isInView
+            className={`text-lg md:text-xl mt-1 transition-colors duration-500 ${isInView
               ? "text-neutral-600 dark:text-neutral-300"
               : "text-neutral-400 dark:text-neutral-600"
               }`}
@@ -109,7 +109,7 @@ function TimelineItem({
         </div>
       </div>
 
-      <div className="relative pl-4 sm:pl-6 md:pl-4 w-full min-w-0 max-md:overflow-hidden">
+      <div className="relative pl-4 sm:pl-6 md:pl-4 w-full min-w-0 flex-1 max-w-3xl lg:max-w-4xl">
         <div className="md:hidden block mb-3 sm:mb-4">
           <h3
             className={`text-xl sm:text-2xl font-bold transition-colors duration-500 ${isInView
@@ -169,14 +169,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         text="Timeline"
       />
       <p
-        className="text-justify md:text-center text-muted-foreground text-sm sm:text-base md:text-xl max-w-5xl mx-auto mb-6 sm:mb-10 px-1 sm:px-4 md:px-4"
+        className="text-justify md:text-center text-muted-foreground text-sm sm:text-base md:text-lg lg:text-xl max-w-6xl mx-auto mb-6 sm:mb-10 px-1 sm:px-4 md:px-6 leading-relaxed"
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        This timeline showcases my journey from being a student to starting my professional career, highlighting the key experiences and milestones along the way.
+        From senior high school research and college foundations to competition wins, freelance collaborations, and full-time work at a fintech startup — this timeline maps the experiences, projects, and milestones that shaped my growth as a developer.
       </p>
 
-      <div ref={ref} className="relative max-w-4xl mx-auto px-1 sm:px-4 md:px-16 pb-12 md:pb-20">
+      <div ref={ref} className="relative max-w-7xl mx-auto px-1 sm:px-4 md:px-8 lg:px-12 pb-12 md:pb-20">
         {data.map((item, index) => (
           <TimelineItem key={index} item={item} index={index} />
         ))}
@@ -184,7 +184,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           style={{
             height: height + "px",
           }}
-          className="absolute left-[15px] sm:left-[19px] md:left-24 top-0 z-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200/80 dark:via-neutral-700/80 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute left-[15px] sm:left-[19px] md:left-20 top-0 z-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200/80 dark:via-neutral-700/80 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{

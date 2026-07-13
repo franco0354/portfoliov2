@@ -9,31 +9,26 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
-import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiBootstrap, SiNodedotjs, SiYarn, SiGit, SiGithub, SiUnity, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiSass, SiPython, SiReact, SiTailwindcss, SiNotion, SiSupabase } from "react-icons/si";
+import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiNodedotjs, SiYarn, SiGit, SiGithub, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiPython, SiReact, SiTailwindcss, SiNotion, SiSupabase } from "react-icons/si";
 import "./About.modern.css";
 import { SkillTag } from "@/components/ui/skill-tag";
 
 const technologies = [
-    { label: "CSS3", icon: <SiCss3 /> },
-    { label: "TypeScript", icon: <SiTypescript /> },
-    { label: "Vercel", icon: <SiVercel /> },
-    { label: "Ant Design", icon: <SiAntdesign /> },
-    { label: "Bootstrap", icon: <SiBootstrap /> },
-    { label: "Node.js", icon: <SiNodedotjs /> },
-    { label: "Yarn", icon: <SiYarn /> },
-    { label: "Git", icon: <SiGit /> },
-    { label: "GitHub", icon: <SiGithub /> },
-    { label: "Unity", icon: <SiUnity /> },
-    { label: "Firebase", icon: <SiFirebase /> },
-    { label: "Next.js", icon: <SiNextdotjs /> },
-    { label: "JavaScript", icon: <SiJavascript /> },
-    { label: "HTML5", icon: <SiHtml5 /> },
-    { label: "SASS", icon: <SiSass /> },
-    { label: "Python", icon: <SiPython /> },
-    { label: "React", icon: <SiReact /> },
-    { label: "TailwindCSS", icon: <SiTailwindcss /> },
-    { label: "Notion", icon: <SiNotion /> },
-    { label: "Supabase", icon: <SiSupabase /> },
+    { label: "Next.js", icon: <SiNextdotjs />, year: 2021, award: true },
+    { label: "TailwindCSS", icon: <SiTailwindcss />, year: 2022, award: true },
+    { label: "Supabase", icon: <SiSupabase />, year: 2022, award: true },
+    { label: "GitHub", icon: <SiGithub />, year: 2022, award: true },
+    { label: "CSS3", icon: <SiCss3 />, year: 2021 },
+    { label: "TypeScript", icon: <SiTypescript />, year: 2021 },
+    { label: "Vercel", icon: <SiVercel />, year: 2021 },
+    { label: "Node.js", icon: <SiNodedotjs />, year: 2021 },
+    { label: "Git", icon: <SiGit />, year: 2022 },
+    { label: "Firebase", icon: <SiFirebase />, year: 2021 },
+    { label: "JavaScript", icon: <SiJavascript />, year: 2021 },
+    { label: "HTML5", icon: <SiHtml5 />, year: 2021 },
+    { label: "Python", icon: <SiPython />, year: 2022 },
+    { label: "React", icon: <SiReact />, year: 2021 },
+    { label: "Notion", icon: <SiNotion />, year: 2023 },
 ] as const;
 
 const CarouselExample = () => {
@@ -161,6 +156,8 @@ const CarouselExample = () => {
                                 delay={(index % 10) + 1}
                                 aosDelay={(index % 8) * 50}
                                 icon={tech.icon}
+                                year={tech.year}
+                                award={"award" in tech ? tech.award : undefined}
                                 className="w-full justify-center"
                             >
                                 {tech.label}
