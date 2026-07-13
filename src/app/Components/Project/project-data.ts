@@ -3,7 +3,17 @@ import TodoList from '@/app/assets/img/todolist.png'
 import Weather from '@/app/assets/img/weather.png'
 import Scanner from '@/app/assets/img/Scanner.jpg'
 import PinoyCode from '@/app/assets/img/PinoyCodex.png'
+import Analytics from '@/app/assets/img/analytics.png'
 export const ProjectData = [
+    {
+        projectURL: Analytics,
+        title: "Analytics",
+        description: "A analytics dashboard for tracking website traffic and user behavior. Built to help businesses understand their audience and make data-driven decisions.",
+        icon: ["Next Js", "Supabase", "Tailwind", "Zustand", "Fivetran", "BigQuery", "Resend"],
+        id: 6,
+        link: "https://analytics-dashboard-bice.vercel.app/",
+        github: "https://github.com/akatsuki0354/analytics-dashboard"
+    },
     {
         projectURL: PinoyCode,
         title: "Pinoy Codex",
@@ -46,6 +56,7 @@ export const ProjectData = [
         link: "#",
         github: "#"
     },
+
 
 ]
 export type ProjectLayoutsProps = {

@@ -67,7 +67,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
       <div
         className="relative h-20 w-full md:h-28"
         aria-hidden="true"
