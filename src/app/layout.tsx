@@ -36,7 +36,7 @@ export default function RootLayout({
                 background: #ffffff;
               }
               html.dark {
-                background: #242424;
+                background: #0a0a0a;
               }
               body:has(#initial-loader) {
                 overflow: hidden;
@@ -76,7 +76,7 @@ export default function RootLayout({
                   var theme = localStorage.getItem('theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                   var isDark = theme === 'dark' || (!theme && prefersDark);
-                  var bg = isDark ? '#242424' : '#ffffff';
+                  var bg = isDark ? '#0a0a0a' : '#ffffff';
                   
                   if (isDark) {
                     document.documentElement.classList.add('dark');
@@ -87,7 +87,7 @@ export default function RootLayout({
                   document.documentElement.style.backgroundColor = bg;
                 } catch (e) {
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var bg = prefersDark ? '#242424' : '#ffffff';
+                  var bg = prefersDark ? '#0a0a0a' : '#ffffff';
                   if (prefersDark) {
                     document.documentElement.classList.add('dark');
                   }
