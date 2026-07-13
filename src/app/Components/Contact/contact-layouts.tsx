@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/alert-dialog'
 
 const fieldClassName =
-    'h-11 rounded-xl border-border/60 bg-muted/30 px-3 pl-10 transition-all placeholder:text-muted-foreground/70 focus-visible:border-primary/50 focus-visible:bg-background focus-visible:ring-primary/20 dark:bg-muted/20'
+    'h-11 rounded-xl border-border/60 bg-muted/30 px-3 pl-10 transition-all placeholder:text-muted-foreground/70 focus-visible:border-primary/50 focus-visible:bg-background focus-visible:ring-primary/20'
 
 function FormSkeleton() {
     return (
@@ -166,7 +166,7 @@ export function ContactLayouts({
                                                 value={message}
                                                 required
                                                 disabled={isSubmitting}
-                                                className="min-h-[120px] resize-none rounded-xl border-border/60 bg-muted/30 py-3 pl-10 transition-all placeholder:text-muted-foreground/70 focus-visible:border-primary/50 focus-visible:bg-background focus-visible:ring-primary/20 dark:bg-muted/20"
+                                                className="min-h-[120px] resize-none rounded-xl border-border/60 bg-muted/30 py-3 pl-10 transition-all placeholder:text-muted-foreground/70 focus-visible:border-primary/50 focus-visible:bg-background focus-visible:ring-primary/20"
                                             />
                                         </div>
                                     </div>

@@ -14,7 +14,7 @@ export default function TimelinePage() {
                     <p className="text-muted-foreground leading-relaxed text-justify md:text-left">
                         Working as a <strong>Web Developer</strong> at{" "}
                         <strong>ENROLLA</strong>, an early-stage fintech startup focused on building modern financial tools.
-                        <span className="block text-sm mt-1 text-neutral-400 dark:text-neutral-500">
+                        <span className="block text-sm mt-1 text-neutral-400">
                             April 2026 – Present
                         </span>
                     </p>

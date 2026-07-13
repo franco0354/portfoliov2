@@ -11,7 +11,7 @@ function TextHeader(props: { text: string, variant?: 'main' | 'sub', delay?: num
 
                 {/* Main text container */}
                 <div className={`mx-3 sm:mx-6 text-justify md:text-center ${isSubHeader ? 'mx-2 sm:mx-4' : ''}`}>
-                    <h1 className={`font-light text-gray-900 dark:text-gray-100 tracking-wide ${isSubHeader
+                    <h1 className={`font-light text-gray-900 tracking-wide ${isSubHeader
                             ? 'text-2xl sm:text-3xl md:text-4xl'
                             : 'text-3xl sm:text-4xl md:text-6xl lg:text-7xl'
                         }`}>

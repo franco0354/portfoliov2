@@ -2,17 +2,13 @@
 
 import * as React from 'react';
 import { useInView, type UseInViewOptions } from 'motion/react';
-import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 import { CopyButton } from '@/components/animate-ui/buttons/copy';
 
 type CodeEditorProps = Omit<React.ComponentProps<'div'>, 'onCopy'> & {
   children: string;
   lang: string;
-  themes?: {
-    light: string;
-    dark: string;
-  };
+  theme?: string;
   duration?: number;
   delay?: number;
   header?: boolean;
@@ -32,10 +28,7 @@ type CodeEditorProps = Omit<React.ComponentProps<'div'>, 'onCopy'> & {
 function CodeEditor({
   children: code,
   lang,
-  themes = {
-    light: 'github-light',
-    dark: 'github-dark',
-  },
+  theme = 'github-light',
   duration = 5,
   delay = 0,
   className,
@@ -53,7 +46,6 @@ function CodeEditor({
   onCopy,
   ...props
 }: CodeEditorProps) {
-  const { resolvedTheme } = useTheme();
 
   const editorRef = React.useRef<HTMLDivElement>(null);
   const [visibleCode, setVisibleCode] = React.useState('');
@@ -75,11 +67,7 @@ function CodeEditor({
 
         const highlighted = await codeToHtml(visibleCode, {
           lang,
-          themes: {
-            light: themes.light,
-            dark: themes.dark,
-          },
-          defaultColor: resolvedTheme === 'dark' ? 'dark' : 'light',
+          theme,
         });
 
         setHighlightedCode(highlighted);
@@ -91,13 +79,12 @@ function CodeEditor({
     loadHighlightedCode();
   }, [
     lang,
-    themes,
+    theme,
     writing,
     isInView,
     duration,
     delay,
     visibleCode,
-    resolvedTheme,
   ]);
 
   React.useEffect(() => {
@@ -151,7 +138,7 @@ function CodeEditor({
       {...props}
     >
       {header ? (
-        <div className="bg-muted border-b border-border/75 dark:border-border/50 relative flex flex-row items-center justify-between gap-y-2 h-10 px-4">
+        <div className="bg-muted border-b border-border/75 relative flex flex-row items-center justify-between gap-y-2 h-10 px-4">
           {dots && (
             <div className="flex flex-row gap-x-2">
               <div className="size-2 rounded-full bg-red-500"></div>
@@ -189,7 +176,7 @@ function CodeEditor({
               content={code}
               size="sm"
               variant="ghost"
-              className="-me-2 bg-transparent hover:bg-black/5 dark:hover:bg-white/10"
+              className="-me-2 bg-transparent hover:bg-black/5"
               onCopy={onCopy}
             />
           ) : null}
@@ -200,7 +187,7 @@ function CodeEditor({
             content={code}
             size="sm"
             variant="ghost"
-            className="absolute right-2 top-2 z-[2] backdrop-blur-md bg-transparent hover:bg-black/5 dark:hover:bg-white/10"
+            className="absolute right-2 top-2 z-[2] backdrop-blur-md bg-transparent hover:bg-black/5"
             onCopy={onCopy}
           />
         )

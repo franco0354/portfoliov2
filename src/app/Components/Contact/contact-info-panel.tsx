@@ -74,9 +74,9 @@ export function ContactInfoPanel() {
       data-aos-delay="200"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-muted/40 to-background dark:from-primary/15 dark:via-muted/20 dark:to-card" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-muted/40 to-background" />
       <div
-        className="absolute inset-0 opacity-[0.35] dark:opacity-[0.2]"
+        className="absolute inset-0 opacity-[0.35]"
         style={{
           backgroundImage:
             "radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0)",
@@ -133,7 +133,7 @@ export function ContactInfoPanel() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.15 + index * 0.06 }}
-                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-background/60 p-4 backdrop-blur-sm transition-colors hover:border-primary/30 hover:bg-background/80 dark:bg-background/30 dark:hover:bg-background/40"
+                className="group flex items-center gap-4 rounded-xl border border-border/60 bg-background/60 p-4 backdrop-blur-sm transition-colors hover:border-primary/30 hover:bg-background/80"
                 data-aos="fade-up"
                 data-aos-delay={150 + index * 75}
               >

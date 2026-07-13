@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { LOAD_DURATION } from '@/components/loading';
 
 export const usePageState = () => {
-    const [mode, setMode] = useState<'light' | 'dark'>('light');
     const [activeSection, setActiveSection] = useState('Home');
     const [isOverInput, setIsOverInput] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -33,13 +32,8 @@ export const usePageState = () => {
         };
     }, []);
 
-    // Initialize theme and loading state
+    // Initialize loading state
     useEffect(() => {
-        const storedMode = localStorage.getItem('theme') as 'light' | 'dark' | null;
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        const initialMode = storedMode || (prefersDark ? 'dark' : 'light');
-        setMode(initialMode);
         setIsLoaded(true);
 
         const timer = setTimeout(() => {
@@ -49,36 +43,6 @@ export const usePageState = () => {
         }, LOAD_DURATION);
 
         return () => clearTimeout(timer);
-    }, []);
-
-    // Apply theme to document
-    useEffect(() => {
-        if (!isLoaded) return;
-
-        localStorage.setItem('theme', mode);
-
-        if (mode === 'dark') {
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-            document.body.classList.remove('dark');
-        }
-    }, [mode, isLoaded]);
-
-    // Listen for system theme changes
-    useEffect(() => {
-        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-        const handleChange = (e: MediaQueryListEvent) => {
-            const storedTheme = localStorage.getItem('theme');
-            if (!storedTheme) {
-                setMode(e.matches ? 'dark' : 'light');
-            }
-        };
-
-        mediaQuery.addEventListener('change', handleChange);
-        return () => mediaQuery.removeEventListener('change', handleChange);
     }, []);
 
     // Scroll-based active section detection
@@ -105,10 +69,9 @@ export const usePageState = () => {
             }
         };
 
-        // Add a small delay to ensure DOM is ready
         const timer = setTimeout(() => {
             window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Initial check
+            handleScroll();
         }, 100);
 
         return () => {
@@ -117,16 +80,10 @@ export const usePageState = () => {
         };
     }, [isLoaded]);
 
-    const toggleMode = () => {
-        setMode(mode === 'light' ? 'dark' : 'light');
-    };
-
     return {
-        mode,
         activeSection,
         isOverInput,
         isLoaded,
         isLoading,
-        toggleMode
     };
-}; 
+};

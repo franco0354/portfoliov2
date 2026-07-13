@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --background: oklch(0.97 0.018 155);
   --foreground: oklch(0.28 0.055 148);
@@ -53,57 +51,6 @@
   --spacing: 0.25rem;
   --section: oklch(0.18 0.05 148);
   --section-alt: oklch(0.18 0.05 148);
-}
-
-.dark {
-  --background: oklch(0.04 0 0);
-  --foreground: oklch(0.9851 0 0);
-  --card: oklch(0.09 0 0);
-  --card-foreground: oklch(0.9851 0 0);
-  --popover: oklch(0.11 0 0);
-  --popover-foreground: oklch(0.9851 0 0);
-  --primary: oklch(0.5555 0 0);
-  --primary-foreground: oklch(0.9851 0 0);
-  --secondary: oklch(0.11 0 0);
-  --secondary-foreground: oklch(0.9851 0 0);
-  --muted: oklch(0.11 0 0);
-  --muted-foreground: oklch(0.709 0 0);
-  --accent: oklch(0.16 0 0);
-  --accent-foreground: oklch(0.9851 0 0);
-  --destructive: oklch(0.7022 0.1892 22.2279);
-  --destructive-foreground: oklch(0.11 0 0);
-  --border: oklch(0.18 0 0);
-  --input: oklch(0.22 0 0);
-  --ring: oklch(0.5555 0 0);
-  --chart-1: oklch(0.5555 0 0);
-  --chart-2: oklch(0.5555 0 0);
-  --chart-3: oklch(0.5555 0 0);
-  --chart-4: oklch(0.5555 0 0);
-  --chart-5: oklch(0.5555 0 0);
-  --sidebar: oklch(0.07 0 0);
-  --sidebar-foreground: oklch(0.9851 0 0);
-  --sidebar-primary: oklch(0.9851 0 0);
-  --sidebar-primary-foreground: oklch(0.07 0 0);
-  --sidebar-accent: oklch(0.11 0 0);
-  --sidebar-accent-foreground: oklch(0.9851 0 0);
-  --sidebar-border: oklch(1 0 0);
-  --sidebar-ring: oklch(0.4386 0 0);
-
-  --radius: 0rem;
-  --shadow-2xs: 0px 1px 0px 0px hsl(0 0% 0% / 0);
-  --shadow-xs: 0px 1px 0px 0px hsl(0 0% 0% / 0);
-  --shadow-sm:
-    0px 1px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
-  --shadow: 0px 1px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
-  --shadow-md:
-    0px 1px 0px 0px hsl(0 0% 0% / 0), 0px 2px 4px -1px hsl(0 0% 0% / 0);
-  --shadow-lg:
-    0px 1px 0px 0px hsl(0 0% 0% / 0), 0px 4px 6px -1px hsl(0 0% 0% / 0);
-  --shadow-xl:
-    0px 1px 0px 0px hsl(0 0% 0% / 0), 0px 8px 10px -1px hsl(0 0% 0% / 0);
-  --shadow-2xl: 0px 1px 0px 0px hsl(0 0% 0% / 0);
-  --section: oklch(0.04 0 0);
-  --section-alt: oklch(0.06 0 0);
 }
 
 @theme inline {
@@ -170,38 +117,38 @@
   }
 }
 
-/* Light mode — same dark green, different opacity per section */
-html:not(.dark) #Home {
+/* Section backgrounds and themed surfaces */
+#Home {
   background: oklch(0.18 0.05 148);
 }
 
-html:not(.dark) #About {
+#About {
   background: oklch(0.18 0.05 148);
 }
 
-html:not(.dark) #Project {
+#Project {
   background: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
 }
 
-html:not(.dark) #Timeline {
+#Timeline {
   background: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
 }
 
-html:not(.dark) #Contact {
+#Contact {
   background: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
 }
 
-html:not(.dark) footer {
+footer {
   background: color-mix(in oklch, oklch(0.18 0.05 148) 85%, white);
 }
 
-/* Dark green sections — white text + themed surfaces (light mode only) */
-html:not(.dark) #Home,
-html:not(.dark) #About,
-html:not(.dark) #Project,
-html:not(.dark) #Timeline,
-html:not(.dark) #Contact,
-html:not(.dark) footer {
+/* Green sections — white text + themed surfaces */
+#Home,
+#About,
+#Project,
+#Timeline,
+#Contact,
+footer {
   color: oklch(0.985 0 0);
   --foreground: oklch(0.985 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -217,7 +164,7 @@ html:not(.dark) footer {
   --chart-3: oklch(0.58 0.06 155);
 }
 
-html:not(.dark) #Home {
+#Home {
   --background: oklch(0.18 0.05 148);
   --card: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
   --popover: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
@@ -228,7 +175,7 @@ html:not(.dark) #Home {
   --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
 }
 
-html:not(.dark) #About {
+#About {
   --background: oklch(0.18 0.05 148);
   --card: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
   --popover: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
@@ -239,7 +186,7 @@ html:not(.dark) #About {
   --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
 }
 
-html:not(.dark) #Project {
+#Project {
   --background: color-mix(in oklch, oklch(0.18 0.05 148) 78%, white);
   --card: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
   --popover: color-mix(in oklch, oklch(0.18 0.05 148) 88%, white);
@@ -250,7 +197,7 @@ html:not(.dark) #Project {
   --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
 }
 
-html:not(.dark) #Timeline {
+#Timeline {
   --background: color-mix(in oklch, oklch(0.18 0.05 148) 92%, white);
   --card: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
   --popover: color-mix(in oklch, oklch(0.18 0.05 148) 86%, white);
@@ -261,7 +208,7 @@ html:not(.dark) #Timeline {
   --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 80%, white);
 }
 
-html:not(.dark) #Contact {
+#Contact {
   --background: color-mix(in oklch, oklch(0.18 0.05 148) 82%, white);
   --card: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
   --popover: color-mix(in oklch, oklch(0.18 0.05 148) 76%, white);
@@ -272,7 +219,7 @@ html:not(.dark) #Contact {
   --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 70%, white);
 }
 
-html:not(.dark) footer {
+footer {
   --background: color-mix(in oklch, oklch(0.18 0.05 148) 85%, white);
   --card: color-mix(in oklch, oklch(0.18 0.05 148) 79%, white);
   --popover: color-mix(in oklch, oklch(0.18 0.05 148) 79%, white);
@@ -283,8 +230,7 @@ html:not(.dark) footer {
   --secondary: color-mix(in oklch, oklch(0.18 0.05 148) 73%, white);
 }
 
-html:not(.dark)
-  #Home
+#Home
   :is(
     .text-gray-900,
     .text-gray-800,
@@ -300,8 +246,7 @@ html:not(.dark)
     .text-accent-foreground,
     .text-card-foreground
   ),
-html:not(.dark)
-  #About
+#About
   :is(
     .text-gray-900,
     .text-gray-800,
@@ -317,8 +262,7 @@ html:not(.dark)
     .text-accent-foreground,
     .text-card-foreground
   ),
-html:not(.dark)
-  #Project
+#Project
   :is(
     .text-gray-900,
     .text-gray-800,
@@ -334,8 +278,7 @@ html:not(.dark)
     .text-accent-foreground,
     .text-card-foreground
   ),
-html:not(.dark)
-  #Timeline
+#Timeline
   :is(
     .text-gray-900,
     .text-gray-800,
@@ -351,8 +294,7 @@ html:not(.dark)
     .text-accent-foreground,
     .text-card-foreground
   ),
-html:not(.dark)
-  #Contact
+#Contact
   :is(
     .text-gray-900,
     .text-gray-800,
@@ -371,18 +313,18 @@ html:not(.dark)
   color: oklch(0.985 0 0);
 }
 
-html:not(.dark) #Home .bg-gray-300,
-html:not(.dark) #About .bg-gray-300,
-html:not(.dark) #Project .bg-gray-300,
-html:not(.dark) #Timeline .bg-gray-300 {
+#Home .bg-gray-300,
+#About .bg-gray-300,
+#Project .bg-gray-300,
+#Timeline .bg-gray-300 {
   background-color: oklch(0.62 0.04 150);
 }
 
-html:not(.dark) #Contact .bg-gray-300 {
+#Contact .bg-gray-300 {
   background-color: oklch(0.72 0.045 150);
 }
 
-html:not(.dark) footer .bg-gray-300 {
+footer .bg-gray-300 {
   background-color: oklch(0.68 0.04 148);
 }
 
@@ -392,24 +334,20 @@ html:not(.dark) footer .bg-gray-300 {
     @apply bg-gradient-to-b from-background via-background/80 to-muted/40;
   }
 
-  .bg-section-dark {
-    @apply dark:from-background dark:via-background/80 dark:to-muted/60;
-  }
-
   .bg-compatible {
-    @apply bg-background/50 dark:bg-background/50;
+    @apply bg-background/50;
   }
 
   .bg-subtle {
-    @apply bg-muted/30 dark:bg-muted/30;
+    @apply bg-muted/30;
   }
 
   .bg-elevated {
-    @apply bg-card dark:bg-card;
+    @apply bg-card;
   }
 
   .bg-light-to-dark {
-    @apply bg-gradient-to-b from-background via-background/80 to-muted/40 dark:from-background dark:via-background/80 dark:to-muted/60;
+    @apply bg-gradient-to-b from-background via-background/80 to-muted/40;
   }
 }
 
@@ -457,17 +395,6 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-.dark .background-gradient {
-  background: linear-gradient(
-    135deg,
-    #020617 0%,
-    #0f172a 25%,
-    #1e293b 50%,
-    #334155 75%,
-    #475569 100%
-  );
-}
-
 /* Animated mesh gradient overlay - Bold accent colors */
 .mesh-gradient {
   position: absolute;
@@ -495,26 +422,6 @@ body {
   opacity: 0.8;
 }
 
-.dark .mesh-gradient {
-  background:
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(59, 130, 246, 0.5) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(16, 185, 129, 0.5) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
-      rgba(245, 158, 11, 0.4) 0%,
-      transparent 50%
-    );
-  opacity: 0.6;
-}
-
 /* Floating geometric shapes - Sharp, professional */
 .floating-shapes {
   position: absolute;
@@ -536,15 +443,6 @@ body {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(59, 130, 246, 0.3);
   animation: float 8s ease-in-out infinite;
-}
-
-.dark .floating-shape {
-  background: linear-gradient(
-    45deg,
-    rgba(59, 130, 246, 0.3),
-    rgba(16, 185, 129, 0.3)
-  );
-  border: 2px solid rgba(59, 130, 246, 0.4);
 }
 
 .floating-shape:nth-child(1) {
@@ -624,13 +522,6 @@ body {
   animation: gridMove 20s linear infinite;
 }
 
-.dark .grid-pattern {
-  background-image:
-    linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
-  opacity: 0.4;
-}
-
 /* Noise texture - Subtle grain */
 .noise-texture {
   position: absolute;
@@ -641,10 +532,6 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   opacity: 0.03;
   mix-blend-mode: overlay;
-}
-
-.dark .noise-texture {
-  opacity: 0.05;
 }
 
 /* Animated particles - Bold, confident */
@@ -665,11 +552,6 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
   animation: particleFloat 10s linear infinite;
-}
-
-.dark .particle {
-  background: #60a5fa;
-  box-shadow: 0 0 15px rgba(96, 165, 250, 0.9);
 }
 
 .particle:nth-child(1) {
@@ -964,20 +846,6 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.dark .dynamic-gradient {
-  background: linear-gradient(
-    -45deg,
-    #020617,
-    #0f172a,
-    #1e293b,
-    #334155,
-    #3b82f6,
-    #1e40af
-  );
-  background-size: 400% 400%;
-  opacity: 0.2;
-}
-
 /* Aurora effect - Tech-inspired */
 .aurora-effect {
   position: absolute;
@@ -1006,11 +874,6 @@ body {
   background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent);
   animation: breathing 6s ease-in-out infinite;
   border: 2px solid rgba(59, 130, 246, 0.2);
-}
-
-.dark .breathing-circle {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent);
-  border: 2px solid rgba(59, 130, 246, 0.3);
 }
 
 .breathing-circle:nth-child(1) {
@@ -1162,32 +1025,6 @@ body {
   transform: translateY(-2px);
 }
 
-.dark .section-bg-enhanced {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.02) 50%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.dark .section-bg-enhanced:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.04) 50%,
-    rgba(255, 255, 255, 0.08) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
 /* Floating orbs with glow - Bold, tech-inspired */
 .floating-orb {
   position: absolute;
@@ -1222,21 +1059,6 @@ body {
   bottom: 20%;
   left: 20%;
   animation-delay: 6s;
-}
-
-.dark .floating-orb:nth-child(1) {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.5), transparent);
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
-}
-
-.dark .floating-orb:nth-child(2) {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.5), transparent);
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
-}
-
-.dark .floating-orb:nth-child(3) {
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.5), transparent);
-  box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
 }
 
 /* Modern Micro-Interactions and Enhanced Animations */

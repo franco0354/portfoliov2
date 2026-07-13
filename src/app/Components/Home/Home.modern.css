@@ -437,7 +437,11 @@
 .home-on-photo .home-skill-tag:hover,
 .home-on-photo .inline-talents .modern-card:hover {
   border-color: color-mix(in srgb, var(--skill-accent) 60%, transparent);
-  background: color-mix(in srgb, var(--skill-accent) 20%, rgb(255 255 255 / 0.08));
+  background: color-mix(
+    in srgb,
+    var(--skill-accent) 20%,
+    rgb(255 255 255 / 0.08)
+  );
   box-shadow: none;
 }
 

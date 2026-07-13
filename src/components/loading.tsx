@@ -50,10 +50,10 @@ export default function Loading() {
       aria-valuemax={100}
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-[38%] size-[min(90vw,520px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px] dark:bg-primary/20" />
-        <div className="absolute -bottom-24 -right-16 size-80 rounded-full bg-foreground/4 blur-[90px] dark:bg-foreground/[0.07]" />
+        <div className="absolute left-1/2 top-[38%] size-[min(90vw,520px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
+        <div className="absolute -bottom-24 -right-16 size-80 rounded-full bg-foreground/4 blur-[90px]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_72%)]" />
-        <div className="absolute inset-0 opacity-[0.035] dark:opacity-[0.06] bg-[radial-gradient(var(--foreground)_0.5px,transparent_0.5px)] bg-size-[28px_28px]" />
+        <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(var(--foreground)_0.5px,transparent_0.5px)] bg-size-[28px_28px]" />
       </div>
 
       <motion.div
@@ -97,7 +97,7 @@ export default function Loading() {
             </svg>
           </motion.div>
 
-          <div className="absolute inset-5 rounded-full bg-linear-to-br from-foreground/6 via-transparent to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] dark:from-foreground/8" />
+          <div className="absolute inset-5 rounded-full bg-linear-to-br from-foreground/6 via-transparent to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]" />
 
           <div className="absolute inset-7 overflow-hidden rounded-full ring-1 ring-border/70 ring-offset-2 ring-offset-background">
             <Image

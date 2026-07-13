@@ -117,7 +117,7 @@ export function AnimatedBackground({
       {(variant === 'geometric' || variant === 'all') && (
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 left-20 w-32 h-32 border-2 border-blue-200 dark:border-blue-800 rounded-full"
+            className="absolute top-20 left-20 w-32 h-32 border-2 border-blue-200 rounded-full"
             animate={{
               rotate: 360,
               scale: [1, 1.1, 1],
@@ -143,7 +143,7 @@ export function AnimatedBackground({
             }}
           />
           <motion.div
-            className="absolute bottom-32 left-32 w-20 h-20 border border-indigo-300 dark:border-indigo-700 transform rotate-45"
+            className="absolute bottom-32 left-32 w-20 h-20 border border-indigo-300 transform rotate-45"
             animate={{
               rotate: [45, 405],
               scale: [1, 1.2, 1]
@@ -161,7 +161,7 @@ export function AnimatedBackground({
       {(variant === 'wave' || variant === 'all') && (
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-blue-100/30 dark:from-blue-900/30 to-transparent"
+            className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-blue-100/30 to-transparent"
             animate={{
               y: [0, -10, 0],
               opacity: [0.3, 0.6, 0.3]
@@ -173,7 +173,7 @@ export function AnimatedBackground({
             }}
           />
           <motion.div
-            className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-purple-100/20 dark:from-purple-900/20 to-transparent"
+            className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-purple-100/20 to-transparent"
             animate={{
               y: [0, -15, 0],
               opacity: [0.2, 0.5, 0.2]
@@ -202,7 +202,7 @@ export function AnimatedBackground({
           {Array.from({ length: 6 }, (_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-blue-400 dark:bg-blue-600 rounded-full"
+              className="absolute w-2 h-2 bg-blue-400 rounded-full"
               style={{
                 left: `${20 + i * 15}%`,
                 top: `${30 + i * 10}%`
@@ -225,7 +225,7 @@ export function AnimatedBackground({
 
       {/* Subtle Grid Overlay */}
       {(variant === 'all') && (
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:50px_50px] opacity-30" />
       )}
     </div>
   );

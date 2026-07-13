@@ -44,7 +44,7 @@ function AnimatedWaveLayer({
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden dark:bg-section-alt max-md:text-justify">
+    <footer className="relative overflow-hidden max-md:text-justify">
       <div className="px-4 pt-10 md:px-6">
         <div className="container mx-auto pb-10">
           <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
@@ -73,12 +73,12 @@ export default function Footer() {
       >
         <AnimatedWaveLayer
           path={backWavePath}
-          className="fill-primary/15 dark:fill-primary/25"
+          className="fill-primary/15"
           duration={22}
         />
         <AnimatedWaveLayer
           path={frontWavePath}
-          className="fill-primary/10 dark:fill-primary/20"
+          className="fill-primary/10"
           duration={16}
           reverse
         />

@@ -94,9 +94,9 @@ export function ImageLink({
       <button
         type="button"
         onClick={toggleImageVisibility}
-        className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-foreground/4 px-4 py-2 text-sm font-medium text-foreground/80 ring-1 ring-foreground/10 transition-all duration-300 hover:bg-foreground/7 hover:text-foreground hover:ring-foreground/20 dark:bg-white/6 dark:ring-white/10 dark:hover:bg-white/10 dark:hover:ring-white/20"
+        className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-foreground/4 px-4 py-2 text-sm font-medium text-foreground/80 ring-1 ring-foreground/10 transition-all duration-300 hover:bg-foreground/7 hover:text-foreground hover:ring-foreground/20"
       >
-        <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-foreground/6 to-transparent transition-transform duration-700 group-hover:translate-x-full dark:via-white/8" />
+        <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-foreground/6 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
         <Expand
           size={14}
           className="relative shrink-0 text-primary transition-transform duration-300 group-hover:scale-110"
@@ -114,7 +114,7 @@ export function ImageLink({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           onClick={openModal}
-          className="group/preview relative mt-3 block w-full max-w-full overflow-hidden rounded-2xl ring-1 ring-foreground/10 transition-all duration-300 hover:ring-foreground/20 dark:ring-white/10 dark:hover:ring-white/20"
+          className="group/preview relative mt-3 block w-full max-w-full overflow-hidden rounded-2xl ring-1 ring-foreground/10 transition-all duration-300 hover:ring-foreground/20"
         >
           <Image
             src={imageSources[currentImageIndex]}

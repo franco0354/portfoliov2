@@ -123,7 +123,7 @@ const CarouselExample = () => {
                             text="My Code Philosophy"
                         />
                     </div>
-                    <div className=" dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl ">
+                    <div className=" rounded-xl ">
                         <p
                             className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed px-2 text-justify lg:text-center md:text-left"
                             data-aos="fade-up"

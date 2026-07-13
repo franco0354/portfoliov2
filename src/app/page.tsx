@@ -25,7 +25,7 @@ const nunito = Nunito({
 })
 
 const sectionClass =
-  "scroll-mt-14 sm:scroll-mt-16 px-4 py-8 sm:px-6 sm:py-10 md:p-10 text-white dark:bg-section dark:text-foreground";
+  "scroll-mt-14 sm:scroll-mt-16 px-4 py-8 sm:px-6 sm:py-10 md:p-10 text-white";
 
 export default function Page() {
   const { isLoading, isOverInput } = usePageState();
@@ -44,7 +44,7 @@ export default function Page() {
         {isLoading && <Loading key="portfolio-loading" />}
       </AnimatePresence>
       <Spotlight
-        className='bg-primary/30 dark:bg-primary/20 blur-3xl'
+        className='bg-primary/30 blur-3xl'
         size={64}
         springOptions={{
           bounce: 0.3,
@@ -87,12 +87,12 @@ export default function Page() {
             {/* Flat green opacity over the photo — same green, opacity only */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 pointer-events-none bg-[oklch(0.18_0.05_148)]/75 dark:bg-black/75"
+              className="absolute inset-0 pointer-events-none bg-[oklch(0.18_0.05_148)]/75"
             />
             {/* Left → right fade — desktop only */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 pointer-events-none hidden md:block dark:hidden"
+              className="absolute inset-0 pointer-events-none hidden md:block"
               style={{
                 background:
                   "linear-gradient(to right, oklch(0.18 0.05 148) 0%, oklch(0.18 0.05 148) 42%, oklch(0.18 0.05 148 / 0.7) 58%, transparent 78%)",
@@ -100,15 +100,7 @@ export default function Page() {
             />
             <div
               aria-hidden="true"
-              className="absolute inset-0 pointer-events-none hidden dark:md:block"
-              style={{
-                background:
-                  "linear-gradient(to right, rgb(0 0 0) 0%, rgb(0 0 0) 42%, rgb(0 0 0 / 0.7) 58%, transparent 78%)",
-              }}
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-40 pointer-events-none bg-gradient-to-t from-[oklch(0.18_0.05_148)] via-[oklch(0.18_0.05_148)]/70 to-transparent dark:from-black dark:via-black/70"
+              className="absolute inset-x-0 bottom-0 h-40 pointer-events-none bg-gradient-to-t from-[oklch(0.18_0.05_148)] via-[oklch(0.18_0.05_148)]/70 to-transparent"
             />
             <div className="relative z-10 home-on-photo flex flex-1 flex-col min-h-0 w-full min-w-0 max-w-full px-4 sm:px-6 md:px-10">
               <Home />
@@ -124,7 +116,7 @@ export default function Page() {
           </section>
           <section
             id="Timeline"
-            className="min-h-screen scroll-mt-14 sm:scroll-mt-16 px-4 py-10 sm:px-6 sm:py-12 md:p-10 text-white dark:bg-section-alt dark:text-foreground"
+            className="min-h-screen scroll-mt-14 sm:scroll-mt-16 px-4 py-10 sm:px-6 sm:py-12 md:p-10 text-white"
           >
             <TimelinePage />
           </section>

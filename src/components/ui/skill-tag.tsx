@@ -36,11 +36,11 @@ export function SkillTag({
         data-aos="zoom-in"
         data-aos-delay={aosDelay}
       >
-        <span className="absolute top-2 left-2.5 whitespace-nowrap rounded-full bg-foreground/8 px-2 py-0.5 text-[0.6rem] font-normal tracking-wide opacity-70 dark:bg-white/10">
+        <span className="absolute top-2 left-2.5 whitespace-nowrap rounded-full bg-foreground/8 px-2 py-0.5 text-[0.6rem] font-normal tracking-wide opacity-70">
           {year}
         </span>
         {award && (
-          <span className="absolute top-2 right-2.5 inline-flex items-center rounded-full bg-primary/15 p-1 text-primary dark:bg-primary/25">
+          <span className="absolute top-2 right-2.5 inline-flex items-center rounded-full bg-primary/15 p-1 text-primary">
             <Award size={10} />
           </span>
         )}
