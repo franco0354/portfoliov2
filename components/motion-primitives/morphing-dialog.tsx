@@ -245,13 +245,15 @@ function MorphingDialogContainer({ children }: MorphingDialogContainerProps) {
         <>
           <motion.div
             key={`backdrop-${uniqueId}`}
-            className='fixed inset-0 h-full w-full bg-white/40 backdrop-blur-xs'
+            className='fixed inset-0 z-40 h-full w-full bg-[oklch(0.18_0.05_148)]/75 backdrop-blur-xl'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           />
-          <div className='fixed inset-0 z-50 flex items-center justify-center'>
-            {children}
+          <div className='fixed inset-0 z-50 overflow-y-auto overscroll-y-contain'>
+            <div className='flex min-h-full items-center justify-center p-4 sm:p-6'>
+              {children}
+            </div>
           </div>
         </>
       )}
