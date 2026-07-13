@@ -2,6 +2,8 @@ import {
     Carousel,
     CarouselMainContainer,
     CarouselThumbsContainer,
+    CarouselNext,
+    CarouselPrevious,
     SliderMainItem,
     SliderThumbItem,
 } from "@/components/ui/extension/carousel";
@@ -9,8 +11,28 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
-import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiNodedotjs, SiYarn, SiGit, SiGithub, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiPython, SiReact, SiTailwindcss, SiNotion, SiSupabase, SiGooglebigquery, SiResend, SiUnity } from "react-icons/si";
+import {
+    SiCss3,
+    SiTypescript,
+    SiVercel,
+    SiNodedotjs,
+    SiGit,
+    SiGithub,
+    SiFirebase,
+    SiNextdotjs,
+    SiJavascript,
+    SiHtml5,
+    SiPython,
+    SiReact,
+    SiTailwindcss,
+    SiNotion,
+    SiSupabase,
+    SiGooglebigquery,
+    SiResend,
+    SiUnity,
+} from "react-icons/si";
 import { SiFivetran, SiZustand } from "@/components/icons/brand-icons";
+import { FileCode2, Layers, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
 import "./About.modern.css";
 import { SkillTag } from "@/components/ui/skill-tag";
 
@@ -37,143 +59,185 @@ const technologies = [
     { label: "Unity", icon: <SiUnity />, year: 2024 },
 ] as const;
 
-const CarouselExample = () => {
+const highlights = [
+    { label: "Full Stack", value: "Web development" },
+    { label: "Focus", value: "UI + backend systems" },
+    { label: "Approach", value: "Team & solo delivery" },
+] as const;
+
+const philosophyPrinciples = [
+    {
+        icon: FileCode2,
+        title: "Readable by default",
+        description:
+            "Clear naming, small focused functions, and early returns keep logic easy to scan at a glance.",
+    },
+    {
+        icon: Layers,
+        title: "DRY & consistent",
+        description:
+            "Repeated patterns become reusable components, with Prettier and shared style guides keeping the codebase uniform.",
+    },
+    {
+        icon: MessageSquareText,
+        title: "Comments with purpose",
+        description:
+            "When complexity appears, comments explain why—not just what—so future changes stay safe and intentional.",
+    },
+    {
+        icon: ShieldCheck,
+        title: "Quality guardrails",
+        description:
+            "Feature-based organization, regular refactors, tests, and ESLint catch issues before they reach production.",
+    },
+] as const;
+
+function About() {
     return (
-        <div className="pt-8 md:pt-24 text-justify md:text-center text-base sm:text-lg md:text-xl">
-            <TextHeader
-                text="About"
-            />
-            <blockquote
-                className="mb-6 w-fit max-w-4xl mx-auto text-muted-foreground text-base sm:text-lg md:text-xl border-l-2 border-muted-foreground/40 pl-4 pr-2 italic text-justify md:text-left"
-                data-aos="fade-up"
-                data-aos-delay="100"
-            >
-                <TextAnimate animation="blurIn" as="h1" duration={1}>
-                    &quot;Great developers aren&#39;t born—they&#39;re shaped through consistency, curiosity, and clean code.&quot;
-                </TextAnimate>
-            </blockquote>
+        <div className="about-shell">
+            <TextHeader text="About" />
 
-            <div
-                className="flex flex-col md:flex-row justify-center place-items-center w-full max-w-4xl mx-auto px-2 gap-4 min-w-0"
-                data-aos="zoom-in"
-                data-aos-delay="200"
-            >
-                <Carousel orientation="horizontal">
-                    <div className="relative min-w-0 flex-1 md:basis-3/4 w-full">
-                        <CarouselMainContainer className="h-48 sm:h-56 md:h-72">
-                            {photoData.map((id) => (
-                                <SliderMainItem
-                                    key={id.id}
-                                    className="border border-muted flex overflow-hidden items-center justify-center h-48 sm:h-56 md:h-72 rounded-md"
-                                >
-                                    <Image src={id.photoURL.src} alt="" width={id.photoURL.width} height={id.photoURL.height} className="object-contain" />
-                                </SliderMainItem>
-                            ))}
-                        </CarouselMainContainer>
-                    </div>
-                    <CarouselThumbsContainer className="h-24 sm:h-32 md:h-40 min-w-0 flex-1 md:basis-1/4 w-full mt-4 md:mt-0">
-                        {photoData.map((id, idx) => (
-                            <SliderThumbItem
-                                key={id.id}
-                                index={idx}
-                                className="rounded-md bg-transparent cursor-pointer "
-                            >
-                                <Image src={id.photoURL.src} alt="" width={id.photoURL.width} height={id.photoURL.height} className="object-cover aspect-video " />
-                            </SliderThumbItem>
-                        ))}
-                    </CarouselThumbsContainer>
-                </Carousel>
+            <div className="about-intro" data-aos="fade-up" data-aos-delay="100">
 
+                <figure className="about-quote-card">
+                    <blockquote className="about-quote-text">
+                        <TextAnimate animation="blurIn" as="span" duration={1}>
+                            &quot;Great developers aren&apos;t born—they&apos;re shaped through consistency, curiosity, and clean code.&quot;
+                        </TextAnimate>
+                    </blockquote>
+                </figure>
             </div>
 
-            {/* About Me Section */}
-            <div className="flex justify-center mt-12" data-aos="fade-up" data-aos-delay="100">
-                <div className="max-w-7xl">
-                    <div className="mb-6">
-                        <TextHeader
-                            variant="sub"
-                            text="Who I Am"
-                        />
+            <div className="about-bento">
+                <div
+                    className="about-gallery-card"
+                    data-aos="fade-up"
+                    data-aos-delay="150"
+                >
+                    <div className="about-card-header">
+                        <p className="about-card-eyebrow">Gallery</p>
+                        <h2 className="about-card-title">Moments behind the work</h2>
                     </div>
-                    <p
-                        className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed px-2 text-justify lg:text-center md:text-left"
-                        data-aos="fade-up"
-                        data-aos-delay="150"
-                    >
-                        <TextAnimate animation="blurIn" duration={1} as="h1">
-                            I&apos;m Franco, a creative problem-solver and passionate web developer based in Bulacan,
-                            Philippines. I love turning ideas into interactive, user-focused digital experiences. I believe
-                            the best products strike a balance between great design and solid engineering—and I aim to
-                            build websites and apps that not only look good, but feel intuitive to use. Beyond crafting
-                            seamless frontends, I also enjoy designing reliable, scalable backend systems that keep
-                            everything running smoothly behind the scenes. Whether I&apos;m collaborating with a team or
-                            learning something new on my own, I bring the same attention to detail and drive to deliver
-                            work I&apos;m proud of.
+
+                    <Carousel orientation="horizontal">
+                        <div className="about-carousel-main">
+                            <CarouselPrevious className="about-carousel-nav about-carousel-nav--prev" />
+                            <CarouselNext className="about-carousel-nav about-carousel-nav--next" />
+
+                            <CarouselMainContainer className="about-carousel-track">
+                                {photoData.map((id) => (
+                                    <SliderMainItem
+                                        key={id.id}
+                                        className="about-carousel-slide"
+                                    >
+                                        <Image
+                                            src={id.photoURL.src}
+                                            alt="About gallery photo"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="about-carousel-image"
+                                        />
+                                    </SliderMainItem>
+                                ))}
+                            </CarouselMainContainer>
+                        </div>
+
+                        <CarouselThumbsContainer className="about-carousel-thumbs">
+                            {photoData.map((id, idx) => (
+                                <SliderThumbItem
+                                    key={id.id}
+                                    index={idx}
+                                    className="about-carousel-thumb basis-1/4"
+                                >
+                                    <Image
+                                        src={id.photoURL.src}
+                                        alt=""
+                                        fill
+                                        sizes="80px"
+                                        className="about-carousel-thumb-image"
+                                    />
+                                </SliderThumbItem>
+                            ))}
+                        </CarouselThumbsContainer>
+                    </Carousel>
+                </div>
+
+                <div
+                    className="about-profile-card"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                >
+                    <TextHeader variant="sub" text="Who I Am" />
+
+                    <p className="about-profile-copy">
+                        <TextAnimate animation="blurIn" duration={1} as="span">
+                            I'm a creative problem-solver and passionate web developer who loves turning ideas into interactive, user-focused experiences. I believe great design meets great function, and I aim to build websites that not only look good—but feel right to use. Alongside crafting seamless interfaces, I also enjoy building reliable and scalable back-end systems that keep everything running smoothly behind the scenes.
                         </TextAnimate>
                     </p>
-                </div>
-            </div>
 
-            {/* Clean Code Philosophy Section */}
-            <div className="flex justify-center mt-12" data-aos="fade-up" data-aos-delay="100">
-                <div className="max-w-7xl">
-                    <div className="mb-6">
-                        <TextHeader
-                            variant="sub"
-                            text="My Code Philosophy"
-                        />
-                    </div>
-                    <div className=" rounded-xl ">
-                        <p
-                            className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed px-2 text-justify lg:text-center md:text-left"
-                            data-aos="fade-up"
-                            data-aos-delay="150"
-                        >
-                            <TextAnimate animation="blurIn" duration={1.2} as="h1">
-                                I believe clean code is a craft, not an accident. I name variables and functions clearly
-                                so their purpose is obvious at a glance. I keep functions small and focused—each one
-                                should do one thing well. Rather than deeply nested conditions, I prefer early returns
-                                to keep logic easy to follow.
-                                I follow the DRY principle: when something repeats, I extract it into a reusable function
-                                or component. Consistent formatting with tools like Prettier and a shared style guide
-                                keeps the codebase uniform across the team.
-                                When logic gets complex, I add comments that explain why—not just what. I organize files
-                                by feature, refactor regularly, and write tests to catch bugs early. Linters like ESLint
-                                help me spot issues before they reach production.
-                            </TextAnimate>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Skills Section */}
-            <div className="flex justify-center mt-12 w-full" data-aos="fade-up" data-aos-delay="100">
-                <div className="w-full max-w-7xl px-2">
-                    <div className="mb-6">
-                        <TextHeader
-                            variant="sub"
-                            text="Technologies I Work With"
-                        />
-                    </div>
-                    <div className="tech-skills-grid grid w-full grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                        {technologies.map((tech, index) => (
-                            <SkillTag
-                                key={tech.label}
-                                delay={(index % 10) + 1}
-                                aosDelay={(index % 8) * 50}
-                                icon={tech.icon}
-                                year={tech.year}
-                                award={"award" in tech ? tech.award : undefined}
-                                className="about-skill-tag w-full justify-center"
+                    <div className="about-highlights">
+                        {highlights.map((item, index) => (
+                            <div
+                                key={item.label}
+                                className="about-highlight"
+                                data-aos="fade-up"
+                                data-aos-delay={250 + index * 75}
                             >
-                                {tech.label}
-                            </SkillTag>
+                                <span className="about-highlight-label">{item.label}</span>
+                                <span className="about-highlight-value">{item.value}</span>
+                            </div>
                         ))}
                     </div>
                 </div>
             </div>
+
+            <section className="about-philosophy" data-aos="fade-up" data-aos-delay="100">
+                <TextHeader variant="sub" text="My Code Philosophy" />
+
+                <div className="about-philosophy-grid">
+                    {philosophyPrinciples.map((principle, index) => (
+                        <article
+                            key={principle.title}
+                            className="about-principle-card"
+                            data-aos="fade-up"
+                            data-aos-delay={150 + index * 75}
+                        >
+                            <div className="about-principle-icon">
+                                <principle.icon className="size-5" aria-hidden="true" />
+                            </div>
+                            <h3 className="about-principle-title">{principle.title}</h3>
+                            <p className="about-principle-copy">{principle.description}</p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <section className="about-skills" data-aos="fade-up" data-aos-delay="100">
+                <div className="about-skills-header">
+                    <TextHeader variant="sub" text="Technologies I Work With" />
+                    <p className="about-skills-lead">
+                        A toolkit built across frontend, backend, and product delivery—from interface polish to data and deployment.
+                    </p>
+                </div>
+
+                <div className="tech-skills-grid about-skills-grid">
+                    {technologies.map((tech, index) => (
+                        <SkillTag
+                            key={tech.label}
+                            delay={(index % 10) + 1}
+                            aosDelay={(index % 8) * 50}
+                            icon={tech.icon}
+                            year={tech.year}
+                            award={"award" in tech ? tech.award : undefined}
+                            className="about-skill-tag w-full justify-center"
+                        >
+                            {tech.label}
+                        </SkillTag>
+                    ))}
+                </div>
+            </section>
         </div>
     );
-};
+}
 
-export default CarouselExample;
+export default About;

@@ -5,7 +5,7 @@ import { TextAnimate } from '@/components/magicui/text-animate'
 import TextHeader from '@/components/text-header'
 function Project() {
     return (
-        <div className='pt-8 pb-12 md:pt-24 md:pb-24'>
+        <div className='pt-8 pb-12'>
             <TextHeader
                 text="Project"
             />

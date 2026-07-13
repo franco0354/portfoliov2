@@ -4,9 +4,9 @@ import { TextAnimate } from '@/components/magicui/text-animate'
 import TextHeader from '@/components/text-header'
 function Contact() {
     return (
-        <div className='pb-12 md:pb-24'>
-             <TextHeader
-            text="Contact"
+        <div className='pt-8 pb-12'>
+            <TextHeader
+                text="Contact"
             />
             <p
                 className="text-justify md:text-center text-muted-foreground text-base sm:text-lg md:text-xl max-w-5xl mx-auto mb-6 sm:mb-10 px-4"
