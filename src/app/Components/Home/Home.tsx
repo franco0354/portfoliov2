@@ -39,7 +39,7 @@ function Home() {
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
-                            Hi! I'm Franco!
+                            Hi! I&apos;m Franco!
                         </h1>
 
                         <p

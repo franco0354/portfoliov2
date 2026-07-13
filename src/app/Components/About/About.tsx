@@ -32,7 +32,7 @@ import {
     SiUnity,
 } from "react-icons/si";
 import { SiFivetran, SiZustand } from "@/components/icons/brand-icons";
-import { FileCode2, Layers, MapPin, MessageSquareText, ShieldCheck } from "lucide-react";
+import { FileCode2, Layers, MessageSquareText, ShieldCheck } from "lucide-react";
 import "./About.modern.css";
 import { SkillTag } from "@/components/ui/skill-tag";
 
@@ -171,7 +171,7 @@ function About() {
 
                     <p className="about-profile-copy">
                         <TextAnimate animation="blurIn" duration={1} as="span">
-                            I'm a creative problem-solver and passionate web developer who loves turning ideas into interactive, user-focused experiences. I believe great design meets great function, and I aim to build websites that not only look good—but feel right to use. Alongside crafting seamless interfaces, I also enjoy building reliable and scalable back-end systems that keep everything running smoothly behind the scenes.
+                            I&apos;m a creative problem-solver and passionate web developer who loves turning ideas into interactive, user-focused experiences. I believe great design meets great function, and I aim to build websites that not only look good—but feel right to use. Alongside crafting seamless interfaces, I also enjoy building reliable and scalable back-end systems that keep everything running smoothly behind the scenes.
                         </TextAnimate>
                     </p>
 

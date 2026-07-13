@@ -43,7 +43,7 @@ export default function Loading() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-background"
-      role="status"
+      role="progressbar"
       aria-label="Loading portfolio"
       aria-valuenow={progress}
       aria-valuemin={0}
