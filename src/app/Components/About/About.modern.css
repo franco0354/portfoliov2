@@ -43,3 +43,22 @@
   border-color: rgb(255 255 255 / 0.22);
   background: rgb(255 255 255 / 0.1);
 }
+
+#About .tech-skills-grid .about-skill-tag {
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.6s ease,
+    background 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+#About .tech-skills-grid .about-skill-tag::before {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#About .tech-skills-grid .about-skill-tag:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: rgb(255 255 255 / 0.45);
+  background: rgb(255 255 255 / 0.18);
+  box-shadow: 0 14px 32px rgb(0 0 0 / 0.22);
+}

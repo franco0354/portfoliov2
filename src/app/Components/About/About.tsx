@@ -155,7 +155,7 @@ const CarouselExample = () => {
                             text="Technologies I Work With"
                         />
                     </div>
-                    <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                    <div className="tech-skills-grid grid w-full grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                         {technologies.map((tech, index) => (
                             <SkillTag
                                 key={tech.label}
@@ -164,7 +164,7 @@ const CarouselExample = () => {
                                 icon={tech.icon}
                                 year={tech.year}
                                 award={"award" in tech ? tech.award : undefined}
-                                className="w-full justify-center"
+                                className="about-skill-tag w-full justify-center"
                             >
                                 {tech.label}
                             </SkillTag>

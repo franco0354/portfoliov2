@@ -27,7 +27,7 @@ export function SkillTag({
     return (
       <span
         className={cn(
-          "modern-card relative flex min-h-17 w-full flex-col items-center justify-center px-3 pb-2.5 pt-6 text-sm font-medium animate-fade-scale transition-transform hover:scale-105",
+          "modern-card relative flex min-h-17 w-full flex-col items-center justify-center px-3 pb-2.5 pt-6 text-sm font-medium animate-fade-scale",
           delayClass,
           className
         )}
