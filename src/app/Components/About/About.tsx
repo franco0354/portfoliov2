@@ -9,7 +9,8 @@ import { photoData } from "./About-data";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Image from "next/image";
 import TextHeader from "@/components/text-header";
-import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiNodedotjs, SiYarn, SiGit, SiGithub, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiPython, SiReact, SiTailwindcss, SiNotion, SiSupabase } from "react-icons/si";
+import { SiCss3, SiTypescript, SiVercel, SiAntdesign, SiNodedotjs, SiYarn, SiGit, SiGithub, SiFirebase, SiNextdotjs, SiJavascript, SiHtml5, SiPython, SiReact, SiTailwindcss, SiNotion, SiSupabase, SiGooglebigquery, SiResend, SiUnity } from "react-icons/si";
+import { SiFivetran, SiZustand } from "@/components/icons/brand-icons";
 import "./About.modern.css";
 import { SkillTag } from "@/components/ui/skill-tag";
 
@@ -29,6 +30,11 @@ const technologies = [
     { label: "Python", icon: <SiPython />, year: 2022 },
     { label: "React", icon: <SiReact />, year: 2021 },
     { label: "Notion", icon: <SiNotion />, year: 2023 },
+    { label: "BigQuery", icon: <SiGooglebigquery />, year: 2024 },
+    { label: "Zustand", icon: <SiZustand />, year: 2024 },
+    { label: "Fivetran", icon: <SiFivetran />, year: 2024 },
+    { label: "Resend", icon: <SiResend />, year: 2024 },
+    { label: "Unity", icon: <SiUnity />, year: 2024 },
 ] as const;
 
 const CarouselExample = () => {
