@@ -11,7 +11,7 @@ export const ProjectData = [
         description: "A analytics dashboard for tracking website traffic and user behavior. Built to help businesses understand their audience and make data-driven decisions.",
         icon: ["Next Js", "Supabase", "Tailwind", "Zustand", "Fivetran", "BigQuery", "Resend"],
         id: 6,
-        link: "https://admanagerenrollment.vercel.app",
+        link: "https://admanagerenrolla.vercel.app/",
         github: "https://github.com/akatsuki0354/analytics-dashboard"
     },
     {
