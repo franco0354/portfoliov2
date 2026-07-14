@@ -4,10 +4,8 @@ import { MapPin, Clock, Mail, Phone } from "lucide-react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-const infoItemHoverDelays = [0.1, 0.15, 0.2, 0.25] as const;
-
 const infoItemCardClassName =
-  "group flex items-center rounded-xl border border-border bg-background shadow-sm";
+  "flex items-center rounded-xl border border-border bg-background shadow-sm";
 
 const infoItemIconClassName =
   "flex shrink-0 items-center justify-center rounded-lg bg-accent text-primary";
@@ -47,8 +45,6 @@ function InfoItemCard({
   index: number;
   className?: string;
 }) {
-  const hoverDelay = infoItemHoverDelays[index];
-
   return (
     <motion.div
       className={cn(infoItemCardClassName, className)}
@@ -56,42 +52,23 @@ function InfoItemCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
-      whileHover={{
-        y: -2,
-        borderColor: "var(--primary)",
-        backgroundColor: "var(--card)",
-        transition: { duration: 0.35, delay: hoverDelay, ease: "easeOut" },
-      }}
       data-aos="fade-up"
       data-aos-delay={index * 75}
     >
-      <motion.div
+      <div
         className={cn(infoItemIconClassName, className?.includes("gap-4") ? "h-10 w-10" : "h-9 w-9")}
-        whileHover={{
-          scale: 1.08,
-          backgroundColor: "var(--secondary)",
-          transition: { duration: 0.35, delay: hoverDelay + 0.05, ease: "easeOut" },
-        }}
       >
         <item.icon className="h-4 w-4" />
-      </motion.div>
+      </div>
       <div className="min-w-0 flex-1">
         <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
           {item.title}
         </p>
         <p className="text-sm font-medium leading-snug break-words">
           {"href" in item && item.href ? (
-            <motion.a
-              href={item.href}
-              className="inline-block"
-              whileHover={{
-                color: "var(--primary)",
-                x: 2,
-                transition: { duration: 0.35, delay: hoverDelay + 0.08, ease: "easeOut" },
-              }}
-            >
+            <a href={item.href} className="inline-block">
               {item.value}
-            </motion.a>
+            </a>
           ) : (
             item.value
           )}
