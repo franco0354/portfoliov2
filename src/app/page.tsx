@@ -27,7 +27,6 @@ const nunito = Nunito({
 const sectionClass =
   "scroll-mt-14 sm:scroll-mt-16 px-4 py-8 sm:px-6 sm:py-10 md:p-10";
 const sectionClassDark = `${sectionClass} text-white`;
-const sectionClassLight = `${sectionClass} text-[oklch(0.26_0.05_148)]`;
 
 export default function Page() {
   const { isLoading, isOverInput } = usePageState();
