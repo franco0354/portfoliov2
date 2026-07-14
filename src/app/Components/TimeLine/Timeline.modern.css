@@ -299,7 +299,7 @@
 .timeline-content-card {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 1.25rem;
+  border-radius: 0.5rem;
   border: 1px solid rgb(255 255 255 / 0.14);
   background:
     linear-gradient(160deg, rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.03)),
@@ -339,7 +339,7 @@
   align-items: center;
   gap: 0.35rem;
   margin-top: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.375rem;
   border: 1px solid rgb(255 255 255 / 0.12);
   background: rgb(255 255 255 / 0.06);
   padding: 0.25rem 0.6rem;
@@ -401,6 +401,10 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgb(255 255 255 / 0.52);
+}
+
+#Timeline [class*="group/preview"] {
+  border-radius: 0.375rem;
 }
 
 .timeline-link {

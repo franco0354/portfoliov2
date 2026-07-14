@@ -101,7 +101,7 @@ export default function TimelinePage() {
                         <ImageLink
                             src={image2}
                             alt="Champion Blitz Competition"
-                            className="w-full max-w-full object-cover aspect-video rounded-xl"
+                            className="w-full max-w-full object-cover aspect-video rounded-md"
                             linkText="View Competition Image"
                         />
                     </div>
@@ -137,7 +137,7 @@ export default function TimelinePage() {
                     </p>
                     <ImageLink
                         src={[planing1, planing2]}
-                        className="w-full sm:w-auto sm:max-w-xs md:w-56 object-cover aspect-video rounded-xl"
+                        className="w-full sm:w-auto sm:max-w-xs md:w-56 object-cover aspect-video rounded-md"
                         alt={["Research Project 1", "Research Project 2"]}
                         linkText="View Research Images"
                     />
