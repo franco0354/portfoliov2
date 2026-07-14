@@ -96,18 +96,17 @@ function About() {
     return (
         <div className="about-shell">
             <TextHeader text="About" />
-
-            <div className="about-intro" data-aos="fade-up" data-aos-delay="100">
-
-                <figure className="about-quote-card">
-                    <blockquote className="about-quote-text">
-                        <TextAnimate animation="blurIn" as="span" duration={1}>
-                            &quot;Great developers aren&apos;t born—they&apos;re shaped through consistency, curiosity, and clean code.&quot;
-                        </TextAnimate>
-                    </blockquote>
-                </figure>
-            </div>
-
+            <p
+                className="text-justify  md:text-center text-muted-foreground text-base sm:text-lg md:text-xl max-w-5xl mx-auto mb-12 sm:mb-10 px-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+            >
+                <TextAnimate animation="blurIn" duration={1} as="span">
+                    A closer look at the person behind the projects—my approach to building,
+                    the principles I follow, and the stack I use to bring products from idea to
+                    production.
+                </TextAnimate>
+            </p>
             <div className="about-bento">
                 <div
                     className="about-gallery-card"
@@ -236,6 +235,8 @@ function About() {
                     ))}
                 </div>
             </section>
+
+
         </div>
     );
 }
