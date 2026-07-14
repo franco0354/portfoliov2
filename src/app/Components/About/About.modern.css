@@ -1,4 +1,4 @@
-/* Modern About — bento layout with glass surfaces */
+/* Modern About — dark emerald section with solid surfaces */
 
 .animate-delay-1 {
   animation-delay: 0.1s;
@@ -17,16 +17,16 @@
 }
 
 #About {
-  color: white;
+  color: oklch(0.985 0 0);
 }
 
 #About h1,
 #About .text-gray-900 {
-  color: white;
+  color: oklch(0.985 0 0);
 }
 
 #About .text-muted-foreground {
-  color: rgb(255 255 255 / 0.82);
+  color: oklch(0.86 0.02 155);
 }
 
 .about-shell {
@@ -61,15 +61,14 @@
   align-items: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  border: 1px solid rgb(255 255 255 / 0.18);
-  background: rgb(255 255 255 / 0.08);
+  border: 1px solid oklch(0.38 0.04 150);
+  background: oklch(0.24 0.05 150);
   padding: 0.45rem 0.9rem;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgb(255 255 255 / 0.88);
-  backdrop-filter: blur(10px);
+  color: oklch(0.9 0.02 155);
 }
 
 .about-quote-card {
@@ -78,11 +77,8 @@
   margin: 0;
   padding: 1.35rem 1.25rem;
   border-radius: 0.5rem;
-  border: 1px solid rgb(255 255 255 / 0.14);
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.03)),
-    rgb(255 255 255 / 0.04);
-  backdrop-filter: blur(14px);
+  border: 1px solid oklch(0.38 0.04 150);
+  background: oklch(0.24 0.05 150);
 }
 
 .about-quote-card::before {
@@ -92,7 +88,7 @@
   left: 1rem;
   font-size: 3rem;
   line-height: 1;
-  color: rgb(255 255 255 / 0.18);
+  color: oklch(0.42 0.04 150);
   pointer-events: none;
 }
 
@@ -102,7 +98,7 @@
   font-size: clamp(1rem, 2.2vw, 1.35rem);
   font-style: italic;
   line-height: 1.65;
-  color: rgb(255 255 255 / 0.9);
+  color: oklch(0.92 0.02 155);
 }
 
 .about-bento {
@@ -122,11 +118,8 @@
 .about-gallery-card,
 .about-profile-card,
 .about-principle-card {
-  border: 1px solid rgb(255 255 255 / 0.14);
-  background:
-    linear-gradient(160deg, rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.03)),
-    rgb(255 255 255 / 0.04);
-  backdrop-filter: blur(14px);
+  border: 1px solid oklch(0.38 0.04 150);
+  background: oklch(0.24 0.05 150);
 }
 
 .about-gallery-card,
@@ -152,7 +145,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgb(255 255 255 / 0.58);
+  color: oklch(0.72 0.03 155);
 }
 
 .about-card-title {
@@ -160,7 +153,7 @@
   font-size: clamp(1.15rem, 2vw, 1.5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: white;
+  color: oklch(0.985 0 0);
 }
 
 .about-carousel-main {
@@ -198,8 +191,8 @@
   height: 12rem;
   overflow: hidden;
   border-radius: 0.375rem;
-  border: 1px solid rgb(255 255 255 / 0.12);
-  background: rgb(0 0 0 / 0.18);
+  border: 1px solid oklch(0.38 0.04 150);
+  background: oklch(0.14 0.04 148);
 }
 
 @media (min-width: 640px) {
@@ -221,15 +214,14 @@
 }
 
 .about-carousel-nav {
-  border-color: rgb(255 255 255 / 0.2);
-  background: rgb(0 0 0 / 0.45);
-  color: white;
-  backdrop-filter: blur(8px);
+  border-color: oklch(0.42 0.04 150);
+  background: oklch(0.14 0.04 148);
+  color: oklch(0.985 0 0);
 }
 
 .about-carousel-nav:hover {
-  background: rgb(0 0 0 / 0.62);
-  color: white;
+  background: oklch(0.12 0.035 148);
+  color: oklch(0.985 0 0);
 }
 
 .about-carousel-nav--prev {
@@ -251,8 +243,8 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: 0.25rem;
-  border: 1px solid rgb(255 255 255 / 0.12);
-  background: rgb(255 255 255 / 0.04);
+  border: 1px solid oklch(0.38 0.04 150);
+  background: oklch(0.22 0.045 150);
   padding: 0;
   transition:
     border-color 0.25s ease,
@@ -268,7 +260,7 @@
 
 .about-carousel-thumb:hover {
   transform: translateY(-2px);
-  border-color: rgb(255 255 255 / 0.28);
+  border-color: oklch(0.55 0.06 150);
 }
 
 .about-carousel-thumb-image {
@@ -285,7 +277,7 @@
   margin: 0 0 1rem;
   font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   line-height: 1.75;
-  color: rgb(255 255 255 / 0.84);
+  color: oklch(0.88 0.02 155);
   text-align: justify;
 }
 
@@ -313,8 +305,8 @@
   gap: 0.2rem;
   padding: 0.85rem 0.95rem;
   border-radius: 0.375rem;
-  border: 1px solid rgb(255 255 255 / 0.12);
-  background: rgb(255 255 255 / 0.06);
+  border: 1px solid oklch(0.38 0.04 150);
+  background: oklch(0.22 0.045 150);
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
@@ -323,8 +315,8 @@
 
 .about-highlight:hover {
   transform: translateY(-2px);
-  border-color: rgb(255 255 255 / 0.24);
-  background: rgb(255 255 255 / 0.1);
+  border-color: oklch(0.52 0.055 150);
+  background: oklch(0.26 0.05 150);
 }
 
 .about-highlight-label {
@@ -332,14 +324,14 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgb(255 255 255 / 0.55);
+  color: oklch(0.7 0.03 155);
 }
 
 .about-highlight-value {
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.35;
-  color: white;
+  color: oklch(0.985 0 0);
 }
 
 .about-philosophy {
@@ -367,7 +359,7 @@
 
 .about-principle-card:hover {
   transform: translateY(-4px);
-  border-color: rgb(255 255 255 / 0.24);
+  border-color: oklch(0.52 0.055 150);
 }
 
 .about-principle-icon {
@@ -378,9 +370,9 @@
   height: 2.5rem;
   margin-bottom: 0.85rem;
   border-radius: 0.375rem;
-  border: 1px solid rgb(255 255 255 / 0.14);
-  background: rgb(255 255 255 / 0.08);
-  color: white;
+  border: 1px solid oklch(0.38 0.04 150);
+  background: oklch(0.26 0.05 150);
+  color: oklch(0.985 0 0);
 }
 
 .about-principle-title {
@@ -388,14 +380,14 @@
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: white;
+  color: oklch(0.985 0 0);
 }
 
 .about-principle-copy {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.65;
-  color: rgb(255 255 255 / 0.78);
+  color: oklch(0.84 0.02 155);
   text-align: justify;
 }
 
@@ -421,7 +413,7 @@
   padding-inline: 0.5rem;
   font-size: clamp(0.92rem, 1.8vw, 1.05rem);
   line-height: 1.7;
-  color: rgb(255 255 255 / 0.72);
+  color: oklch(0.82 0.02 155);
   text-align: justify;
 }
 
@@ -459,12 +451,12 @@
 #About .modern-card,
 #About .home-skill-tag,
 #About button {
-  color: white;
+  color: oklch(0.985 0 0);
 }
 
 #About .modern-card {
-  border-color: rgb(255 255 255 / 0.18);
-  background: rgb(255 255 255 / 0.08);
+  border-color: oklch(0.38 0.04 150);
+  background: oklch(0.24 0.05 150);
   box-shadow: none;
 }
 
@@ -485,6 +477,6 @@
 
 #About .tech-skills-grid .about-skill-tag:hover {
   transform: translateY(-4px) scale(1.03);
-  border-color: rgb(255 255 255 / 0.45);
-  background: rgb(255 255 255 / 0.18);
+  border-color: oklch(0.55 0.06 150);
+  background: oklch(0.3 0.055 150);
 }

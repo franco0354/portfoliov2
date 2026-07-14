@@ -25,7 +25,9 @@ const nunito = Nunito({
 })
 
 const sectionClass =
-  "scroll-mt-14 sm:scroll-mt-16 px-4 py-8 sm:px-6 sm:py-10 md:p-10 text-white";
+  "scroll-mt-14 sm:scroll-mt-16 px-4 py-8 sm:px-6 sm:py-10 md:p-10";
+const sectionClassDark = `${sectionClass} text-white`;
+const sectionClassLight = `${sectionClass} text-[oklch(0.26_0.05_148)]`;
 
 export default function Page() {
   const { isLoading, isOverInput } = usePageState();
@@ -75,7 +77,7 @@ export default function Page() {
       <Navbar />
       <div className="relative z-20 pt-14 sm:pt-16 max-md:[&_section:not(#Home)]:text-justify">
         <div>
-          <section id="Home" className={`${sectionClass} relative flex flex-col overflow-x-hidden overflow-y-auto !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem] md:overflow-hidden`}>
+          <section id="Home" className={`${sectionClassDark} relative flex flex-col overflow-x-hidden overflow-y-auto !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem] md:overflow-hidden`}>
             <Image
               src={profilebackground}
               alt=""
@@ -95,23 +97,27 @@ export default function Page() {
               className="absolute inset-0 pointer-events-none hidden md:block"
               style={{
                 background:
-                  "linear-gradient(to right, oklch(0.18 0.05 148) 0%, oklch(0.18 0.05 148) 42%, oklch(0.18 0.05 148 / 0.7) 58%, transparent 78%)",
+                  "linear-gradient(to right, oklch(0.18 0.055 148) 0%, oklch(0.18 0.055 148) 42%, oklch(0.18 0.055 148 / 0.7) 58%, transparent 78%)",
               }}
             />
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-40 pointer-events-none bg-gradient-to-t from-[oklch(0.18_0.05_148)] via-[oklch(0.18_0.05_148)]/70 to-transparent"
+              className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 0%, oklch(0.18 0.055 148) 55%, oklch(0.18 0.055 148) 100%)",
+              }}
             />
             <div className="relative z-10 home-on-photo flex flex-1 flex-col min-h-0 w-full min-w-0 max-w-full px-4 sm:px-6 md:px-10">
               <Home />
             </div>
           </section>
 
-          <section id="About" className={sectionClass}>
+          <section id="About" className={sectionClassDark}>
             <About />
           </section>
 
-          <section id="Project" className={sectionClass}>
+          <section id="Project" className={sectionClassDark}>
             <Project />
           </section>
           <section
@@ -120,7 +126,7 @@ export default function Page() {
           >
             <TimelinePage />
           </section>
-          <section id="Contact" className={sectionClass}>
+          <section id="Contact" className={sectionClassDark}>
             <Contact />
           </section>
         </div>
