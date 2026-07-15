@@ -106,7 +106,7 @@ function Home() {
                                 fill
                                 priority
                                 sizes="(max-width: 858px) 70vw, 22rem"
-                                className="home-visual-photo"
+                                className="home-visual-photo rounded-full"
                             />
                         </div>
                     </div>
