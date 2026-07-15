@@ -43,28 +43,30 @@ export function DrawBorder({ radius = 8 }: DrawBorderProps) {
   const bottom = y + h;
   const right = x + w;
   const midY = y + h * 0.5;
-  const gapHalf = Math.max(18, w * 0.22);
+  // Top gap is larger; bottom center segment is smaller
+  const topGapHalf = Math.max(20, w * 0.28);
+  const bottomCenterHalf = Math.max(8, w * 0.08);
 
   const ready = box.w > 0 && box.h > 0 && w > r * 2 && h > r * 2;
 
   const topLeftPath = ready
-    ? `M ${cx - gapHalf} ${y} H ${x + r} A ${r} ${r} 0 0 0 ${x} ${y + r} V ${midY}`
+    ? `M ${cx - topGapHalf} ${y} H ${x + r} A ${r} ${r} 0 0 0 ${x} ${y + r} V ${midY}`
     : "";
   const topRightPath = ready
-    ? `M ${cx + gapHalf} ${y} H ${right - r} A ${r} ${r} 0 0 1 ${right} ${y + r} V ${midY}`
+    ? `M ${cx + topGapHalf} ${y} H ${right - r} A ${r} ${r} 0 0 1 ${right} ${y + r} V ${midY}`
     : "";
   const bottomCenterPath = ready
-    ? `M ${cx - gapHalf} ${bottom} H ${cx + gapHalf}`
+    ? `M ${cx - bottomCenterHalf} ${bottom} H ${cx + bottomCenterHalf}`
     : "";
 
   const topSpan = ready
-    ? `M ${cx - gapHalf} ${y} H ${cx + gapHalf}`
+    ? `M ${cx - topGapHalf} ${y} H ${cx + topGapHalf}`
     : "";
   const bottomLeftSpan = ready
-    ? `M ${cx - gapHalf} ${bottom} H ${x + r} A ${r} ${r} 0 0 1 ${x} ${bottom - r} V ${midY}`
+    ? `M ${cx - bottomCenterHalf} ${bottom} H ${x + r} A ${r} ${r} 0 0 1 ${x} ${bottom - r} V ${midY}`
     : "";
   const bottomRightSpan = ready
-    ? `M ${cx + gapHalf} ${bottom} H ${right - r} A ${r} ${r} 0 0 0 ${right} ${bottom - r} V ${midY}`
+    ? `M ${cx + bottomCenterHalf} ${bottom} H ${right - r} A ${r} ${r} 0 0 0 ${right} ${bottom - r} V ${midY}`
     : "";
 
   return (
