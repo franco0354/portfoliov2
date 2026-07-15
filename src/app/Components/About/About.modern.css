@@ -116,8 +116,7 @@
 }
 
 .about-gallery-card,
-.about-profile-card,
-.about-principle-card {
+.about-profile-card {
   border: 1px solid oklch(0.84 0.03 150);
   background: oklch(0.98 0.012 155);
 }
@@ -299,24 +298,45 @@
   }
 }
 
+.about-highlight-wrap {
+  height: 100%;
+}
+
 .about-highlight {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  height: 100%;
   padding: 0.85rem 0.95rem;
   border-radius: 0.375rem;
-  border: 1px solid oklch(0.84 0.03 150);
+  border: 1px solid transparent;
   background: oklch(0.92 0.022 153);
+  cursor: default;
   transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+    border-color 0.45s ease 0.15s,
+    background 0.45s ease 0.15s,
+    box-shadow 0.45s ease 0.15s;
 }
 
 .about-highlight:hover {
-  transform: translateY(-2px);
-  border-color: oklch(0.62 0.07 152);
+  transform: translateY(-6px);
+  border-color: transparent;
   background: oklch(0.96 0.016 154);
+  box-shadow: 0 12px 28px oklch(0.42 0.05 150 / 0.12);
+  transition-delay: 0.15s;
+}
+
+.about-highlight:not(:hover) {
+  transition-delay: 0s;
+}
+
+.about-highlight-label,
+.about-highlight-value {
+  position: relative;
+  z-index: 2;
 }
 
 .about-highlight-label {
@@ -349,17 +369,85 @@
   }
 }
 
+.about-principle-wrap {
+  height: 100%;
+}
+
 .about-principle-card {
+  position: relative;
+  isolation: isolate;
+  height: 100%;
   border-radius: 0.5rem;
+  border: 1px solid transparent;
+  background: oklch(0.98 0.012 155);
   padding: 1.2rem 1.15rem 1.25rem;
+  cursor: default;
   transition:
-    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.3s ease;
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+    border-color 0.45s ease 0.15s,
+    background 0.45s ease 0.15s,
+    box-shadow 0.45s ease 0.15s;
 }
 
 .about-principle-card:hover {
-  transform: translateY(-4px);
-  border-color: oklch(0.62 0.07 152);
+  transform: translateY(-6px);
+  border-color: transparent;
+  background: oklch(0.99 0.01 155);
+  box-shadow: 0 12px 28px oklch(0.42 0.05 150 / 0.12);
+  transition-delay: 0.15s;
+}
+
+.about-principle-card:not(:hover) {
+  transition-delay: 0s;
+}
+
+.about-principle-icon,
+.about-principle-title,
+.about-principle-copy {
+  position: relative;
+  z-index: 2;
+}
+
+/* Frame: top-left + top-right (half sides) + bottom-center.
+   Hover completes lower sides into a full rounded border, then stops. */
+.about-draw-border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-draw-border-base,
+.about-draw-border-fill {
+  fill: none;
+  stroke: oklch(0.42 0.1 152);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-draw-border-base {
+  opacity: 0.9;
+}
+
+.about-draw-border-fill {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.75s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.about-highlight:hover .about-draw-border-fill,
+.about-principle-card:hover .about-draw-border-fill {
+  stroke-dashoffset: 0;
+}
+
+.about-highlight:not(:hover) .about-draw-border-fill,
+.about-principle-card:not(:hover) .about-draw-border-fill {
+  transition-delay: 0s;
+  transition-duration: 0.3s;
 }
 
 .about-principle-icon {
@@ -373,6 +461,20 @@
   border: 1px solid oklch(0.84 0.03 150);
   background: oklch(0.92 0.022 153);
   color: oklch(0.32 0.07 150);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.15s,
+    border-color 0.45s ease 0.15s,
+    background 0.45s ease 0.15s;
+}
+
+.about-principle-card:hover .about-principle-icon {
+  transform: scale(1.08);
+  border-color: oklch(0.55 0.08 152);
+  background: oklch(0.9 0.035 152);
+}
+
+.about-principle-card:not(:hover) .about-principle-icon {
+  transition-delay: 0s;
 }
 
 .about-principle-title {
