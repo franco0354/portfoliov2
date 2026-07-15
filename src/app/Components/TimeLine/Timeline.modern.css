@@ -1,16 +1,16 @@
-/* Modern Timeline — deep emerald section with solid surfaces */
+/* Modern Timeline — soft sage light section with emerald accents */
 
 #Timeline {
-  color: oklch(0.985 0 0);
+  color: oklch(0.26 0.05 148);
 }
 
 #Timeline h1,
 #Timeline .text-gray-900 {
-  color: oklch(0.985 0 0);
+  color: oklch(0.26 0.05 148);
 }
 
 #Timeline .text-muted-foreground {
-  color: oklch(0.86 0.025 155);
+  color: oklch(0.45 0.04 150);
 }
 
 .timeline-shell {
@@ -30,7 +30,7 @@
 .timeline-intro-lead {
   font-size: clamp(0.92rem, 1.8vw, 1.1rem);
   line-height: 1.75;
-  color: oklch(0.84 0.025 155);
+  color: oklch(0.42 0.04 150);
   text-align: justify;
 }
 
@@ -54,10 +54,10 @@
   overflow: hidden;
   background: linear-gradient(
     to bottom,
-    oklch(0.23 0.075 162) 0%,
-    oklch(0.42 0.05 160) 10%,
-    oklch(0.42 0.05 160) 90%,
-    oklch(0.23 0.075 162) 100%
+    oklch(0.94 0.022 152) 0%,
+    oklch(0.78 0.04 152) 10%,
+    oklch(0.78 0.04 152) 90%,
+    oklch(0.94 0.022 152) 100%
   );
   mask-image: linear-gradient(
     to bottom,
@@ -87,9 +87,9 @@
   border-radius: 9999px;
   background: linear-gradient(
     to bottom,
-    oklch(0.8 0.08 160),
-    oklch(0.7 0.08 150),
-    oklch(0.6 0.07 170)
+    oklch(0.42 0.1 152),
+    oklch(0.52 0.09 160),
+    oklch(0.36 0.08 148)
   );
 }
 
@@ -166,21 +166,21 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  border: 1px solid oklch(0.55 0.07 160);
-  background: oklch(0.29 0.07 162);
+  border: 1px solid oklch(0.55 0.08 152);
+  background: oklch(0.98 0.012 155);
   transition: all 0.5s ease;
 }
 
 .timeline-dot-ring--inactive {
-  border-color: oklch(0.42 0.05 160);
-  background: oklch(0.26 0.06 160);
+  border-color: oklch(0.78 0.04 152);
+  background: oklch(0.92 0.02 153);
 }
 
 .timeline-dot-core {
   position: relative;
   z-index: 10;
   border-radius: 9999px;
-  box-shadow: 0 0 0 2px oklch(0.23 0.075 162);
+  box-shadow: 0 0 0 2px oklch(0.94 0.022 152);
   transition: all 0.5s ease;
 }
 
@@ -189,15 +189,15 @@
   height: 0.875rem;
   background: linear-gradient(
     135deg,
-    oklch(0.82 0.08 160),
-    oklch(0.65 0.08 155)
+    oklch(0.52 0.1 155),
+    oklch(0.4 0.09 160)
   );
 }
 
 .timeline-dot-core--inactive {
   width: 0.625rem;
   height: 0.625rem;
-  background: oklch(0.55 0.05 160);
+  background: oklch(0.65 0.05 152);
 }
 
 .timeline-year-block {
@@ -218,8 +218,8 @@
   line-height: 1;
   background: linear-gradient(
     135deg,
-    oklch(0.95 0.02 155) 0%,
-    oklch(0.75 0.07 160) 100%
+    oklch(0.32 0.07 148) 0%,
+    oklch(0.48 0.1 158) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -235,20 +235,20 @@
   display: inline-flex;
   margin-top: 0.65rem;
   border-radius: 9999px;
-  border: 1px solid oklch(0.42 0.05 160);
-  background: oklch(0.29 0.07 162);
+  border: 1px solid oklch(0.8 0.035 152);
+  background: oklch(0.98 0.012 155);
   padding: 0.3rem 0.75rem;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: oklch(0.9 0.02 155);
+  color: oklch(0.36 0.06 150);
   transition: all 0.4s ease;
 }
 
 .timeline-month--inactive {
   opacity: 0.5;
-  border-color: oklch(0.38 0.04 160);
+  border-color: oklch(0.84 0.03 150);
 }
 
 .timeline-body {
@@ -285,15 +285,15 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: oklch(0.9 0.04 155);
+  color: oklch(0.32 0.07 150);
 }
 
 .timeline-content-card {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0.5rem;
-  border: 1px solid oklch(0.42 0.05 160);
-  background: oklch(0.29 0.07 162);
+  border: 1px solid oklch(0.84 0.03 150);
+  background: oklch(0.98 0.012 155);
   padding: 1.15rem 1.1rem;
   box-shadow: none;
   transition:
@@ -309,7 +309,7 @@
 
 .timeline-content-card:hover {
   transform: translateY(-3px);
-  border-color: oklch(0.55 0.07 160);
+  border-color: oklch(0.62 0.07 152);
   box-shadow: none;
 }
 
@@ -318,7 +318,7 @@
 }
 
 .timeline-content-card strong {
-  color: oklch(0.985 0 0);
+  color: oklch(0.26 0.05 148);
   font-weight: 600;
 }
 
@@ -328,12 +328,12 @@
   gap: 0.35rem;
   margin-top: 0.5rem;
   border-radius: 0.375rem;
-  border: 1px solid oklch(0.42 0.05 160);
-  background: oklch(0.26 0.06 160);
+  border: 1px solid oklch(0.84 0.03 150);
+  background: oklch(0.92 0.022 153);
   padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: oklch(0.78 0.03 155);
+  color: oklch(0.42 0.05 150);
 }
 
 .timeline-list {
@@ -350,7 +350,7 @@
   padding-left: 1.35rem;
   font-size: 0.92rem;
   line-height: 1.65;
-  color: oklch(0.86 0.025 155);
+  color: oklch(0.4 0.04 150);
   text-align: justify;
 }
 
@@ -370,15 +370,15 @@
   border-radius: 9999px;
   background: linear-gradient(
     135deg,
-    oklch(0.8 0.08 160),
-    oklch(0.65 0.08 155)
+    oklch(0.48 0.1 155),
+    oklch(0.4 0.09 160)
   );
 }
 
 .timeline-subsection {
   padding-top: 1.25rem;
   margin-top: 1.25rem;
-  border-top: 1px solid oklch(0.38 0.045 160);
+  border-top: 1px solid oklch(0.86 0.025 152);
 }
 
 .timeline-subsection-label {
@@ -387,7 +387,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: oklch(0.7 0.04 155);
+  color: oklch(0.48 0.05 150);
 }
 
 #Timeline [class*="group/preview"] {
@@ -395,21 +395,21 @@
 }
 
 .timeline-link {
-  color: oklch(0.82 0.08 160);
+  color: oklch(0.4 0.1 152);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.25s ease;
 }
 
 .timeline-link:hover {
-  color: oklch(0.92 0.05 155);
+  color: oklch(0.32 0.09 155);
 }
 
 .timeline-copy {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.75;
-  color: oklch(0.88 0.025 155);
+  color: oklch(0.38 0.04 150);
   text-align: justify;
 }
 

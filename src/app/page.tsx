@@ -25,8 +25,7 @@ const nunito = Nunito({
 })
 
 const sectionClass =
-  "scroll-mt-14 sm:scroll-mt-16 px-4 py-8 sm:px-6 sm:py-10 md:p-10";
-const sectionClassDark = `${sectionClass} text-white`;
+  "scroll-mt-14 sm:scroll-mt-16 px-4 py-8 sm:px-6 sm:py-10 md:p-10 text-foreground";
 
 export default function Page() {
   const { isLoading, isOverInput } = usePageState();
@@ -76,7 +75,7 @@ export default function Page() {
       <Navbar />
       <div className="relative z-20 pt-14 sm:pt-16 max-md:[&_section:not(#Home)]:text-justify">
         <div>
-          <section id="Home" className={`${sectionClassDark} relative flex flex-col overflow-x-hidden overflow-y-auto !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem] md:overflow-hidden`}>
+          <section id="Home" className={`${sectionClass} relative flex flex-col overflow-x-hidden overflow-y-auto !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem] md:overflow-hidden`}>
             <Image
               src={profilebackground}
               alt=""
@@ -85,10 +84,10 @@ export default function Page() {
               priority
               className="object-cover object-top pointer-events-none scale-100 md:scale-110 md:translate-x-[18%] lg:translate-x-[28%] xl:translate-x-[34%]"
             />
-            {/* Flat green opacity over the photo — same green, opacity only */}
+            {/* Soft mint wash over the photo */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 pointer-events-none bg-[oklch(0.18_0.05_148)]/75"
+              className="absolute inset-0 pointer-events-none bg-[oklch(0.95_0.02_145)]/70"
             />
             {/* Left → right fade — desktop only */}
             <div
@@ -96,7 +95,7 @@ export default function Page() {
               className="absolute inset-0 pointer-events-none hidden md:block"
               style={{
                 background:
-                  "linear-gradient(to right, oklch(0.18 0.055 148) 0%, oklch(0.18 0.055 148) 42%, oklch(0.18 0.055 148 / 0.7) 58%, transparent 78%)",
+                  "linear-gradient(to right, oklch(0.95 0.02 145) 0%, oklch(0.95 0.02 145) 42%, oklch(0.95 0.02 145 / 0.75) 58%, transparent 78%)",
               }}
             />
             <div
@@ -104,7 +103,7 @@ export default function Page() {
               className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(to bottom, transparent 0%, oklch(0.18 0.055 148) 55%, oklch(0.18 0.055 148) 100%)",
+                  "linear-gradient(to bottom, transparent 0%, oklch(0.95 0.02 145) 55%, oklch(0.95 0.02 145) 100%)",
               }}
             />
             <div className="relative z-10 home-on-photo flex flex-1 flex-col min-h-0 w-full min-w-0 max-w-full px-4 sm:px-6 md:px-10">
@@ -112,20 +111,20 @@ export default function Page() {
             </div>
           </section>
 
-          <section id="About" className={sectionClassDark}>
+          <section id="About" className={sectionClass}>
             <About />
           </section>
 
-          <section id="Project" className={sectionClassDark}>
+          <section id="Project" className={sectionClass}>
             <Project />
           </section>
           <section
             id="Timeline"
-            className="min-h-screen scroll-mt-14 sm:scroll-mt-16 px-4 py-10 sm:px-6 sm:py-12 md:p-10 text-white"
+            className="min-h-screen scroll-mt-14 sm:scroll-mt-16 px-4 py-10 sm:px-6 sm:py-12 md:p-10 text-foreground"
           >
             <TimelinePage />
           </section>
-          <section id="Contact" className={sectionClassDark}>
+          <section id="Contact" className={sectionClass}>
             <Contact />
           </section>
         </div>

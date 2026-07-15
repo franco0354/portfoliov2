@@ -55,7 +55,7 @@
   gap: 0.45rem;
   transform: none;
   text-decoration: none;
-  color: rgb(255 255 255 / 0.72);
+  color: oklch(0.45 0.04 150);
 }
 
 .home-scroll-line {
@@ -64,7 +64,7 @@
   width: 1px;
   height: 2.25rem;
   overflow: hidden;
-  background: rgb(255 255 255 / 0.22);
+  background: oklch(0.84 0.03 150);
 }
 
 .home-scroll-line::after {
@@ -73,7 +73,7 @@
   inset-inline: 0;
   top: -40%;
   height: 40%;
-  background: white;
+  background: oklch(0.42 0.1 152);
   animation: homeScrollLine 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
@@ -85,11 +85,11 @@
 }
 
 .home-scroll:hover {
-  color: white;
+  color: oklch(0.26 0.05 148);
 }
 
 .home-scroll:hover .home-scroll-line {
-  background: rgb(255 255 255 / 0.35);
+  background: oklch(0.72 0.05 152);
 }
 
 .home {
@@ -379,59 +379,59 @@
 .home-on-photo .home-display,
 .home-on-photo .home-role-typing,
 .home-on-photo .home-role-typing [data-slot="typing-text"] {
-  color: white;
-  text-shadow: 0 2px 40px rgb(0 0 0 / 0.25);
+  color: oklch(0.26 0.05 148);
+  text-shadow: none;
 }
 
 .home-on-photo .home-kicker,
 .home-on-photo .home-role-label {
-  color: rgb(255 255 255 / 0.7);
+  color: oklch(0.45 0.04 150);
 }
 
 .home-on-photo .home-lead,
 .home-on-photo .home-role {
-  color: rgb(255 255 255 / 0.84);
+  color: oklch(0.38 0.04 150);
 }
 
 .home-on-photo .home-availability {
-  background: oklch(0.78 0.12 150);
+  background: oklch(0.42 0.1 152);
 }
 
 .home-on-photo .home-availability::before {
-  background: oklch(0.78 0.12 150 / 0.55);
+  background: oklch(0.42 0.1 152 / 0.45);
 }
 
 .home-on-photo .home-cta--primary {
-  color: oklch(0.22 0.05 148);
-  background: white;
-  border-color: white;
+  color: oklch(0.98 0.01 155);
+  background: oklch(0.42 0.1 152);
+  border-color: oklch(0.42 0.1 152);
 }
 
 .home-on-photo .home-cta--primary:hover {
-  background: rgb(255 255 255 / 0.9);
+  background: oklch(0.36 0.09 150);
 }
 
 .home-on-photo .home-cta--ghost {
-  color: white;
-  border-color: rgb(255 255 255 / 0.35);
-  background: rgb(255 255 255 / 0.06);
+  color: oklch(0.26 0.05 148);
+  border-color: oklch(0.84 0.03 150);
+  background: oklch(0.98 0.012 155 / 0.55);
   backdrop-filter: blur(8px);
 }
 
 .home-on-photo .home-cta--ghost:hover {
-  border-color: rgb(255 255 255 / 0.55);
-  background: rgb(255 255 255 / 0.14);
+  border-color: oklch(0.62 0.07 152);
+  background: oklch(0.98 0.012 155);
 }
 
 .home-on-photo .home-skills {
-  border-top-color: rgb(255 255 255 / 0.18);
+  border-top-color: oklch(0.84 0.03 150);
 }
 
 .home-on-photo .home-skill-tag,
 .home-on-photo .inline-talents .modern-card {
-  color: white;
-  border-color: rgb(255 255 255 / 0.2);
-  background: rgb(255 255 255 / 0.08);
+  color: oklch(0.26 0.05 148);
+  border-color: oklch(0.84 0.03 150);
+  background: oklch(0.98 0.012 155 / 0.75);
 }
 
 .home-on-photo .home-skill-tag:hover,
@@ -439,8 +439,8 @@
   border-color: color-mix(in srgb, var(--skill-accent) 60%, transparent);
   background: color-mix(
     in srgb,
-    var(--skill-accent) 20%,
-    rgb(255 255 255 / 0.08)
+    var(--skill-accent) 12%,
+    oklch(0.98 0.012 155)
   );
   box-shadow: none;
 }

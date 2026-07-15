@@ -42,7 +42,7 @@ export default function Loading() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="loading-screen fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden text-white"
+      className="loading-screen fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden text-foreground"
       role="progressbar"
       aria-label="Loading portfolio"
       aria-valuenow={progress}
@@ -58,7 +58,7 @@ export default function Loading() {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 rounded-full border border-dashed border-white/12"
+            className="absolute inset-0 rounded-full border border-dashed border-border"
           />
 
           <motion.div
@@ -74,7 +74,7 @@ export default function Loading() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="0.75"
-                className="text-white/25"
+                className="text-border"
               />
               <circle
                 cx="50"
@@ -85,14 +85,14 @@ export default function Loading() {
                 strokeWidth="1.25"
                 strokeLinecap="round"
                 strokeDasharray="72 230"
-                className="text-white/70"
+                className="text-primary"
               />
             </svg>
           </motion.div>
 
-          <div className="absolute inset-5 rounded-full bg-linear-to-br from-white/8 via-transparent to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]" />
+          <div className="absolute inset-5 rounded-full bg-linear-to-br from-primary/10 via-transparent to-transparent" />
 
-          <div className="absolute inset-7 overflow-hidden rounded-full ring-1 ring-white/20 ring-offset-2 ring-offset-section">
+          <div className="absolute inset-7 overflow-hidden rounded-full ring-1 ring-border ring-offset-2 ring-offset-background">
             <Image
               src={Logo}
               alt="Logo"
@@ -107,30 +107,30 @@ export default function Loading() {
             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0"
           >
-            <span className="absolute left-1/2 top-1 size-1.5 -translate-x-1/2 rounded-full bg-white shadow-[0_0_10px_rgb(255_255_255_/_0.35)]" />
+            <span className="absolute left-1/2 top-1 size-1.5 -translate-x-1/2 rounded-full bg-primary" />
           </motion.div>
         </div>
 
         <div className="flex flex-col items-center gap-3 text-center">
-          <h1 className="text-[clamp(1.5rem,4vw,2rem)] font-bold tracking-tight text-white">
+          <h1 className="text-[clamp(1.5rem,4vw,2rem)] font-bold tracking-tight text-foreground">
             Franco <span className="gradient-text">Gregorio</span>
           </h1>
 
-          <p className="text-sm tracking-wide text-white/72">
+          <p className="text-sm tracking-wide text-muted-foreground">
             Preparing your experience
           </p>
         </div>
 
         <div className="w-full max-w-68 space-y-2.5">
-          <div className="relative h-0.5 overflow-hidden rounded-full bg-white/20">
+          <div className="relative h-0.5 overflow-hidden rounded-full bg-border">
             <motion.div
-              className="absolute inset-y-0 left-0 rounded-full bg-linear-to-r from-white/30 via-white to-white/30"
+              className="absolute inset-y-0 left-0 rounded-full bg-primary"
               style={{ width: `${progress}%` }}
             />
-            <div className="absolute inset-0 animate-[shimmer_2.2s_ease-in-out_infinite] bg-linear-to-r from-transparent via-white/25 to-transparent" />
+            <div className="absolute inset-0 animate-[shimmer_2.2s_ease-in-out_infinite] bg-linear-to-r from-transparent via-primary/30 to-transparent" />
           </div>
 
-          <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.22em] text-white/65">
+          <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
             <span>Portfolio</span>
             <span>{String(progress).padStart(2, "0")}%</span>
           </div>

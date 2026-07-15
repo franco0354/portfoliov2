@@ -33,10 +33,10 @@ export default function RootLayout({
                 background-color: inherit;
               }
               html {
-                background: #ffffff;
+                background: oklch(0.95 0.02 145);
               }
               html:has(#initial-loader) {
-                background-color: oklch(0.18 0.05 148);
+                background-color: oklch(0.95 0.02 145);
               }
               body:has(#initial-loader) {
                 overflow: hidden;
@@ -48,14 +48,14 @@ export default function RootLayout({
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: oklch(0.18 0.05 148);
+                background-color: oklch(0.95 0.02 145);
               }
               #initial-loader .initial-loader-spinner {
                 width: 2rem;
                 height: 2rem;
                 border-radius: 9999px;
-                border: 1.5px solid rgb(255 255 255 / 0.18);
-                border-top-color: rgb(255 255 255 / 0.85);
+                border: 1.5px solid oklch(0.84 0.03 150);
+                border-top-color: oklch(0.42 0.1 152);
                 animation: initialLoaderSpin 0.7s linear infinite;
               }
               @keyframes initialLoaderSpin {
