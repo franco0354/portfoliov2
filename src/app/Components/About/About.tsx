@@ -37,101 +37,7 @@ import { SiFivetran, SiZustand } from "@/components/icons/brand-icons";
 import { FileCode2, Layers, MessageSquareText, ShieldCheck } from "lucide-react";
 import "./About.modern.css";
 import { SkillTag } from "@/components/ui/skill-tag";
-import { useLayoutEffect, useRef, useState } from "react";
-
-/** Base: top-left + top-right with half left/right sides. Hover completes bottom half + bottom edge. */
-function AboutDrawBorder({ radius = 8 }: { radius?: number }) {
-    const svgRef = useRef<SVGSVGElement>(null);
-    const [box, setBox] = useState({ w: 0, h: 0 });
-
-    useLayoutEffect(() => {
-        const parent = svgRef.current?.parentElement;
-        if (!parent) return;
-
-        const update = () => {
-            const { width, height } = parent.getBoundingClientRect();
-            setBox({
-                w: Math.max(0, Math.round(width * 100) / 100),
-                h: Math.max(0, Math.round(height * 100) / 100),
-            });
-        };
-
-        update();
-        const observer = new ResizeObserver(update);
-        observer.observe(parent);
-        return () => observer.disconnect();
-    }, []);
-
-    const pad = 1.5;
-    const w = Math.max(0, box.w - pad * 2);
-    const h = Math.max(0, box.h - pad * 2);
-    const x = pad;
-    const y = pad;
-    const r = Math.min(radius, w / 2, h / 2);
-    const cx = x + w / 2;
-    const bottom = y + h;
-    const right = x + w;
-    // Left/right sides only go halfway down (bottom half stays empty until hover)
-    const midY = y + h * 0.5;
-    // Bottom center segment always visible; top center stays empty (wider gap)
-    const topGapHalf = Math.max(20, w * 0.28);
-    const bottomCenterHalf = Math.max(12, w * 0.14);
-
-    const ready = box.w > 0 && box.h > 0 && w > r * 2 && h > r * 2;
-
-    // Always on: top-left arm (gap at top center) → TL corner → down left halfway
-    const topLeftPath = ready
-        ? `M ${cx - topGapHalf} ${y} H ${x + r} A ${r} ${r} 0 0 0 ${x} ${y + r} V ${midY}`
-        : "";
-    // Always on: top-right arm (gap at top center) → TR corner → down right halfway
-    const topRightPath = ready
-        ? `M ${cx + topGapHalf} ${y} H ${right - r} A ${r} ${r} 0 0 1 ${right} ${y + r} V ${midY}`
-        : "";
-    // Always on: bottom center
-    const bottomCenterPath = ready
-        ? `M ${cx - bottomCenterHalf} ${bottom} H ${cx + bottomCenterHalf}`
-        : "";
-
-    // Hover: top center gap + lower sides + bottom corners → connect to bottom center
-    const topCenterFill = ready
-        ? `M ${cx - topGapHalf} ${y} H ${cx + topGapHalf}`
-        : "";
-    const leftFill = ready
-        ? `M ${x} ${midY} V ${bottom - r} A ${r} ${r} 0 0 0 ${x + r} ${bottom} H ${cx - bottomCenterHalf}`
-        : "";
-    const rightFill = ready
-        ? `M ${right} ${midY} V ${bottom - r} A ${r} ${r} 0 0 1 ${right - r} ${bottom} H ${cx + bottomCenterHalf}`
-        : "";
-
-    return (
-        <svg
-            ref={svgRef}
-            className="about-draw-border"
-            width={box.w || "100%"}
-            height={box.h || "100%"}
-            aria-hidden="true"
-        >
-            {topLeftPath && (
-                <path className="about-draw-border-base" d={topLeftPath} />
-            )}
-            {topRightPath && (
-                <path className="about-draw-border-base" d={topRightPath} />
-            )}
-            {bottomCenterPath && (
-                <path className="about-draw-border-base" d={bottomCenterPath} />
-            )}
-            {topCenterFill && (
-                <path className="about-draw-border-fill" pathLength="100" d={topCenterFill} />
-            )}
-            {leftFill && (
-                <path className="about-draw-border-fill" pathLength="100" d={leftFill} />
-            )}
-            {rightFill && (
-                <path className="about-draw-border-fill" pathLength="100" d={rightFill} />
-            )}
-        </svg>
-    );
-}
+import { DrawBorder } from "@/components/ui/draw-border";
 
 const technologies = [
     { label: "Next.js", icon: <SiNextdotjs />, year: 2021, award: true },
@@ -279,8 +185,8 @@ function About() {
                                 data-aos="fade-up"
                                 data-aos-delay={250 + index * 75}
                             >
-                                <div className="about-highlight">
-                                    <AboutDrawBorder radius={6} />
+                                <div className="about-highlight draw-border-host">
+                                    <DrawBorder radius={6} />
                                     <span className="about-highlight-label">{item.label}</span>
                                     <span className="about-highlight-value">{item.value}</span>
                                 </div>
@@ -301,8 +207,8 @@ function About() {
                             data-aos="fade-up"
                             data-aos-delay={150 + index * 75}
                         >
-                            <article className="about-principle-card">
-                                <AboutDrawBorder radius={8} />
+                            <article className="about-principle-card draw-border-host">
+                                <DrawBorder radius={8} />
                                 <div className="about-principle-icon">
                                     <principle.icon className="size-5" aria-hidden="true" />
                                 </div>

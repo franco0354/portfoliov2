@@ -289,16 +289,19 @@
 }
 
 .timeline-content-card {
+  position: relative;
+  isolation: isolate;
   width: 100%;
   box-sizing: border-box;
   border-radius: 0.5rem;
-  border: 1px solid oklch(0.84 0.03 150);
+  border: 1px solid transparent;
   background: oklch(0.98 0.012 155);
   padding: 1.15rem 1.1rem;
   box-shadow: none;
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.35s ease;
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 @media (min-width: 640px) {
@@ -307,10 +310,15 @@
   }
 }
 
+.timeline-content-inner {
+  position: relative;
+  z-index: 2;
+}
+
 .timeline-content-card:hover {
   transform: translateY(-3px);
-  border-color: oklch(0.62 0.07 152);
-  box-shadow: none;
+  border-color: transparent;
+  box-shadow: 0 12px 28px oklch(0.42 0.05 150 / 0.12);
 }
 
 .timeline-content-card--dim {

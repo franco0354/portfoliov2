@@ -8,6 +8,7 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import TextHeader from "../text-header";
 import { TextAnimate } from "../magicui/text-animate";
+import { DrawBorder } from "@/components/ui/draw-border";
 import "@/app/Components/TimeLine/Timeline.modern.css";
 
 interface TimelineEntry {
@@ -102,7 +103,7 @@ function TimelineItem({
           </span>
         </div>
         <motion.div
-          className={`timeline-content-card ${isInView ? "" : "timeline-content-card--dim"}`}
+          className={`timeline-content-card draw-border-host ${isInView ? "" : "timeline-content-card--dim"}`}
           initial={{ opacity: 0.7, y: 12 }}
           animate={{
             opacity: isInView ? 1 : 0.72,
@@ -110,7 +111,8 @@ function TimelineItem({
           }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
-          {item.content}
+          <DrawBorder radius={8} />
+          <div className="timeline-content-inner">{item.content}</div>
         </motion.div>
       </div>
     </div>

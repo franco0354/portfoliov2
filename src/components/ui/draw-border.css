@@ -1,0 +1,39 @@
+/* Partial frame that completes on parent hover */
+
+.draw-border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.draw-border-base,
+.draw-border-fill {
+  fill: none;
+  stroke: oklch(0.42 0.1 152);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.draw-border-base {
+  opacity: 0.9;
+}
+
+.draw-border-fill {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.75s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.draw-border-host:hover .draw-border-fill {
+  stroke-dashoffset: 0;
+}
+
+.draw-border-host:not(:hover) .draw-border-fill {
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
