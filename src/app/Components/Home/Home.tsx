@@ -2,9 +2,11 @@
 
 import '../Home/Home.style.css'
 import '../Home/Home.modern.css'
+import Image from 'next/image';
 import { TypingText } from '@/components/animate-ui/text/typing';
 import { SkillTag } from '@/components/ui/skill-tag';
 import { scrollToSection } from '@/lib/scroll';
+import profilebackground from '@/app/assets/img/backgroundprofile.jpg';
 import {
     SiReact,
     SiNextdotjs,
@@ -89,6 +91,23 @@ function Home() {
                             <SkillTag aosDelay={250} className="home-skill-tag home-skill-tag--firebase" iconClassName="home-skill-icon" icon={<SiFirebase />}>Firebase</SkillTag>
                             <SkillTag aosDelay={300} className="home-skill-tag home-skill-tag--supabase" iconClassName="home-skill-icon" icon={<SiSupabase />}>Supabase</SkillTag>
                             <SkillTag aosDelay={350} className="home-skill-tag home-skill-tag--typescript" iconClassName="home-skill-icon" icon={<SiTypescript />}>TypeScript</SkillTag>
+                        </div>
+                    </div>
+
+                    <div
+                        className="home-visual"
+                        data-aos="fade-up"
+                        data-aos-delay="350"
+                    >
+                        <div className="home-visual-frame">
+                            <Image
+                                src={profilebackground}
+                                alt="Franco at his desk"
+                                fill
+                                priority
+                                sizes="(max-width: 858px) 70vw, 22rem"
+                                className="home-visual-photo"
+                            />
                         </div>
                     </div>
                 </div>

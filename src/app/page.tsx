@@ -17,8 +17,6 @@ import { useAos } from "@/hooks/useAos";
 import Navbar from "./Components/Navbar/navbar";
 import "lenis/dist/lenis.css";
 import TimelinePage from "./Components/TimeLine/page";
-import Image from "next/image";
-import profilebackground from "@/app/assets/img/backgroundprofile.jpg";
 const nunito = Nunito({
   subsets: ['latin'],
   weight: ['400']
@@ -76,37 +74,7 @@ export default function Page() {
       <div className="relative z-20 pt-14 sm:pt-16 max-md:[&_section:not(#Home)]:text-justify">
         <div>
           <section id="Home" className={`${sectionClass} relative flex flex-col overflow-x-hidden overflow-y-auto !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem] md:overflow-hidden`}>
-            <Image
-              src={profilebackground}
-              alt=""
-              aria-hidden="true"
-              fill
-              priority
-              className="object-cover object-top pointer-events-none scale-100 md:scale-110 md:translate-x-[18%] lg:translate-x-[28%] xl:translate-x-[34%]"
-            />
-            {/* Soft mint wash over the photo */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none bg-[oklch(0.95_0.02_145)]/70"
-            />
-            {/* Left → right fade — desktop only */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none hidden md:block"
-              style={{
-                background:
-                  "linear-gradient(to right, oklch(0.95 0.02 145) 0%, oklch(0.95 0.02 145) 42%, oklch(0.95 0.02 145 / 0.75) 58%, transparent 78%)",
-              }}
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to bottom, transparent 0%, oklch(0.95 0.02 145) 55%, oklch(0.95 0.02 145) 100%)",
-              }}
-            />
-            <div className="relative z-10 home-on-photo flex flex-1 flex-col min-h-0 w-full min-w-0 max-w-full px-4 sm:px-6 md:px-10">
+            <div className="relative z-10 flex flex-1 flex-col min-h-0 w-full min-w-0 max-w-full px-4 sm:px-6 md:px-10">
               <Home />
             </div>
           </section>
