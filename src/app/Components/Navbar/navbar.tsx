@@ -83,21 +83,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 z-40 w-full border-b border-border bg-background/95 text-foreground backdrop-blur-md">
       <div className="container relative mx-auto flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6">
-        <ThemeToggle />
-
-        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 md:flex">
-          {DATA.navbar.map((item) => (
-            <NavItem
-              key={item.label}
-              item={item}
-              isActive={activeSection === item.label}
-              onClick={handleNavClick}
-              variant="desktop"
-            />
-          ))}
-        </nav>
-
-        <div className="flex shrink-0 items-center justify-end gap-0.5">
+        <div className="flex shrink-0 items-center gap-0.5">
           {DATA.socials.map((social) => (
             <Button
               key={social.label}
@@ -116,6 +102,22 @@ export default function Navbar() {
               </a>
             </Button>
           ))}
+        </div>
+
+        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 md:flex">
+          {DATA.navbar.map((item) => (
+            <NavItem
+              key={item.label}
+              item={item}
+              isActive={activeSection === item.label}
+              onClick={handleNavClick}
+              variant="desktop"
+            />
+          ))}
+        </nav>
+
+        <div className="flex shrink-0 items-center justify-end gap-2">
+          <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button

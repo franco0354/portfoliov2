@@ -13,7 +13,7 @@
 .draw-border-base,
 .draw-border-fill {
   fill: none;
-  stroke: oklch(0.42 0.1 152);
+  stroke: var(--primary);
   stroke-width: 2px;
   stroke-linecap: round;
   stroke-linejoin: round;

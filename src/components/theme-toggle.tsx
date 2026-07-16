@@ -77,12 +77,12 @@ export function ThemeToggle() {
       disabled={!mounted || animating}
       className={cn(
         "theme-toggle group relative inline-flex h-8 w-14 shrink-0 items-center rounded-full",
-        "border border-border/70 bg-muted/80",
+        "border border-border bg-muted",
         "transition-colors duration-300",
-        "hover:border-primary/40 hover:bg-muted",
+        "hover:border-primary/50 hover:bg-accent",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         "disabled:opacity-70",
-        "dark:bg-muted/50"
+        "dark:border-border dark:bg-secondary dark:hover:border-primary/60 dark:hover:bg-accent"
       )}
     >
       <span
@@ -91,14 +91,14 @@ export function ThemeToggle() {
       >
         <Sun
           className={cn(
-            "size-3 transition-colors duration-300",
-            isDark ? "text-muted-foreground/50" : "text-primary"
+            "size-3.5 transition-colors duration-300",
+            isDark ? "text-muted-foreground" : "text-primary"
           )}
         />
         <Moon
           className={cn(
-            "size-3 transition-colors duration-300",
-            isDark ? "text-primary" : "text-muted-foreground/50"
+            "size-3.5 transition-colors duration-300",
+            isDark ? "text-primary" : "text-muted-foreground"
           )}
         />
       </span>
@@ -107,12 +107,13 @@ export function ThemeToggle() {
         aria-hidden
         className={cn(
           "theme-toggle-thumb absolute top-0.5 left-0.5 z-10 size-6 rounded-full",
-          "bg-background",
-          "border border-border/50",
-          "shadow-[0_1px_2px_oklch(0_0_0/0.08)]",
+          "bg-card text-foreground",
+          "border border-border",
+          "shadow-[0_1px_3px_oklch(0_0_0/0.18)]",
           "transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-          "group-hover:border-primary/25",
+          "group-hover:border-primary/40",
           "group-active:scale-95",
+          "dark:bg-foreground dark:border-transparent dark:shadow-[0_1px_3px_oklch(0_0_0/0.45)]",
           isDark && "translate-x-6"
         )}
       />

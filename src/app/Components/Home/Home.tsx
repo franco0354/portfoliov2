@@ -5,6 +5,7 @@ import '../Home/Home.modern.css'
 import Image from 'next/image';
 import { TypingText } from '@/components/animate-ui/text/typing';
 import { SkillTag } from '@/components/ui/skill-tag';
+import { DrawBorder } from '@/components/ui/draw-border';
 import { scrollToSection } from '@/lib/scroll';
 import profilebackground from '@/app/assets/img/backgroundprofile.jpg';
 import {
@@ -99,15 +100,18 @@ function Home() {
                         data-aos="fade-up"
                         data-aos-delay="350"
                     >
-                        <div className="home-visual-frame">
-                            <Image
-                                src={profilebackground}
-                                alt="Franco at his desk"
-                                fill
-                                priority
-                                sizes="(max-width: 858px) 70vw, 22rem"
-                                className="home-visual-photo rounded-full"
-                            />
+                        <div className="home-visual-frame draw-border-host">
+                            <DrawBorder circle />
+                            <div className="home-visual-photo-clip">
+                                <Image
+                                    src={profilebackground}
+                                    alt="Franco at his desk"
+                                    fill
+                                    priority
+                                    sizes="(max-width: 858px) 70vw, 22rem"
+                                    className="home-visual-photo"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
