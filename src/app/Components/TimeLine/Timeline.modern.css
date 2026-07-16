@@ -1,16 +1,16 @@
 /* Modern Timeline — soft sage light section with emerald accents */
 
 #Timeline {
-  color: oklch(0.26 0.05 148);
+  color: var(--foreground);
 }
 
 #Timeline h1,
 #Timeline .text-gray-900 {
-  color: oklch(0.26 0.05 148);
+  color: var(--foreground);
 }
 
 #Timeline .text-muted-foreground {
-  color: oklch(0.45 0.04 150);
+  color: var(--muted-foreground);
 }
 
 .timeline-shell {
@@ -30,7 +30,7 @@
 .timeline-intro-lead {
   font-size: clamp(0.92rem, 1.8vw, 1.1rem);
   line-height: 1.75;
-  color: oklch(0.42 0.04 150);
+  color: var(--muted-foreground);
   text-align: justify;
 }
 
@@ -54,10 +54,10 @@
   overflow: hidden;
   background: linear-gradient(
     to bottom,
-    oklch(0.94 0.022 152) 0%,
-    oklch(0.78 0.04 152) 10%,
-    oklch(0.78 0.04 152) 90%,
-    oklch(0.94 0.022 152) 100%
+    var(--background) 0%,
+    var(--border) 10%,
+    var(--border) 90%,
+    var(--background) 100%
   );
   mask-image: linear-gradient(
     to bottom,
@@ -87,7 +87,7 @@
   border-radius: 9999px;
   background: linear-gradient(
     to bottom,
-    oklch(0.42 0.1 152),
+    var(--primary),
     oklch(0.52 0.09 160),
     oklch(0.36 0.08 148)
   );
@@ -166,21 +166,21 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  border: 1px solid oklch(0.55 0.08 152);
-  background: oklch(0.98 0.012 155);
+  border: 1px solid var(--primary);
+  background: var(--card);
   transition: all 0.5s ease;
 }
 
 .timeline-dot-ring--inactive {
-  border-color: oklch(0.78 0.04 152);
-  background: oklch(0.92 0.02 153);
+  border-color: var(--border);
+  background: var(--muted);
 }
 
 .timeline-dot-core {
   position: relative;
   z-index: 10;
   border-radius: 9999px;
-  box-shadow: 0 0 0 2px oklch(0.94 0.022 152);
+  box-shadow: 0 0 0 2px var(--background);
   transition: all 0.5s ease;
 }
 
@@ -197,7 +197,7 @@
 .timeline-dot-core--inactive {
   width: 0.625rem;
   height: 0.625rem;
-  background: oklch(0.65 0.05 152);
+  background: var(--muted-foreground);
 }
 
 .timeline-year-block {
@@ -235,20 +235,20 @@
   display: inline-flex;
   margin-top: 0.65rem;
   border-radius: 9999px;
-  border: 1px solid oklch(0.8 0.035 152);
-  background: oklch(0.98 0.012 155);
+  border: 1px solid var(--border);
+  background: var(--card);
   padding: 0.3rem 0.75rem;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: oklch(0.36 0.06 150);
+  color: var(--primary);
   transition: all 0.4s ease;
 }
 
 .timeline-month--inactive {
   opacity: 0.5;
-  border-color: oklch(0.84 0.03 150);
+  border-color: var(--border);
 }
 
 .timeline-body {
@@ -285,7 +285,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: oklch(0.32 0.07 150);
+  color: var(--primary);
 }
 
 .timeline-content-card {
@@ -295,7 +295,7 @@
   box-sizing: border-box;
   border-radius: 0.5rem;
   border: 1px solid transparent;
-  background: oklch(0.98 0.012 155);
+  background: var(--card);
   padding: 1.15rem 1.1rem;
   box-shadow: none;
   transition:
@@ -326,7 +326,7 @@
 }
 
 .timeline-content-card strong {
-  color: oklch(0.26 0.05 148);
+  color: var(--foreground);
   font-weight: 600;
 }
 
@@ -336,12 +336,12 @@
   gap: 0.35rem;
   margin-top: 0.5rem;
   border-radius: 0.375rem;
-  border: 1px solid oklch(0.84 0.03 150);
-  background: oklch(0.92 0.022 153);
+  border: 1px solid var(--border);
+  background: var(--muted);
   padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 500;
-  color: oklch(0.42 0.05 150);
+  color: var(--muted-foreground);
 }
 
 .timeline-list {
@@ -358,7 +358,7 @@
   padding-left: 1.35rem;
   font-size: 0.92rem;
   line-height: 1.65;
-  color: oklch(0.4 0.04 150);
+  color: var(--muted-foreground);
   text-align: justify;
 }
 
@@ -386,7 +386,7 @@
 .timeline-subsection {
   padding-top: 1.25rem;
   margin-top: 1.25rem;
-  border-top: 1px solid oklch(0.86 0.025 152);
+  border-top: 1px solid var(--border);
 }
 
 .timeline-subsection-label {
@@ -395,7 +395,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: oklch(0.48 0.05 150);
+  color: var(--muted-foreground);
 }
 
 #Timeline [class*="group/preview"] {
@@ -403,21 +403,21 @@
 }
 
 .timeline-link {
-  color: oklch(0.4 0.1 152);
+  color: var(--primary);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.25s ease;
 }
 
 .timeline-link:hover {
-  color: oklch(0.32 0.09 155);
+  color: var(--primary);
 }
 
 .timeline-copy {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.75;
-  color: oklch(0.38 0.04 150);
+  color: var(--muted-foreground);
   text-align: justify;
 }
 

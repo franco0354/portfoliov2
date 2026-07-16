@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
   /* Soft light greens — base canvas matches Home mint */
   --background: oklch(0.95 0.02 145);
   --foreground: oklch(0.26 0.05 148);
@@ -54,6 +57,46 @@
   --section-alt: oklch(0.94 0.03 160);
   --sage: oklch(0.93 0.028 152);
   --sage-foreground: oklch(0.26 0.05 148);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.18 0.02 150);
+  --foreground: oklch(0.93 0.015 150);
+  --card: oklch(0.22 0.022 152);
+  --card-foreground: oklch(0.93 0.015 150);
+  --popover: oklch(0.22 0.022 152);
+  --popover-foreground: oklch(0.93 0.015 150);
+  --primary: oklch(0.72 0.1 152);
+  --primary-foreground: oklch(0.18 0.03 150);
+  --secondary: oklch(0.26 0.03 152);
+  --secondary-foreground: oklch(0.92 0.015 150);
+  --muted: oklch(0.25 0.025 152);
+  --muted-foreground: oklch(0.72 0.03 150);
+  --accent: oklch(0.28 0.035 152);
+  --accent-foreground: oklch(0.93 0.015 150);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 155);
+  --border: oklch(0.32 0.03 150);
+  --input: oklch(0.26 0.025 152);
+  --ring: oklch(0.68 0.09 152);
+  --chart-1: oklch(0.72 0.1 152);
+  --chart-2: oklch(0.68 0.09 160);
+  --chart-3: oklch(0.62 0.08 148);
+  --chart-4: oklch(0.75 0.07 155);
+  --chart-5: oklch(0.7 0.08 145);
+  --sidebar: oklch(0.2 0.02 152);
+  --sidebar-foreground: oklch(0.93 0.015 150);
+  --sidebar-primary: oklch(0.72 0.1 152);
+  --sidebar-primary-foreground: oklch(0.18 0.03 150);
+  --sidebar-accent: oklch(0.28 0.035 152);
+  --sidebar-accent-foreground: oklch(0.93 0.015 150);
+  --sidebar-border: oklch(0.32 0.03 150);
+  --sidebar-ring: oklch(0.68 0.09 152);
+  --section: oklch(0.18 0.02 150);
+  --section-alt: oklch(0.2 0.025 160);
+  --sage: oklch(0.22 0.025 152);
+  --sage-foreground: oklch(0.93 0.015 150);
 }
 
 @theme inline {
@@ -233,13 +276,116 @@ footer {
   --secondary: oklch(0.86 0.042 140);
 }
 
+/* Dark mode — deep green section tones */
+.dark #Home,
+.dark #About,
+.dark #Project,
+.dark #Timeline,
+.dark #Contact,
+.dark footer {
+  color: oklch(0.93 0.015 150);
+  --foreground: oklch(0.93 0.015 150);
+  --card-foreground: oklch(0.93 0.015 150);
+  --popover-foreground: oklch(0.93 0.015 150);
+  --accent-foreground: oklch(0.93 0.015 150);
+  --muted-foreground: oklch(0.72 0.03 150);
+  --secondary-foreground: oklch(0.92 0.015 150);
+  --primary: oklch(0.72 0.1 152);
+  --primary-foreground: oklch(0.18 0.03 150);
+  --ring: oklch(0.68 0.09 152);
+  --chart-1: oklch(0.72 0.1 152);
+  --chart-2: oklch(0.68 0.09 160);
+  --chart-3: oklch(0.62 0.08 148);
+}
+
+.dark #Home {
+  background: oklch(0.18 0.02 145);
+  --background: oklch(0.18 0.02 145);
+  --card: oklch(0.23 0.022 148);
+  --popover: oklch(0.23 0.022 148);
+  --accent: oklch(0.28 0.03 145);
+  --muted: oklch(0.25 0.022 146);
+  --border: oklch(0.32 0.028 146);
+  --input: oklch(0.26 0.02 146);
+  --secondary: oklch(0.28 0.03 145);
+}
+
+.dark #About {
+  background: oklch(0.19 0.025 152);
+  --background: oklch(0.19 0.025 152);
+  --card: oklch(0.24 0.024 154);
+  --popover: oklch(0.24 0.024 154);
+  --accent: oklch(0.29 0.035 152);
+  --muted: oklch(0.26 0.026 153);
+  --border: oklch(0.33 0.032 152);
+  --input: oklch(0.27 0.024 153);
+  --secondary: oklch(0.29 0.035 152);
+}
+
+.dark #Project {
+  background: oklch(0.18 0.025 160);
+  --background: oklch(0.18 0.025 160);
+  --card: oklch(0.23 0.024 162);
+  --popover: oklch(0.23 0.024 162);
+  --accent: oklch(0.28 0.035 160);
+  --muted: oklch(0.25 0.028 160);
+  --border: oklch(0.32 0.032 160);
+  --input: oklch(0.26 0.026 160);
+  --secondary: oklch(0.28 0.035 160);
+  --primary: oklch(0.7 0.1 158);
+  --ring: oklch(0.66 0.09 158);
+  --chart-1: oklch(0.7 0.1 158);
+  --chart-2: oklch(0.66 0.09 165);
+  --chart-3: oklch(0.6 0.08 152);
+}
+
+.dark #Timeline {
+  background: oklch(0.19 0.02 148);
+  --background: oklch(0.19 0.02 148);
+  --card: oklch(0.24 0.022 150);
+  --popover: oklch(0.24 0.022 150);
+  --accent: oklch(0.28 0.03 148);
+  --muted: oklch(0.26 0.024 149);
+  --border: oklch(0.33 0.028 149);
+  --input: oklch(0.27 0.02 149);
+  --secondary: oklch(0.28 0.03 148);
+}
+
+.dark #Contact {
+  background: oklch(0.18 0.022 168);
+  --background: oklch(0.18 0.022 168);
+  --card: oklch(0.23 0.024 170);
+  --popover: oklch(0.23 0.024 170);
+  --accent: oklch(0.28 0.03 168);
+  --muted: oklch(0.25 0.024 168);
+  --border: oklch(0.32 0.03 168);
+  --input: oklch(0.26 0.022 168);
+  --secondary: oklch(0.28 0.03 168);
+  --primary: oklch(0.7 0.09 165);
+  --ring: oklch(0.66 0.08 165);
+  --chart-1: oklch(0.7 0.09 165);
+  --chart-2: oklch(0.66 0.08 158);
+  --chart-3: oklch(0.6 0.07 172);
+}
+
+.dark footer {
+  background: oklch(0.17 0.02 168);
+  --card: oklch(0.22 0.022 142);
+  --popover: oklch(0.22 0.022 142);
+  --accent: oklch(0.28 0.035 140);
+  --muted: oklch(0.25 0.028 141);
+  --border: oklch(0.32 0.03 140);
+  --input: oklch(0.26 0.025 141);
+  --secondary: oklch(0.28 0.035 140);
+}
+
 /* Light sections — dark text utilities */
-#Home,
-#About,
-#Project,
-#Timeline,
-#Contact,
-footer {
+html:not(.dark) #Home,
+html:not(.dark) #About,
+html:not(.dark) #Project,
+html:not(.dark) #Timeline,
+html:not(.dark) #Contact,
+html:not(.dark) footer {
   :is(
     .text-gray-900,
     .text-gray-800,
@@ -265,13 +411,53 @@ footer {
   }
 }
 
-#Home .bg-gray-300,
-#About .bg-gray-300,
-#Project .bg-gray-300,
-#Timeline .bg-gray-300,
-#Contact .bg-gray-300,
-footer .bg-gray-300 {
+.dark #Home,
+.dark #About,
+.dark #Project,
+.dark #Timeline,
+.dark #Contact,
+.dark footer {
+  :is(
+    .text-gray-900,
+    .text-gray-800,
+    .text-zinc-950,
+    .text-neutral-800,
+    .text-foreground,
+    .text-accent-foreground,
+    .text-card-foreground
+  ) {
+    color: oklch(0.93 0.015 150);
+  }
+
+  :is(
+    .text-gray-600,
+    .text-gray-500,
+    .text-zinc-500,
+    .text-neutral-600,
+    .text-neutral-500,
+    .text-neutral-400,
+    .text-muted-foreground
+  ) {
+    color: oklch(0.72 0.03 150);
+  }
+}
+
+html:not(.dark) #Home .bg-gray-300,
+html:not(.dark) #About .bg-gray-300,
+html:not(.dark) #Project .bg-gray-300,
+html:not(.dark) #Timeline .bg-gray-300,
+html:not(.dark) #Contact .bg-gray-300,
+html:not(.dark) footer .bg-gray-300 {
   background-color: oklch(0.78 0.04 152);
+}
+
+.dark #Home .bg-gray-300,
+.dark #About .bg-gray-300,
+.dark #Project .bg-gray-300,
+.dark #Timeline .bg-gray-300,
+.dark #Contact .bg-gray-300,
+.dark footer .bg-gray-300 {
+  background-color: oklch(0.35 0.04 152);
 }
 
 /* Enhanced background utilities */
@@ -1376,6 +1562,10 @@ body {
   background-color: oklch(0.95 0.02 145);
 }
 
+.dark #initial-loader {
+  background-color: oklch(0.18 0.02 150);
+}
+
 .initial-loader-spinner {
   width: 2rem;
   height: 2rem;
@@ -1385,6 +1575,11 @@ body {
   animation: initialLoaderSpin 0.7s linear infinite;
 }
 
+.dark .initial-loader-spinner {
+  border-color: oklch(0.32 0.03 150);
+  border-top-color: oklch(0.72 0.1 152);
+}
+
 .loading-screen {
   background-color: oklch(0.95 0.02 145);
   --foreground: oklch(0.26 0.05 148);
@@ -1392,6 +1587,15 @@ body {
   --primary: oklch(0.42 0.1 152);
   --chart-2: oklch(0.52 0.09 160);
   --chart-3: oklch(0.36 0.08 148);
+}
+
+.dark .loading-screen {
+  background-color: oklch(0.18 0.02 150);
+  --foreground: oklch(0.93 0.015 150);
+  --muted-foreground: oklch(0.72 0.03 150);
+  --primary: oklch(0.72 0.1 152);
+  --chart-2: oklch(0.68 0.09 160);
+  --chart-3: oklch(0.62 0.08 148);
 }
 
 /* Responsive Design Enhancements */

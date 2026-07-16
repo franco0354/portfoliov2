@@ -6,9 +6,7 @@ import { usePageState } from "@/hooks/usePageState";
 import { cn } from "@/lib/utils";
 import { DATA } from "@/app/page-data";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu } from "lucide-react";
-import Logo from "@/app/assets/img/logo.png";
 import { motion } from "motion/react";
 import {
   Sheet,
@@ -18,6 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { scrollToSection } from "@/lib/scroll";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 type NavItemProps = {
   item: (typeof DATA.navbar)[number];
@@ -82,21 +81,9 @@ export default function Navbar() {
   );
 
   return (
-    <header className="fixed top-0 z-40 w-full border-b border-border bg-[oklch(0.95_0.02_145)]/95 text-foreground backdrop-blur-md">
+    <header className="fixed top-0 z-40 w-full border-b border-border bg-background/95 text-foreground backdrop-blur-md">
       <div className="container relative mx-auto flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6">
-        <Link
-          href="#Home"
-          onClick={(e) => handleNavClick(e, "#Home")}
-          aria-label="Home"
-          className="shrink-0"
-        >
-          <Image
-            src={Logo}
-            alt="Logo"
-            className="h-8 w-8 sm:h-9 sm:w-9"
-            priority
-          />
-        </Link>
+        <ThemeToggle />
 
         <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 md:flex">
           {DATA.navbar.map((item) => (
@@ -142,7 +129,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-72 border-border bg-[oklch(0.95_0.02_145)]/95 text-foreground backdrop-blur-xl"
+              className="w-72 border-border bg-background/95 text-foreground backdrop-blur-xl"
             >
               <SheetHeader>
                 <SheetTitle className="text-foreground">Navigation</SheetTitle>

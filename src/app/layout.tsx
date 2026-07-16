@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const siteUrl = "https://francogregorio.com";
@@ -35,8 +36,14 @@ export default function RootLayout({
               html {
                 background: oklch(0.95 0.02 145);
               }
+              html.dark {
+                background: oklch(0.18 0.02 150);
+              }
               html:has(#initial-loader) {
                 background-color: oklch(0.95 0.02 145);
+              }
+              html.dark:has(#initial-loader) {
+                background-color: oklch(0.18 0.02 150);
               }
               body:has(#initial-loader) {
                 overflow: hidden;
@@ -50,6 +57,9 @@ export default function RootLayout({
                 justify-content: center;
                 background-color: oklch(0.95 0.02 145);
               }
+              html.dark #initial-loader {
+                background-color: oklch(0.18 0.02 150);
+              }
               #initial-loader .initial-loader-spinner {
                 width: 2rem;
                 height: 2rem;
@@ -57,6 +67,10 @@ export default function RootLayout({
                 border: 1.5px solid oklch(0.84 0.03 150);
                 border-top-color: oklch(0.42 0.1 152);
                 animation: initialLoaderSpin 0.7s linear infinite;
+              }
+              html.dark #initial-loader .initial-loader-spinner {
+                border-color: oklch(0.32 0.03 150);
+                border-top-color: oklch(0.72 0.1 152);
               }
               @keyframes initialLoaderSpin {
                 to { transform: rotate(360deg); }
@@ -66,10 +80,12 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className="bg-background">
-        <div id="initial-loader" aria-hidden="true">
-          <div className="initial-loader-spinner" />
-        </div>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <div id="initial-loader" aria-hidden="true">
+            <div className="initial-loader-spinner" />
+          </div>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
