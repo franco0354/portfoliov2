@@ -560,12 +560,7 @@
   }
 
   .home-scroll-slot {
-    margin-top: auto;
-    padding-block: 0.75rem 0.5rem;
-  }
-
-  .home-scroll-line {
-    height: 1.75rem;
+    display: none;
   }
 }
 
@@ -594,10 +589,6 @@
   .home-skill-tag {
     padding: 0.35rem 0.7rem;
     font-size: 0.75rem;
-  }
-
-  .home-scroll-slot {
-    padding-block: 0.65rem 0.35rem;
   }
 }
 
