@@ -99,6 +99,108 @@
   --sage-foreground: oklch(0.93 0.015 150);
 }
 
+/* Soft theme blend — green ↔ white with a feathered diagonal, no hard line */
+@supports (view-transition-name: root) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-old(root) {
+    z-index: 1;
+    animation: theme-blend-out 0.55s ease both;
+  }
+
+  ::view-transition-new(root) {
+    z-index: 2;
+  }
+
+  html[data-theme-wipe="ltr"]::view-transition-new(root) {
+    -webkit-mask-image: linear-gradient(
+      120deg,
+      #000 0%,
+      #000 46%,
+      transparent 54%
+    );
+    mask-image: linear-gradient(
+      120deg,
+      #000 0%,
+      #000 46%,
+      transparent 54%
+    );
+    -webkit-mask-size: 260% 260%;
+    mask-size: 260% 260%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: theme-soft-wipe-ltr 0.55s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  html[data-theme-wipe="rtl"]::view-transition-new(root) {
+    -webkit-mask-image: linear-gradient(
+      120deg,
+      transparent 46%,
+      #000 54%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      120deg,
+      transparent 46%,
+      #000 54%,
+      #000 100%
+    );
+    -webkit-mask-size: 260% 260%;
+    mask-size: 260% 260%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: theme-soft-wipe-rtl 0.55s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes theme-blend-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes theme-soft-wipe-ltr {
+    from {
+      -webkit-mask-position: 100% 50%;
+      mask-position: 100% 50%;
+      opacity: 1;
+    }
+    to {
+      -webkit-mask-position: 0% 50%;
+      mask-position: 0% 50%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes theme-soft-wipe-rtl {
+    from {
+      -webkit-mask-position: 0% 50%;
+      mask-position: 0% 50%;
+      opacity: 1;
+    }
+    to {
+      -webkit-mask-position: 100% 50%;
+      mask-position: 100% 50%;
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
