@@ -101,6 +101,41 @@
 
 /* Soft theme blend — green ↔ white with a feathered diagonal, no hard line */
 @supports (view-transition-name: root) {
+  .theme-toggle {
+    view-transition-name: theme-toggle;
+  }
+
+  .theme-toggle-thumb {
+    view-transition-name: theme-thumb;
+  }
+
+  ::view-transition-group(theme-toggle),
+  ::view-transition-group(theme-thumb) {
+    z-index: 2147483646;
+  }
+
+  /* Keep the switch crisp above the page wipe; morph thumb position */
+  ::view-transition-old(theme-toggle),
+  ::view-transition-new(theme-toggle) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-group(theme-thumb) {
+    animation-duration: 0.35s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ::view-transition-old(theme-thumb) {
+    animation: none;
+    opacity: 0;
+  }
+
+  ::view-transition-new(theme-thumb) {
+    animation: none;
+    opacity: 1;
+  }
+
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation: none;
