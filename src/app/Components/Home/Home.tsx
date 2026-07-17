@@ -65,11 +65,7 @@ function Home() {
                             data-aos="fade-up"
                             data-aos-delay="400"
                         >
-                            I craft modern web and mobile applications with React,
-                            Next.js, React Native, Firebase, Supabase, and TypeScript.
-                            I focus on building fast, scalable products with thoughtful
-                            user experiences—from polished interfaces to reliable systems
-                            running behind the scenes.
+                            I create modern web and mobile applications using React, Next.js, React Native, TypeScript, Firebase, Supabase, and Node.js. I also build data-driven dashboards and analytics platforms with BigQuery, GA4, and Fivetran, delivering fast, scalable applications with clean user experiences and reliable backend systems.
                         </p>
 
                         <div
