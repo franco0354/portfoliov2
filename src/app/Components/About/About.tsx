@@ -100,11 +100,11 @@ function About() {
         <div className="about-shell">
             <TextHeader text="About" />
             <p
-                className="text-justify  md:text-center text-muted-foreground text-base sm:text-lg md:text-xl max-w-5xl mx-auto mb-12 sm:mb-10 px-4"
+                className="text-center text-muted-foreground text-base sm:text-lg md:text-xl max-w-5xl mx-auto mb-12 sm:mb-10 px-4 text-balance"
                 data-aos="fade-up"
                 data-aos-delay="100"
             >
-                <TextAnimate animation="blurIn" duration={1} as="span">
+                <TextAnimate animation="blurIn" duration={1} as="span" className="text-center">
                     A closer look at the person behind the projects—my approach to building,
                     the principles I follow, and the stack I use to bring products from idea to
                     production.

@@ -145,7 +145,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
       <div className="timeline-intro px-1 sm:px-4 md:px-6" data-aos="fade-up" data-aos-delay="100">
         <p className="timeline-intro-lead">
-          <TextAnimate animation="blurIn" duration={1} as="span">
+          <TextAnimate animation="blurIn" duration={1} as="span" className="text-center">
             This timeline showcases my journey from being a student to starting my professional career, highlighting the key experiences and milestones along the way.
           </TextAnimate>
         </p>

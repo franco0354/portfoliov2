@@ -10,11 +10,11 @@ function Project() {
                 text="Project"
             />
             <p
-                className="text-justify md:text-center text-muted-foreground text-base sm:text-lg md:text-xl max-w-5xl mx-auto mb-6 sm:mb-10 px-4"
+                className="text-center text-muted-foreground text-base sm:text-lg md:text-xl max-w-5xl mx-auto mb-6 sm:mb-10 px-4 text-balance"
                 data-aos="fade-up"
                 data-aos-delay="100"
             >
-                <TextAnimate animation="blurIn" duration={1} as="h1">
+                <TextAnimate animation="blurIn" duration={1} as="h1" className="text-center">
                     Explore a curated selection of projects that reflect my skills in design, development, and
                     problem-solving. From full-stack web apps to mobile tools, each build showcases my commitment to
                     creating functional, performant, and visually polished digital experiences.
