@@ -73,7 +73,7 @@ export default function Page() {
       <Navbar />
       <div className="relative z-20 pt-14 sm:pt-16 max-md:[&_section:not(#Home)]:text-justify">
         <div>
-          <section id="Home" className={`${sectionClass} relative flex flex-col overflow-x-hidden overflow-y-auto !py-0 h-[calc(100svh-3.5rem)] sm:h-[calc(100svh-4rem)] min-h-[36rem] md:overflow-hidden`}>
+          <section id="Home" className={`${sectionClass} relative flex flex-col overflow-x-hidden !py-0 h-auto min-h-[calc(100svh-3.5rem)] sm:min-h-[calc(100svh-4rem)] md:h-[calc(100svh-4rem)] md:min-h-0 md:overflow-hidden`}>
             <div className="relative z-10 flex flex-1 flex-col min-h-0 w-full min-w-0 max-w-full px-4 sm:px-6 md:px-10">
               <Home />
             </div>
