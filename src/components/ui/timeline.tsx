@@ -104,10 +104,10 @@ function TimelineItem({
         </div>
         <motion.div
           className={`timeline-content-card draw-border-host ${isInView ? "" : "timeline-content-card--dim"}`}
-          initial={{ opacity: 0.7, y: 12 }}
+          initial={{ opacity: 0.85, y: 8 }}
           animate={{
-            opacity: isInView ? 1 : 0.72,
-            y: isInView ? 0 : 4,
+            opacity: isInView ? 1 : 0.85,
+            y: 0,
           }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
