@@ -67,4 +67,5 @@ export type ProjectLayoutsProps = {
     description: string;
     icon: string[];
     github: string | undefined;
+    index?: number;
 }

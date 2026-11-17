@@ -21,12 +21,11 @@ function Project() {
                 </TextAnimate>
             </p>
             <div>
-                <div className='flex justify-center p-2 gap-4 sm:gap-6 md:gap-10 flex-wrap'>
+                <div className='mx-auto flex max-w-5xl flex-col gap-6 px-4'>
                     {ProjectData.map((id, index) => (
                         <div
                             key={id.id}
-                            data-aos="zoom-in"
-                            data-aos-delay={index * 100}
+                            data-aos="fade-up"
                         >
                             <Projectlayouts
                                 photoAlt={id.description}
@@ -36,6 +35,7 @@ function Project() {
                                 link={id.link}
                                 icon={id.icon}
                                 github={id.github}
+                                index={index}
                             />
                         </div>
                     ))}
