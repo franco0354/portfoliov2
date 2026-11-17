@@ -1,21 +1,20 @@
 import { ArrowUpRight, GithubIcon } from 'lucide-react';
 import { ProjectLayoutsProps } from './project-data';
 import React from 'react'
-import './Project.modern.css';
+
 
 function Projectlayouts(props: ProjectLayoutsProps) {
     const hasLink = props.link && props.link !== '#'
     const hasGithub = props.github && props.github !== '#'
-    const reversed = (props.index ?? 0) % 2 === 1
     const number = String((props.index ?? 0) + 1).padStart(2, '0')
 
     return (
-        <article className={`project-frame flex w-full flex-col rounded border border-border/50 bg-card ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+        <article className={`project-frame flex w-full flex-col rounded border border-border/50 bg-card md:flex-row`}>
             <span className='project-frame-corner project-frame-corner--tr' aria-hidden='true' />
             <span className='project-frame-corner project-frame-corner--bl' aria-hidden='true' />
             <span className='project-frame-corner project-frame-corner--tl' aria-hidden='true' />
             <span className='project-frame-corner project-frame-corner--br' aria-hidden='true' />
-            <div className={`project-frame-media w-full overflow-hidden md:w-2/5 md:shrink-0 ${reversed ? 'md:rounded-r rounded-t md:rounded-tl-none' : 'md:rounded-l rounded-t md:rounded-tr-none'}`}>
+            <div className={`project-frame-media w-full overflow-hidden md:w-2/5 md:shrink-0 md:rounded-l rounded-t md:rounded-tr-none`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src={props.photoURl}
@@ -23,7 +22,7 @@ function Projectlayouts(props: ProjectLayoutsProps) {
                     className='h-full w-full object-cover aspect-video md:aspect-auto'
                 />
             </div>
-            <div className={`flex grow flex-col gap-4 border-t border-border/50 p-5 md:p-6 md:border-t-0 ${reversed ? 'md:border-r' : 'md:border-l'}`}>
+            <div className={`flex grow flex-col gap-4 border-t border-border/50 p-5 md:p-6 md:border-t-0 md:border-l`}>
                 <div className='flex items-baseline justify-between gap-3'>
                     <h3 className='text-lg font-semibold tracking-tight text-foreground'>
                         {props.title}
