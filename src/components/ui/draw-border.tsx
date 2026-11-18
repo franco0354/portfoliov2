@@ -7,14 +7,21 @@ type DrawBorderProps = {
   radius?: number;
   /** Use circular frame paths (for round avatars / photos). */
   circle?: boolean;
+  /**
+   * "default": center-out partial frame (philosophy cards).
+   * "corners": four L-bracket corners at rest; gap lines sweep inward on hover.
+   */
+  variant?: "default" | "corners";
 };
 
 /**
  * Partial frame: top L/R arms + half sides + bottom center.
  * On hover, top & bottom span left↔right from center to complete the border.
  * With `circle`, draws partial arcs around a round frame instead.
+ * With `variant="corners"`, shows four corner L-brackets at rest and fills
+ * in the edge gaps on hover (corners-in design).
  */
-export function DrawBorder({ radius = 8, circle = false }: DrawBorderProps) {
+export function DrawBorder({ radius = 8, circle = false, variant = "default" }: DrawBorderProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [box, setBox] = useState({ w: 0, h: 0 });
 
@@ -102,15 +109,66 @@ export function DrawBorder({ radius = 8, circle = false }: DrawBorderProps) {
     ? `M ${cx + bottomCenterHalf} ${bottom} H ${right - r} A ${r} ${r} 0 0 0 ${right} ${bottom - r} V ${midY}`
     : "";
 
+  // ── corners variant ───────────────────────────────────────────────────────
+  // Four L-bracket corner arms always visible; edge-gap lines animate in on hover.
+  const cArmH = Math.max(18, w * 0.18); // horizontal arm length
+  const cArmV = Math.max(18, h * 0.28); // vertical arm length
+
+  const cornerTL = readyRect
+    ? `M ${x + cArmH} ${y} H ${x + r} A ${r} ${r} 0 0 0 ${x} ${y + r} V ${y + cArmV}`
+    : "";
+  const cornerTR = readyRect
+    ? `M ${right - cArmH} ${y} H ${right - r} A ${r} ${r} 0 0 1 ${right} ${y + r} V ${y + cArmV}`
+    : "";
+  const cornerBL = readyRect
+    ? `M ${x + cArmH} ${bottom} H ${x + r} A ${r} ${r} 0 0 1 ${x} ${bottom - r} V ${bottom - cArmV}`
+    : "";
+  const cornerBR = readyRect
+    ? `M ${right - cArmH} ${bottom} H ${right - r} A ${r} ${r} 0 0 0 ${right} ${bottom - r} V ${bottom - cArmV}`
+    : "";
+
+  // Gap-fill paths: animate from corner-arm endpoints inward to meet in edge center
+  const gapTop = readyRect
+    ? `M ${x + cArmH} ${y} H ${right - cArmH}`
+    : "";
+  const gapBottom = readyRect
+    ? `M ${x + cArmH} ${bottom} H ${right - cArmH}`
+    : "";
+  const gapLeft = readyRect
+    ? `M ${x} ${y + cArmV} V ${bottom - cArmV}`
+    : "";
+  const gapRight = readyRect
+    ? `M ${right} ${y + cArmV} V ${bottom - cArmV}`
+    : "";
+
   return (
     <svg
       ref={svgRef}
-      className="draw-border"
+      className={`draw-border${variant === "corners" ? " draw-border--corners" : ""}`}
       width={box.w || "100%"}
       height={box.h || "100%"}
       aria-hidden="true"
     >
-      {circle ? (
+      {variant === "corners" ? (
+        <>
+          {cornerTL && <path className="draw-border-base" d={cornerTL} />}
+          {cornerTR && <path className="draw-border-base" d={cornerTR} />}
+          {cornerBL && <path className="draw-border-base" d={cornerBL} />}
+          {cornerBR && <path className="draw-border-base" d={cornerBR} />}
+          {gapTop && (
+            <path className="draw-border-fill" pathLength="100" d={gapTop} />
+          )}
+          {gapBottom && (
+            <path className="draw-border-fill" pathLength="100" d={gapBottom} />
+          )}
+          {gapLeft && (
+            <path className="draw-border-fill" pathLength="100" d={gapLeft} />
+          )}
+          {gapRight && (
+            <path className="draw-border-fill" pathLength="100" d={gapRight} />
+          )}
+        </>
+      ) : circle ? (
         <>
           {circleTopLeft && (
             <path className="draw-border-base" d={circleTopLeft} />
