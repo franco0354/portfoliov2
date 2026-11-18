@@ -14,7 +14,7 @@ function Project() {
                 data-aos="fade-up"
                 data-aos-delay="100"
             >
-                <TextAnimate animation="blurIn" duration={1} as="h1" className="text-center">
+                <TextAnimate animation="blurIn" duration={1} as="span" className="text-center">
                     Explore a curated selection of projects that reflect my skills in design, development, and
                     problem-solving. From full-stack web apps to mobile tools, each build showcases my commitment to
                     creating functional, performant, and visually polished digital experiences.

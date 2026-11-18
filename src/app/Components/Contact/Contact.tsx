@@ -13,7 +13,7 @@ function Contact() {
                 data-aos="fade-up"
                 data-aos-delay="100"
             >
-                <TextAnimate animation="blurIn" duration={1} as="h1" className="text-center">
+                <TextAnimate animation="blurIn" duration={1} as="span" className="text-center">
                     Have a project in mind, a collaboration opportunity, or just want to say hello?
                     I&apos;d love to hear from you. I&apos;m always open to connecting and exploring new
                     opportunities in web development, mobile apps, and thoughtful product design.
