@@ -3,11 +3,14 @@
 import '../Home/Home.style.css'
 import '../Home/Home.modern.css'
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { TypingText } from '@/components/animate-ui/text/typing';
 import { SkillTag } from '@/components/ui/skill-tag';
 import { DrawBorder } from '@/components/ui/draw-border';
 import { scrollToSection } from '@/lib/scroll';
-import profilebackground from '@/app/assets/img/backgroundprofile.jpg';
+import darkProfile from '@/app/assets/img/darkbackround.jpg';
+import lightProfile from '@/app/assets/img/lightbackground.jpg';
 import {
     SiReact,
     SiNextdotjs,
@@ -23,6 +26,15 @@ const dataText = [
 ];
 
 function Home() {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const profileSrc = mounted && resolvedTheme === 'light' ? lightProfile : darkProfile;
+
     return (
         <div className="home-shell">
             <div className="container home mx-auto">
@@ -100,7 +112,7 @@ function Home() {
                             <DrawBorder circle />
                             <div className="home-visual-photo-clip">
                                 <Image
-                                    src={profilebackground}
+                                    src={profileSrc}
                                     alt="Franco at his desk"
                                     fill
                                     priority

@@ -110,10 +110,14 @@ export function DrawBorder({ radius = 8, circle = false, variant = "default" }: 
     : "";
 
   // ── corners variant ───────────────────────────────────────────────────────
-  // Four L-bracket corner arms always visible; edge-gap lines animate in on hover.
-  const cArmH = Math.max(18, w * 0.18); // horizontal arm length
-  const cArmV = Math.max(18, h * 0.28); // vertical arm length
+  // Four L-bracket corner arms + center ticks on all 4 edges always visible.
+  // On hover, 8 gap-fill segments sweep from corner arms toward the center ticks.
+  const cArmH = Math.max(18, w * 0.18); // horizontal arm length from corner
+  const cArmV = Math.max(14, h * 0.20); // vertical arm length from corner
+  const tickH = Math.max(10, w * 0.08); // half-width of center tick (top/bottom)
+  const tickV = Math.max(8,  h * 0.08); // half-height of center tick (left/right)
 
+  // Base: 4 corner L-brackets
   const cornerTL = readyRect
     ? `M ${x + cArmH} ${y} H ${x + r} A ${r} ${r} 0 0 0 ${x} ${y + r} V ${y + cArmV}`
     : "";
@@ -127,19 +131,21 @@ export function DrawBorder({ radius = 8, circle = false, variant = "default" }: 
     ? `M ${right - cArmH} ${bottom} H ${right - r} A ${r} ${r} 0 0 0 ${right} ${bottom - r} V ${bottom - cArmV}`
     : "";
 
-  // Gap-fill paths: animate from corner-arm endpoints inward to meet in edge center
-  const gapTop = readyRect
-    ? `M ${x + cArmH} ${y} H ${right - cArmH}`
-    : "";
-  const gapBottom = readyRect
-    ? `M ${x + cArmH} ${bottom} H ${right - cArmH}`
-    : "";
-  const gapLeft = readyRect
-    ? `M ${x} ${y + cArmV} V ${bottom - cArmV}`
-    : "";
-  const gapRight = readyRect
-    ? `M ${right} ${y + cArmV} V ${bottom - cArmV}`
-    : "";
+  // Base: center tick on each edge
+  const tickTop    = readyRect ? `M ${cx - tickH} ${y} H ${cx + tickH}` : "";
+  const tickBottom = readyRect ? `M ${cx - tickH} ${bottom} H ${cx + tickH}` : "";
+  const tickLeft   = readyRect ? `M ${x} ${cy - tickV} V ${cy + tickV}` : "";
+  const tickRight  = readyRect ? `M ${right} ${cy - tickV} V ${cy + tickV}` : "";
+
+  // Fill: 8 gap segments, each sweeping from a corner arm's inner end → its center tick
+  const gapTopL    = readyRect ? `M ${x + cArmH} ${y} H ${cx - tickH}` : "";
+  const gapTopR    = readyRect ? `M ${right - cArmH} ${y} H ${cx + tickH}` : "";
+  const gapBottomL = readyRect ? `M ${x + cArmH} ${bottom} H ${cx - tickH}` : "";
+  const gapBottomR = readyRect ? `M ${right - cArmH} ${bottom} H ${cx + tickH}` : "";
+  const gapLeftT   = readyRect ? `M ${x} ${y + cArmV} V ${cy - tickV}` : "";
+  const gapLeftB   = readyRect ? `M ${x} ${bottom - cArmV} V ${cy + tickV}` : "";
+  const gapRightT  = readyRect ? `M ${right} ${y + cArmV} V ${cy - tickV}` : "";
+  const gapRightB  = readyRect ? `M ${right} ${bottom - cArmV} V ${cy + tickV}` : "";
 
   return (
     <svg
@@ -151,22 +157,25 @@ export function DrawBorder({ radius = 8, circle = false, variant = "default" }: 
     >
       {variant === "corners" ? (
         <>
+          {/* Corner L-brackets */}
           {cornerTL && <path className="draw-border-base" d={cornerTL} />}
           {cornerTR && <path className="draw-border-base" d={cornerTR} />}
           {cornerBL && <path className="draw-border-base" d={cornerBL} />}
           {cornerBR && <path className="draw-border-base" d={cornerBR} />}
-          {gapTop && (
-            <path className="draw-border-fill" pathLength="100" d={gapTop} />
-          )}
-          {gapBottom && (
-            <path className="draw-border-fill" pathLength="100" d={gapBottom} />
-          )}
-          {gapLeft && (
-            <path className="draw-border-fill" pathLength="100" d={gapLeft} />
-          )}
-          {gapRight && (
-            <path className="draw-border-fill" pathLength="100" d={gapRight} />
-          )}
+          {/* Center ticks on all 4 edges */}
+          {tickTop    && <path className="draw-border-base" d={tickTop} />}
+          {tickBottom && <path className="draw-border-base" d={tickBottom} />}
+          {tickLeft   && <path className="draw-border-base" d={tickLeft} />}
+          {tickRight  && <path className="draw-border-base" d={tickRight} />}
+          {/* Gap fills: sweep from corner arms → center ticks on hover */}
+          {gapTopL    && <path className="draw-border-fill" pathLength="100" d={gapTopL} />}
+          {gapTopR    && <path className="draw-border-fill" pathLength="100" d={gapTopR} />}
+          {gapBottomL && <path className="draw-border-fill" pathLength="100" d={gapBottomL} />}
+          {gapBottomR && <path className="draw-border-fill" pathLength="100" d={gapBottomR} />}
+          {gapLeftT   && <path className="draw-border-fill" pathLength="100" d={gapLeftT} />}
+          {gapLeftB   && <path className="draw-border-fill" pathLength="100" d={gapLeftB} />}
+          {gapRightT  && <path className="draw-border-fill" pathLength="100" d={gapRightT} />}
+          {gapRightB  && <path className="draw-border-fill" pathLength="100" d={gapRightB} />}
         </>
       ) : circle ? (
         <>
